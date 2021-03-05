@@ -94,6 +94,8 @@ const tray_text_backups = global_language_texts.tray_text_backups
 const tray_text_language = global_language_texts.tray_text_language
 const tray_text_quit = global_language_texts.tray_text_quit
 const tray_text_startup = global_language_texts.tray_text_startup
+const tray_text_version = global_language_texts.tray_text_version
+
 
 // define general variables
 const switching_time_animation = 700 //miliseconds
@@ -113,6 +115,9 @@ let context_menu = Menu.buildFromTemplate([
         click: handle_open_settings
     },
     { 
+        type: 'separator', 
+    },
+    { 
         label: tray_text_watching,
         type: 'checkbox', 
         checked: true,
@@ -124,14 +129,24 @@ let context_menu = Menu.buildFromTemplate([
         //click: () => {handle_tray_backups_click(context_menu.items[2].checked)}
     //},
     { 
+        label: tray_text_startup,
+        type: 'checkbox',
+        click: handle_tray_startup_click
+    },
+    { 
+        type: 'separator', 
+    },
+    { 
         label: tray_text_language + user_language,
         type: 'normal',
         click: handle_tray_language_click
     },
     { 
-        label: tray_text_startup,
-        type: 'checkbox',
-        click: handle_tray_startup_click
+        label: tray_text_version + process.env.npm_config_init_version,
+        type: 'normal', 
+    },
+    { 
+        type: 'separator', 
     },
     { 
         label: tray_text_quit,
