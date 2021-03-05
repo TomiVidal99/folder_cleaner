@@ -1,0 +1,47 @@
+{
+    "mainjs": {
+        "tray_text_settings": "Settings",
+        "tray_text_watching": "Active folder changes",
+        "tray_text_backups": "Active backups",
+        "tray_text_language": "Lang: ",
+        "tray_text_quit": "Quit",
+        "tray_text_startup": "Enable auto-startup"
+    },
+    "settings": {
+        "commonText": {
+            "title": "Settings panel",
+            "titleComment": "get comfy while we organize your life :)",
+            "titleDescription": "Here you can set up everything just once and then let it run",
+            "watchingTitle": "Watching folders configuration",
+            "watchingDescription": "Add the folders that you'd like to be organized to the list by clicking the blue button",
+            "selectWatchingPath": "search folders",
+            "removeSelectedWatchingPaths": "remove selected paths",
+            "noWatchingFoldersWarning": "Oops! there are no folders selected, click up above to add them!",
+            "noDestinationFoldersWarning": "Oops! there are no folders selected, click up above to add them!",
+            "destinationTitle": "Destination folders configuration",
+            "destinationDescription": "Select the files destination with the sorting parameters as you'd like",
+            "selectDestinationFolder": "select a folder",
+            "addDestinationFolder": "add destination folder",
+            "removeSelectedDestinationFolders": "remove selected folders",
+            "destinationPropertyName": "Sort by name",
+            "destinationPropertyFormat": "Sort by format",
+            "destinationPropertyRegex": "Sort by regex",
+            "addConfiguredFolder": "add to list",
+            "resetPersonalConfiguration": "reset all the configuration to the initial"
+        },
+        "paths": {
+            "selectWatchingPathImgSrc": "./../assets/add_path.png",
+            "removeSelectedWatchingPathsImgSrc": "./../assets/remove_path.png",
+            "selectDestinationFolderImgSrc": "./../assets/add_path.png",
+            "removeSelectedDestinationFoldersImgSrc": "./../assets/remove_path.png",
+            "summitFolderProperty": "./../assets/summit_property.png",
+            "addConfiguredFolderImgSrc": "./../assets/add_destination_folder.png",
+            "resetPersonalConfigurationImgSrc": "./../assets/reset_personal_configuration.png"
+        },
+        "alerts": {
+            "watchingPathAlreadySelected": "The following path is already selected: ",
+            "destinationPathAlreadySelected": "The selected path is already set as a destination, we selected it so you can change it's properties", 
+            "destinationPropertyAlreadySelected": "is already selected as a sorting property"
+        }
+    }
+}

@@ -1,0 +1,282 @@
+:root {
+    --first-color: #191919;
+    --second-color: #374c72;
+    --third-color: #008891;
+    --fourth-color: #e7e7de;
+    --fifth-color: #cccccc;
+    --sixth-color: white;
+    --seventh-color: #5ebc6a;
+
+    --property-name-color: #910FFA;
+    --property-regex-color: #7f69ea;
+    --property-format-color: #0B80D9;
+
+}
+body {
+    background: var(--first-color);
+}
+p {
+    font-size: 1.35rem;
+}
+
+.input-group {
+    height: 4vh;
+}
+
+/*for the warning badges */
+.badge-warning {
+    font-size: 0.9rem;
+}
+
+/*style for the h1 tags to have a line under them*/
+h1 {
+    border-bottom: 1px solid var(--secondary);
+    padding-bottom: 10px;
+}
+/*style for the h3 tags to have a line under them*/
+h3 {
+    border-bottom: 1px solid var(--secondary);
+    padding-bottom: 15px;
+}
+
+/*style for all img tags inside buttons*/
+.button-icon {
+    width: auto;
+    height: 100% !important;
+    margin-left: 2vw;
+}
+
+/*style for the buttons that have an image inside*/
+.btn-with-image {
+    height: 6vh;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/*style for all p tags inside buttons*/
+button > p {
+    font-size: 1.1rem;
+}
+
+/*make not selectable the next elements*/
+p, li, ul {
+    user-select: none; 
+}
+
+/*classes for font colors*/
+.first-color {
+    color: var(--first-color);
+}
+.secondary-color {
+    color: var(--second-color);
+}
+.third-color {
+    color: var(--third-color);
+}
+.fourth-color {
+    color: var(--fourth-color);
+}
+.fifth-color {
+    color: var(--fifth-color);
+}
+.sixth-color {
+    color: var(--sixth-color);
+}
+
+/*classes for backgrouds color*/
+.first-bg {
+    background-color: var(--first-color);
+}
+.second-bg {
+    background-color: var(--second-color);
+}
+.third-bg {
+    background-color: var(--third-color);
+}
+
+
+/*classes for rounded corners*/
+.round-left {
+    border-radius: 8px 0 0 8px;
+}
+.round-right {
+    border-radius: 0 8px 8px 0;
+}
+
+/*custom styling for the page*/
+
+/*items inside of the watching_paths_list ul tag*/
+#watching_paths_list > li, #destination_paths_list > li {
+    width: 90%;
+    border-radius: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--light);
+    flex-wrap: wrap;
+}
+#watching_paths_list > li:last-child, #destination_paths_list > li:last-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+#watching_paths_list > li:first-child, #destination_paths_list > li:first-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+#watching_paths_list > li:hover, #destination_paths_list > li:hover {
+    background-color: var(--light) !important;
+    font-size: larger;
+    animation-name: hovering-list-item-growth;
+    animation-duration: 0.5s;
+    width: 100%;
+    border-radius: 8px 8px 8px 8px;
+    font-weight: bolder;
+    color: var(--dark);
+}
+.selected_watching_li, .selected_destination_li {
+    background-color: var(--danger) !important;
+    transform: translateX(2vw);
+    border-radius: 8px 8px 8px 8px !important;
+    z-index: 10;
+    color: var(--light);
+    font-weight: bolder;
+}
+
+.destination-properties-img {
+    width: auto;
+    height: 100%;
+    margin: 0;
+}
+
+/*animation class for the img inside buttons*/
+.img-rotate-animation:hover > img {
+    animation-name: img-rotate-animation;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+/*animation for the images on the destination properties*/
+.img-property-name:hover, .destination-properties-img-animation > input:focus ~ .img-property-name, .property-name-element {
+    background-color: var(--property-name-color) !important;
+}
+.img-property-format:hover, .destination-properties-img-animation > input:focus ~ .img-property-format, .property-format-element {
+    background-color: var(--property-format-color) !important;
+}
+.img-property-regex:hover, .destination-properties-img-animation > input:focus ~ .img-property-regex, .property-regex-element {
+    background-color: var(--property-regex-color) !important;
+}
+.destination-properties-img-animation > input:focus ~ .destination-properties-img {
+    animation-name: destination-properties-img-animation;
+    animation-duration: 1s;
+}
+
+/*styling for the destination paths list*/
+/*#destination_paths_list > li:first-child {*/
+    /*display: inline-flex;*/
+    /*background-color: red !important;*/
+    /*overflow: hidden;*/
+    /*overflow-wrap: nowrap;*/
+/*}*/
+.property-element {
+    margin-right: 0.7vw;
+}
+.name-property-element {
+    color: var(--property-name-color);
+}
+.format-property-element {
+    color: var(--property-format-color);
+}
+.regex-property-element {
+    color: var(--property-regex-color);
+}
+
+.on-hover-stretch-path > h6 {
+    width: 50%;
+    overflow: hidden;
+    overflow-wrap: nowrap;
+}
+#destination-properties-path-display:hover {
+    animation: stretch-text forwards 1.4s;
+}
+
+/*list where all the folder properties are diplayed*/
+.property-inline-elements {
+    display: inline-flex;
+    align-items: center;
+}
+.property-inline-elements > * {
+    height: 100%;
+}
+#list-folder-properties {
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+}
+#list-folder-properties > li {
+    display: inline-flex;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    color: var(--light);
+    box-shadow: 2px 2px 10px solid var(--light);
+    font-size: 1.2rem;
+    padding: 10px 3px 10px 3px;
+}
+#list-folder-properties > li:hover {
+    background-color: var(--danger) !important;
+    font-weight: bolder;
+    padding: 0.7vw 1.2vw 0.7vw 1.2vw !important;
+}
+
+/*all custom animations*/
+@keyframes stretch-text {
+    100% {
+        align-text: center;
+        padding: 1.4vh;
+        width: 80%;
+        font-size: 1.3rem;
+    }
+}
+@keyframes destination-properties-img-animation {
+    0% {
+        transform: rotateX(60deg);
+    }
+    40% {
+        transform: rotateX(-60deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+@keyframes img-rotate-animation {
+    0% {
+        transform: rotate(0deg);
+    }
+    60% {
+        transform: rotate(360deg);
+    }
+    70% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(90deg);
+    }
+    80% {
+        transform: rotate(0deg);
+    }
+    85% {
+        transform: rotate(45deg);
+    }
+    90% {
+        transform: rotate(0deg);
+    }
+    95% {
+        transform: rotate(25deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
