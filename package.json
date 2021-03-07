@@ -6,7 +6,7 @@
   "main": "./scripts/main.js",
   "scripts": {
     "start": "APP_DEV=true electron .",
-    "build-portable-linux": "electron-packager . --platform=linux --arch=x64 --out=builds --overwrite --icon=./assets/app_icon_1024x1024.png",
+    "build-portable-linux": "electron-packager . --platform=linux --arch=x64 --out=builds --overwrite --icon='./assets/app_icon_256x256.png' --asar",
     "build-installer-linux": "electron-installer-debian --src builds/app-linux-x64/ --dest builds/app-linux-x64-installer/ --arch amd64"
   },
   "repository": "https://github.com/TomiVidal99/folder_cleaner.git",
