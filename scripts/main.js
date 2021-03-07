@@ -60,6 +60,7 @@ const disable_watch = () => {
     watcher.shutdown_watch()
 }
 const switch_watching_state = () => {
+    console.log('switch_watching_state is clicked')
     watcher.switch_watching_state()
 }
 const return_watched = async () => {

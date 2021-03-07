@@ -55,6 +55,7 @@ class chokidar_class {
             this.watcher.close().then( () => {
                 console.log('finally watcher closed')
                 this.is_watching_enable = false
+                return false
             }).catch( (e) => {
                 if (e) throw e
             })
@@ -66,10 +67,11 @@ class chokidar_class {
         console.log('watcher is: ', this.is_watching_enable)
 
         if (this.is_watching_enable) {
-            this.shutdown_watch()
+            return await this.shutdown_watch()
         } else {
-            this.create_watcher() 
+            return await this.create_watcher() 
         }
+
     }
 
     return_watched = () => {
@@ -111,8 +113,9 @@ class chokidar_class {
         console.log('resetting watcher')
         console.log(this.is_watching_enable)
         if (this.is_watching_enable) {
-            this.shutdown_watch()
-            this.create_watcher()
+            this.shutdown_watch().then( (new_state) => {
+                this.create_watcher()
+            })
         } else {
             this.create_watcher()
         }
