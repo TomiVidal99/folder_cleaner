@@ -13,6 +13,7 @@ const auto_launch = require('auto-launch')
 
 let auto_launcher = new auto_launch({
     name: 'Folder Cleaner',
+    path: process.execPath
 });
 
 // define useful paths
@@ -23,7 +24,6 @@ if (isDev) {
 } else {
     app_directory = path.join(process.resourcesPath, 'app')
 }
-console.log(app_directory)
 localStorage.setItem('app_directory', app_directory)
 const assets_path = path.join(app_directory, "assets")
 localStorage.setItem('assets_path', assets_path)
@@ -33,6 +33,7 @@ const scripts_path = path.join(app_directory, "scripts")
 localStorage.setItem('scripts_path', scripts_path)
 const configurations_path = path.join(app_directory, "configurations")
 localStorage.setItem('configurations_path', configurations_path)
+localStorage.setItem('app_version', app.getVersion())
 
 // import the cokidar class
 const { chokidar_class } = require('./chokidar_class.js')
@@ -295,7 +296,8 @@ function createWindow() {
             enableRemoteModule: true
         },
         resizable: true,
-        show: false,
+        //show: false,
+        show: true,
         title: 'Folder Cleaner Settings Panel',
     }) 
     const main_page_path = path.join(pages_path, "settings.html")
@@ -308,7 +310,7 @@ function createWindow() {
         event.preventDefault()
         handle_open_settings()
     })
-    settings_window.removeMenu()
+    //settings_window.removeMenu()
 }  
 
 app.whenReady().then( () => {
@@ -359,6 +361,7 @@ handle_tray_watching_click(context_menu.items[1].checked)
 // handle the load of the user configuration
 require(path.join(scripts_path, "handle_configuration")).load_user_configuration()
 
+// TODO move all functions of sorting the files to an independent file
 function move_file(from, to) {
     fs.copyFile(from, to, () => {
         // on copy sucess remove copied file
@@ -366,6 +369,46 @@ function move_file(from, to) {
             console.log('copied')
         })
     })
+}
+
+function sort_out_file(folder, file, complete_path, keywords, unfiltered) {
+    // first i loop through all the keywords 
+    for (let k = 0; k < keywords.length; k++) {
+        const keyword = keywords[k]
+        const unfiltered_splitted = unfiltered.toLowerCase().split(keyword) // i ignore upper cases
+        console.log(unfiltered_splitted)
+        // if there is a keyword proceed to move the file and return true, else return false
+        if (unfiltered_splitted.length > 1) {
+            // when the file format is one that has to be moved 
+            const to_path = path.join(folder, file)
+            console.log("from: ", complete_path)
+            console.log("to: ", to_path)
+            // only copy the file if the destination folder exists
+            fs.exists(folder, (the_path_exists) => {
+                if (!the_path_exists) {
+                    // create the path and then move the file
+                    fs.mkdirSync(folder)
+                } else {
+                    // check if a file with the same name is already there
+                    fs.exists(to_path, (the_name_is_already_taken) => {
+                        // if there is not such a file, move it 
+                        if (!the_name_is_already_taken) {
+                            move_file(complete_path, to_path)
+                        } else {
+                            // TODO else pop a menu of what to do
+                            showNotification(notifications_texts.fileAlreadyExists.title, notifications_texts.fileAlreadyExists.body)
+                            console.log('Error, the file was not moved, another one was already in the folder')
+                        }
+                    })
+                }
+            })
+            return true
+            break
+        } else {
+            // there is no keyword found and so do not move file and return false
+            return false
+        }
+    }
 }
 
 // callback when a file is added to a watching folder
@@ -386,57 +429,18 @@ function handle_folder_change(complete_path) {
     // priority on this one
     // sorts by names
     let is_sorted = false 
-    if (!is_sorted) {
-        for (let folder in destination_folders) {
-            const current_formats_array = destination_folders[folder].names
-            const names_of_the_watched_file = file_name.split(' ')
-            // first loop through all the words that compounds the name of the file
-            for (let j = 0; j < names_of_the_watched_file.length; j++) {
-                // now loop through all the classifier words of the destination folders
-                const selected_word = names_of_the_watched_file[j]
-                for (let i = 0; i < current_formats_array.length; i++) {
-                    if (current_formats_array[i] == selected_word) {
-                        // when the file format is one that has to be moved 
-                        const to_path = path.join(folder, file)
-                        console.log("from: ", complete_path)
-                        console.log("to: ", to_path)
-                        // only copy the file if the destination folder exists
-                        fs.exists(folder, (the_path_exists) => {
-                            if (!the_path_exists) {
-                                // create the path and then move the file
-                                fs.mkdirSync(folder)
-                            }
-                            move_file(complete_path, to_path)
-                        })
-                        is_sorted = true
-                        break
-                    }
-                }
-            }
-        }
+
+    // filter by names
+    for (let folder in destination_folders) {
+        const current_names_array = destination_folders[folder].names
+        is_sorted = sort_out_file(folder, file, complete_path, current_names_array, file_name)
     }
 
-    // sorts by formats
+    // filter by formats
     if (!is_sorted) {
         for (let folder in destination_folders) {
             const current_formats_array = destination_folders[folder].formats
-            for (let i = 0; i < current_formats_array.length; i++) {
-                if (current_formats_array[i] == file_format) {
-                    // when the file format is one that has to be moved 
-                    const to_path = path.join(folder, file)
-                    console.log("from: ", complete_path)
-                    console.log('to: ', to_path)
-                    fs.exists(folder, (the_path_exists) => {
-                        if (!the_path_exists) {
-                            // create the path and then move the file
-                            fs.mkdirSync(folder)
-                        }
-                        move_file(complete_path, to_path)
-                    })
-                    is_sorted = true
-                    break
-                }
-            }
+            is_sorted = sort_out_file(folder, file, complete_path, current_formats_array, file_format)
         }
     }
 

@@ -37,6 +37,11 @@ function apply_text_to_elements_with_language_attribute() {
             }
         }
     }
+
+    // i apply the current version to the correct tag
+    document.getElementById('app_version').innerHTML = electronLocalStorage.getItem('app_version')
+
+
 }
 
 // this function applies the metadata to the elements that requires it
@@ -69,4 +74,5 @@ window.onload = () => {
     apply_metadata_to_elements()
     // creates the initial conditions for the elements
     loadInitialConditions()
+
 }

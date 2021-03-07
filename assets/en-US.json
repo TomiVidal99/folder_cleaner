@@ -49,6 +49,10 @@
         "fileNotSorted": {
             "title": "Add more filters! :)",
             "body": "A new file has been detected but not sorted, we recommend you to add more filter to the application, so next time you won't have to do it yourself!"
+        },
+        "fileAlreadyExists": {
+            "title": "File Conflict",
+            "body": "The destination folder already has a file with that name, the file was not moved"
         }
     }
 }
