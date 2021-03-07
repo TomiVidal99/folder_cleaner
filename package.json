@@ -7,7 +7,7 @@
   "scripts": {
     "start": "APP_DEV=true electron .",
     "build-portable-linux": "electron-packager . --platform=linux --arch=x64 --out=builds --overwrite --icon='./assets/linux-icons/app_icon_256x256.png' --asar",
-    "build-installer-linux": ""
+    "build-installer-linux": "electron-builder"
   },
   "repository": "https://github.com/TomiVidal99/folder_cleaner.git",
   "author": "Tomas Vidal <tomi_vidal_99@hotmail.com>",
@@ -19,7 +19,8 @@
   },
   "devDependencies": {
     "electron": "^11.2.0",
-    "electron-builder": "^22.10.5"
+    "electron-builder": "^22.10.5",
+    "electron-packager": "^15.2.0"
   },
   "build": {
     "extraResources": [
