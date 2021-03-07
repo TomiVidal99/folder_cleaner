@@ -1,6 +1,6 @@
 {
   "name": "folder_cleaner",
-  "version": "1.3.3",
+  "version": "1.4.5",
   "description": "A desktop app that organizes and backs up your data",
   "productName": "Folder Cleaner",
   "main": "./scripts/main.js",

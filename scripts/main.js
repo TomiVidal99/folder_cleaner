@@ -296,8 +296,8 @@ function createWindow() {
             enableRemoteModule: true
         },
         resizable: true,
-        //show: false,
-        show: true,
+        show: false,
+        //show: true,
         title: 'Folder Cleaner Settings Panel',
     }) 
     const main_page_path = path.join(pages_path, "settings.html")
@@ -310,7 +310,7 @@ function createWindow() {
         event.preventDefault()
         handle_open_settings()
     })
-    //settings_window.removeMenu()
+    settings_window.removeMenu()
 }  
 
 app.whenReady().then( () => {
