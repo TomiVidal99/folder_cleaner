@@ -1,14 +1,14 @@
 {
   "name": "folder_cleaner",
-  "version": "1.1.0",
+  "version": "1.2.1",
   "description": "A desktop app that organizes and backs up your data",
+  "productName": "Folder Cleaner",
   "main": "./scripts/main.js",
   "scripts": {
     "start": "APP_DEV=true electron .",
-    "build-portable-linux": "electron-packager . app --platform linux --arch x64 --out builds/ --executableName folder_cleaner --overwrite",
+    "build-portable-linux": "electron-packager . --platform=linux --arch=x64 --out=builds --overwrite",
     "build-installer-linux": "electron-installer-debian --src builds/app-linux-x64/ --dest builds/app-linux-x64-installer/ --arch amd64"
   },
-  "start": "APP_DEV=true electron .",
   "repository": "https://github.com/TomiVidal99/folder_cleaner.git",
   "author": "Tomas Vidal <tomi_vidal_99@hotmail.com>",
   "license": "MIT",
@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "electron": "^11.2.0",
-    "electron-builder": "^22.9.1",
+    "electron-builder": "^22.10.5",
     "electron-installer-debian": "^3.1.0"
   },
   "build": {

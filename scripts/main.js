@@ -2,7 +2,7 @@
 // the objective is for it to control all the logic 
 
 // import modules
-const { app, Menu, Tray, BrowserWindow, ipcMain } = require('electron')
+const { app, Menu, Tray, BrowserWindow, ipcMain, Notification } = require('electron')
 const localStorage = require('electron-localstorage')
 const fs = require('fs')
 const url = require('url')
@@ -88,6 +88,7 @@ require(path.join(scripts_path, "handle_language_creation.js")).handle_language_
 const user_language = localStorage.getItem("user_language")
 const raw_json = require(path.join(assets_path, user_language + ".json"))
 const global_language_texts = JSON.parse(JSON.stringify(raw_json)).mainjs
+const notifications_texts = JSON.parse(JSON.stringify(raw_json)).notifications
 const tray_text_settings = global_language_texts.tray_text_settings
 const tray_text_watching = global_language_texts.tray_text_watching
 const tray_text_backups = global_language_texts.tray_text_backups
@@ -96,6 +97,14 @@ const tray_text_quit = global_language_texts.tray_text_quit
 const tray_text_startup = global_language_texts.tray_text_startup
 const tray_text_version = global_language_texts.tray_text_version
 
+// function to create notifications
+function showNotification(title, body) {
+  const notification = {
+    title: title,
+    body: body
+  }
+  new Notification(notification).show()
+}
 
 // define general variables
 const switching_time_animation = 700 //miliseconds
@@ -142,7 +151,7 @@ let context_menu = Menu.buildFromTemplate([
         click: handle_tray_language_click
     },
     { 
-        label: tray_text_version + process.env.npm_config_init_version,
+        label: tray_text_version + app.getVersion(),
         type: 'normal', 
     },
     { 
@@ -431,8 +440,9 @@ function handle_folder_change(complete_path) {
     }
 
     if (!is_sorted) {
-        // TODO pop up an adviser message to encourage the user to add more filters
+        // send a notification for the user to warn him to add more filter to the app
         console.log("The file was not sorted")
+        showNotification(notifications_texts.fileNotSorted.title, notifications_texts.fileNotSorted.body)
     }
 
 }

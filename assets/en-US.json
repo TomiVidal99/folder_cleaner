@@ -44,5 +44,11 @@
             "destinationPathAlreadySelected": "The selected path is already set as a destination, we selected it so you can change it's properties", 
             "destinationPropertyAlreadySelected": "is already selected as a sorting property"
         }
+    },
+    "notifications": {
+        "fileNotSorted": {
+            "title": "Add more filters! :)",
+            "body": "A new file has been detected but not sorted, we recommend you to add more filter to the application, so next time you won't have to do it yourself!"
+        }
     }
 }
