@@ -371,20 +371,17 @@ function move_file(from, to) {
     })
 }
 
-function sort_out_file(folder, file, complete_path, keywords, unfiltered) {
+async function sort_out_file(folder, file, complete_path, keywords, unfiltered, callback) {
     // first i loop through all the keywords 
     for (let k = 0; k < keywords.length; k++) {
         const keyword = keywords[k]
         const unfiltered_splitted = unfiltered.toLowerCase().split(keyword) // i ignore upper cases
-        console.log(unfiltered_splitted)
         // if there is a keyword proceed to move the file and return true, else return false
         if (unfiltered_splitted.length > 1) {
             // when the file format is one that has to be moved 
             const to_path = path.join(folder, file)
-            console.log("from: ", complete_path)
-            console.log("to: ", to_path)
             // only copy the file if the destination folder exists
-            fs.exists(folder, (the_path_exists) => {
+            return fs.exists(folder, (the_path_exists) => {
                 if (!the_path_exists) {
                     // create the path and then move the file
                     fs.mkdirSync(folder)
@@ -393,7 +390,10 @@ function sort_out_file(folder, file, complete_path, keywords, unfiltered) {
                     fs.exists(to_path, (the_name_is_already_taken) => {
                         // if there is not such a file, move it 
                         if (!the_name_is_already_taken) {
-                            move_file(complete_path, to_path)
+                            console.log("from: ", complete_path)
+                            console.log("to: ", to_path)
+                            move_file(from_pah, to_path)
+                            callback(true)
                         } else {
                             // TODO else pop a menu of what to do
                             showNotification(notifications_texts.fileAlreadyExists.title, notifications_texts.fileAlreadyExists.body)
@@ -402,12 +402,7 @@ function sort_out_file(folder, file, complete_path, keywords, unfiltered) {
                     })
                 }
             })
-            return true
-            break
-        } else {
-            // there is no keyword found and so do not move file and return false
-            return false
-        }
+        } 
     }
 }
 
@@ -423,24 +418,27 @@ function handle_folder_change(complete_path) {
 
     splitted_path.pop()
     const file_path = splitted_path.reduce((a,b) => { return a+'/'+b })
-    console.log(complete_path)
-    console.log(file)
 
     // priority on this one
     // sorts by names
     let is_sorted = false 
 
+    function update_is_sorted(state) {
+        console.log(state)
+        is_sorted = state
+    }
+
     // filter by names
     for (let folder in destination_folders) {
         const current_names_array = destination_folders[folder].names
-        is_sorted = sort_out_file(folder, file, complete_path, current_names_array, file_name)
+        is_sorted = await sort_out_file(folder, file, complete_path, current_names_array, file_name, update_is_sorted)
     }
 
     // filter by formats
     if (!is_sorted) {
         for (let folder in destination_folders) {
             const current_formats_array = destination_folders[folder].formats
-            is_sorted = sort_out_file(folder, file, complete_path, current_formats_array, file_format)
+            is_sorted = await sort_out_file(folder, file, complete_path, current_formats_array, file_format, update_is_sorted)
         }
     }
 
@@ -448,6 +446,7 @@ function handle_folder_change(complete_path) {
         // send a notification for the user to warn him to add more filter to the app
         console.log("The file was not sorted")
         showNotification(notifications_texts.fileNotSorted.title, notifications_texts.fileNotSorted.body)
+
     }
 
 }
