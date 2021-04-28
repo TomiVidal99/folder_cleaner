@@ -9,11 +9,11 @@ const url = require('url')
 const path = require('path')
 const chokidar = require('chokidar')
 const isDev = process.env.APP_DEV ? (process.env.APP_DEV.trim() == "true") : false
-const auto_launch = require('auto-launch')
+const AutoLaunch = require('auto-launch-gpmdp')
 
-let auto_launcher = new auto_launch({
-    name: 'Folder Cleaner',
-    path: process.execPath
+// create the AutoLaunch object
+let appLauncher = new AutoLaunch({
+    name: 'Folder Cleaner'
 });
 
 // define useful paths
@@ -25,18 +25,18 @@ if (isDev) {
     app_directory = path.join(process.resourcesPath, 'app')
 }
 localStorage.setItem('app_directory', app_directory)
-const assets_path = path.join(app_directory, "assets")
+const assets_path = path.join(app_directory, "App/assets")
 localStorage.setItem('assets_path', assets_path)
-const pages_path = path.join(app_directory, "pages")
+const pages_path = path.join(app_directory, "App/pages")
 localStorage.setItem('pages_path', pages_path)
-const scripts_path = path.join(app_directory, "scripts")
+const scripts_path = path.join(app_directory, "App/scripts")
 localStorage.setItem('scripts_path', scripts_path)
-const configurations_path = path.join(app_directory, "configurations")
+const configurations_path = path.join(app_directory, "App/configurations")
 localStorage.setItem('configurations_path', configurations_path)
 localStorage.setItem('app_version', app.getVersion())
 
 // import the cokidar class
-const { chokidar_class } = require('./chokidar_class.js')
+const { chokidar_class } = require(path.join(scripts_path, 'chokidar_class.js'))
 const watcher = new chokidar_class(chokidar, null, handle_folder_change)
 
 const watch_new_folder = (new_folder) => {
@@ -174,27 +174,37 @@ function handle_tray_watching_click(new_state) {
 }
 
 function handle_tray_startup_click() {
+    // function to switch between enable and disable of the auto startup script
+    // do not run while in dev
+    if (isDev) {
+        return;
+    }
+
     console.log('Should change auto load on startup')
     let personal_configuration = JSON.parse(localStorage.getItem('personal_configuration'))
     console.log(personal_configuration)
     const current_state = personal_configuration.shouldInitOnStartup
-    if (current_state == 'false') {
-        auto_launcher.enable().then( () => {
-            console.log('Next startup will auto launch')
-            personal_configuration.shouldInitOnStartup = "true"
-            require(path.join(scripts_path, 'handle_configuration.js')).update_user_configuration(personal_configuration)
-        }).catch( (e) => { 
-            if (e) throw e
-        })
+
+    // switch the enable state of the startup script
+    appLauncher.isEnabled().then(function(enabled){
+        if(enabled) return;
+        return appLauncher.enable()
+    }).then(function(err){
+        console.log(err);
+    });
+
+    // change the configuration file to match the current state
+    if (current_state == "true") {
+        // when the app is set to be launched in startup
+        personal_configuration.shouldInitOnStartup = "false"
+        require(path.join(scripts_path, 'handle_configuration.js')).update_user_configuration(personal_configuration)
+
     } else {
-        auto_launcher.disable().then( () => {
-            console.log('Next startup will NOT auto launch')
-            personal_configuration.shouldInitOnStartup = "false"
-            require(path.join(scripts_path, 'handle_configuration.js')).update_user_configuration(personal_configuration)
-        }).catch( (e) => { 
-            if (e) throw e
-        })
+        // when the app is NOT set to be launched in startup
+        personal_configuration.shouldInitOnStartup = "true"
+        require(path.join(scripts_path, 'handle_configuration.js')).update_user_configuration(personal_configuration)
     }
+
 }
 
 function handle_cleaning_animation_tray_icon(new_state) {
@@ -342,13 +352,13 @@ function check_load_on_startup() {
     const current_state = JSON.parse(localStorage.getItem('personal_configuration')).shouldInitOnStartup
     if (current_state == "true") {
         context_menu.items[3].checked = true
-        auto_launcher.isEnabled().then( (is_enabled) => {
-            if (!is_enabled) {
-                auto_launcher.enable()
-            }
-        }).catch( (e) => {
-            if (e) throw e
-        })
+        //auto_launcher.isEnabled().then( (is_enabled) => {
+            //if (!is_enabled) {
+                //auto_launcher.enable()
+            //}
+        //}).catch( (e) => {
+            //if (e) throw e
+        //})
     } else {
         context_menu.items[3].checked = false
     }
@@ -362,11 +372,14 @@ handle_tray_watching_click(context_menu.items[1].checked)
 require(path.join(scripts_path, "handle_configuration")).load_user_configuration()
 
 // TODO move all functions of sorting the files to an independent file
-function move_file(from, to) {
-    fs.copyFile(from, to, () => {
-        // on copy sucess remove copied file
-        fs.unlink(from, () => { 
-            console.log('copied')
+async function move_file(from, to) {
+    return new Promise( resolve => {
+        fs.copyFile(from, to, () => {
+            // on copy sucess remove copied file
+            fs.unlink(from, () => { 
+                console.log('copied')
+                resolve('Copied')
+            })
         })
     })
 }
@@ -431,14 +444,14 @@ function handle_folder_change(complete_path) {
     // filter by names
     for (let folder in destination_folders) {
         const current_names_array = destination_folders[folder].names
-        is_sorted = await sort_out_file(folder, file, complete_path, current_names_array, file_name, update_is_sorted)
+        is_sorted = sort_out_file(folder, file, complete_path, current_names_array, file_name, update_is_sorted)
     }
 
     // filter by formats
     if (!is_sorted) {
         for (let folder in destination_folders) {
             const current_formats_array = destination_folders[folder].formats
-            is_sorted = await sort_out_file(folder, file, complete_path, current_formats_array, file_format, update_is_sorted)
+            is_sorted = sort_out_file(folder, file, complete_path, current_formats_array, file_format, update_is_sorted)
         }
     }
 
