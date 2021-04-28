@@ -28,6 +28,7 @@ _Windows: Currently it does not support Windows._
 * - [x] remove devtools from settings window
 * - [ ] style the bar of the settings window
 * - [x] fix tray cleaning animation 
+* - [x] remove shouldInit from personalConfig.json and check auto-launch on checkbox from tray menu
 
 ## KNOWN ISSUES
 _We've launched the app knowning that it has some bugs yet to be fixed, some appear up in the TODO list to be fixed, but in this list we only included the ones that may affect the user experience, because it can cause data loss for example_
