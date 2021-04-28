@@ -18,17 +18,16 @@ _Windows: Currently it does not support Windows._
 * - [ ] be able to set if the watch is folder recursive or not
 * - [ ] handle priority better if a file has multiple sorting parameters
 * - [ ] add the option to edit a destination folder
-* - [ ] when a file is not sorted should pop up a message to advise the user that should add more filters
+* - [x] when a file is not sorted should pop up a message to advise the user that should add more filters
 * - [ ] to be more efficient should only take out or add the watchers that correspond the specific path, instead of loading everything again
-* - [ ] add auto startup functionality
 * - [ ] choose if when launched should organize all the existing files
 * - [ ] when a new destination folder is added check if the sorting filters are not already being used
 * - [ ] add copy counter when the destination folder holds a file with the same name as the file to be moved
 * - [x] add the icons for the settings page
-* - [ ] option to automatically launch up on startup 
-* - [ ] remove devtools from settings window
+* - [x] option to automatically launch up on startup 
+* - [x] remove devtools from settings window
 * - [ ] style the bar of the settings window
-* - [ ] fix tray cleaning animation 
+* - [x] fix tray cleaning animation 
 
 ## KNOWN ISSUES
 _We've launched the app knowning that it has some bugs yet to be fixed, some appear up in the TODO list to be fixed, but in this list we only included the ones that may affect the user experience, because it can cause data loss for example_
