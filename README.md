@@ -6,8 +6,8 @@ __We used chokidar to watch the folder changes thus making the program more reso
 _You want to make some changes to improve your own experience? or maybe you want to contribute to this project?_ then **clone** this repo and execute **yarn start** when you're **inside the folder**.
 
 # INSTALLATION
-_Linux: You can download the latest packaged version from **https://drive.google.com/file/d/1PU7Xmap2G1qdhw9NRfVA9hCE1Tka9Pp4/view?usp=sharing**, or you can clone this repo and pack the app with electron-packager executing: **yarn build:linux** and then you will have the packed app in the builds folders.
-_Windows: Currently it does not support Windows.
+_Linux: You can download the latest packaged version from **https://drive.google.com/file/d/1PU7Xmap2G1qdhw9NRfVA9hCE1Tka9Pp4/view?usp=sharing**, or you can clone this repo and pack the app with electron-packager executing: **yarn build:linux** and then you will have the packed app in the builds folders._
+_Windows: Currently it does not support Windows._
 
 ## TODO
 * - [ ] folder backup 
