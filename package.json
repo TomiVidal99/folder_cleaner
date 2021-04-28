@@ -1,9 +1,9 @@
 {
   "name": "folder_cleaner",
-  "version": "1.4.6",
+  "version": "2.0.0",
   "description": "A desktop app that organizes and backs up your data",
   "productName": "Folder Cleaner",
-  "main": "./scripts/main.js",
+  "main": "./main.js",
   "scripts": {
     "start": "APP_DEV=true electron .",
     "build:linux": "electron-packager . --platform=linux --arch=x64 --out=builds --overwrite --icon='./assets/linux-icons/app_icon_256x256.png'"
@@ -12,7 +12,7 @@
   "author": "Tomas Vidal <tomi_vidal_99@hotmail.com>",
   "license": "MIT",
   "dependencies": {
-    "auto-launch": "^5.0.5",
+    "auto-launch-gpmdp": "^2.1.0",
     "chokidar": "^3.5.0",
     "electron-localstorage": "^1.0.5"
   },
