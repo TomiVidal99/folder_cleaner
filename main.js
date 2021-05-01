@@ -175,35 +175,25 @@ function handle_tray_watching_click(new_state) {
 
 function handle_tray_startup_click() {
     // function to switch between enable and disable of the auto startup script
+   
     // do not run while in dev
-    if (isDev) {
-        return;
-    }
-
-    console.log('Should change auto load on startup')
-    let personal_configuration = JSON.parse(localStorage.getItem('personal_configuration'))
-    console.log(personal_configuration)
-    const current_state = personal_configuration.shouldInitOnStartup
+    //if (isDev) {
+        //return;
+    //}
+    
+    console.log("Should switch auto-launch state")
 
     // switch the enable state of the startup script
-    appLauncher.isEnabled().then(function(enabled){
-        if(enabled) return;
-        return appLauncher.enable()
-    }).then(function(err){
+    appLauncher.isEnabled().then( function(enabled) {
+        console.log("Switched state")
+        if (enabled) {
+            return appLauncher.disable()
+        } else {
+            return appLauncher.enable()
+        }
+    }).then( function(err) {
         console.log(err);
     });
-
-    // change the configuration file to match the current state
-    if (current_state == "true") {
-        // when the app is set to be launched in startup
-        personal_configuration.shouldInitOnStartup = "false"
-        require(path.join(scripts_path, 'handle_configuration.js')).update_user_configuration(personal_configuration)
-
-    } else {
-        // when the app is NOT set to be launched in startup
-        personal_configuration.shouldInitOnStartup = "true"
-        require(path.join(scripts_path, 'handle_configuration.js')).update_user_configuration(personal_configuration)
-    }
 
 }
 
@@ -349,19 +339,14 @@ app.whenReady().then( () => {
 
 // checks if next system startup should open the app
 function check_load_on_startup() {
-    const current_state = JSON.parse(localStorage.getItem('personal_configuration')).shouldInitOnStartup
-    if (current_state == "true") {
-        context_menu.items[3].checked = true
-        //auto_launcher.isEnabled().then( (is_enabled) => {
-            //if (!is_enabled) {
-                //auto_launcher.enable()
-            //}
-        //}).catch( (e) => {
-            //if (e) throw e
-        //})
-    } else {
-        context_menu.items[3].checked = false
-    }
+    // if the auto_launch is active set the checkbox to true
+    console.log("loading previous data...")
+    appLauncher.isEnabled().then( (is_enabled) => {
+        console.log("Got new value: ", is_enabled)
+        context_menu.items[3].checked = is_enabled
+    }).catch( (e) => {
+        if (e) throw e
+    })
     tray.setContextMenu(context_menu)
 }
 
