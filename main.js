@@ -177,9 +177,9 @@ function handle_tray_startup_click() {
     // function to switch between enable and disable of the auto startup script
    
     // do not run while in dev
-    //if (isDev) {
-        //return;
-    //}
+    if (isDev) {
+        return;
+    }
     
     console.log("Should switch auto-launch state")
 
