@@ -9,7 +9,7 @@ const url = require('url')
 const path = require('path')
 const chokidar = require('chokidar')
 const isDev = process.env.APP_DEV ? (process.env.APP_DEV.trim() == "true") : false
-const AutoLaunch = require('auto-launch-gpmdp')
+const AutoLaunch = require('auto-launch')
 
 // create the AutoLaunch object
 let appLauncher = new AutoLaunch({
