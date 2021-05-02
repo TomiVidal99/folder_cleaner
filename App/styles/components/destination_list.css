@@ -60,10 +60,17 @@
 }
 
 #destination_paths_list > li > div:first-of-type {
+    max-height: 3vh;
     width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     flex-wrap: wrap;
+    /*word-break: break-all;*/
+    white-space: nowrap;
+}
+
+#destination_paths_list > li:hover > div:first-of-type {
+    white-space: normal !important;
 }
 
 .selected_destination_li > div:last-of-type {

@@ -23,18 +23,20 @@
     margin-left: auto;
     margin-right: auto;
     flex-wrap: wrap;
+    white-space: nowrap;
 }
+
 #watching_paths_list > li:last-child {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
+
 #watching_paths_list > li:first-child {
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 }
-#watching_paths_list > li:hover {
-    /*background-color: var(--light) !important;*/
-    background-color: var(--item-background-color-hover) !important;
+
+#watching_paths_list > li:hover { /*background-color: var(--light) !important;*/ background-color: var(--item-background-color-hover) !important;
     font-size: larger;
     animation-name: hovering-list-item-growth;
     animation-duration: 0.5s;
@@ -43,10 +45,13 @@
     font-weight: bolder;
     /*color: var(--dark);*/
     color: var(--item-font-color-hover);
+    white-space: normal !important;
 }
+
 .selected_watching_li {
     background-color: var(--item-background-color-selected) !important;
-    transform: translateX(2vw);
+    width: 100% !important;
+    align-self: center;
     border-radius: 8px 8px 8px 8px !important;
     z-index: 10;
     color: var(--item-font-color-selected);
