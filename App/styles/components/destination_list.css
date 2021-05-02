@@ -4,7 +4,7 @@
 
     /*VARIABLES ~~~~~*/
     --item-font-color: #ccc;
-    --item-font-color-hover: var(--dark);
+    --item-font-color-hover: #ccc;
     --item-background-color: var(--palette-second);
     --item-background-color-hover: var(--palette-first);
     --item-font-color-selected: #ccc;
@@ -18,22 +18,24 @@
     background-color: var(--item-background-color);
     width: 90%;
     border-radius: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
     margin-left: auto;
     margin-right: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
     flex-wrap: wrap;
 }
+
 #destination_paths_list > li:last-child {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
+
 #destination_paths_list > li:first-child {
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 }
+
 #destination_paths_list > li:hover {
-    /*background-color: var(--light) !important;*/
     background-color: var(--item-background-color-hover) !important;
     font-size: larger;
     animation-name: hovering-list-item-growth;
@@ -41,14 +43,29 @@
     width: 100%;
     border-radius: 8px 8px 8px 8px;
     font-weight: bolder;
-    /*color: var(--dark);*/
     color: var(--item-font-color-hover);
 }
+
 .selected_destination_li {
     background-color: var(--item-background-color-selected) !important;
-    transform: translateX(2vw);
+    /*transform: translateX(2vw);*/
+    margin: 0 !important;
+    align-self: center;
+    font-size: larger;
     border-radius: 8px 8px 8px 8px !important;
     z-index: 10;
     color: var(--item-font-color-selected);
-    font-weight: bolder;
+    font-weight: bold; 
+    width: 100% !important;
+}
+
+#destination_paths_list > li > div:first-of-type {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-wrap: wrap;
+}
+
+.selected_destination_li > div:last-of-type {
+    display: none !important;
 }

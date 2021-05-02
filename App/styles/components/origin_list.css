@@ -4,10 +4,10 @@
 
     /*VARIABLES ~~~~~*/
     --item-font-color: #ccc;
-    --item-font-color-hover: var(--dark);
+    --item-font-color-hover: #ccc;
     --item-background-color: var(--palette-second);
     --item-background-color-hover: var(--palette-first);
-    --item-font-color-selected: #ccc;
+    --item-font-color-selected: #808080;
     --item-background-color-selected: #630000;
 
     color: var(--font-color);
