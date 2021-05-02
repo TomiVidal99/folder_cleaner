@@ -1,0 +1,8 @@
+/*styling for the wrapper that holds all the components, includes #watching_wrapper and #destination_wrapper*/
+
+.wrappers {
+
+    background-color: var(--palette-fourth);
+    color: var(--fonts-color);
+
+}

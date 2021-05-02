@@ -1,4 +1,25 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ IMPORT STYLING COMPONENTS ~~~~~*/
+@import "./components/components_wrapper.css";
+@import "./components/delete_button.css";
+@import "./components/add_button.css";
+@import "./components/origin_list.css";
+@import "./components/destination_list.css";
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ IMPORT ANIMATIONS ~~~~~*/
+@import "./components/animations/destination_properties_img_animation.css";
+@import "./components/animations/img_rotate_animation.css";
+@import "./components/animations/stretch_text.css";
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ GLOBAL VARIABLES ~~~~~*/
 :root {
+
+    /*palette colors ~~~~~*/
+    --palette-first: #1B2233;
+    --palette-second: #121621;
+    --palette-third: #0E111A;
+    --palette-fourth: #0D1018;
+    --palette-fifth: #07090D;
+
     --first-color: #191919;
     --second-color: #374c72;
     --third-color: #008891;
@@ -11,10 +32,16 @@
     --property-regex-color: #7f69ea;
     --property-format-color: #0B80D9;
 
+    --fonts-color: #4E5659;
+
 }
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MAIN STYLING ~~~~~*/
 body {
-    background: var(--first-color);
+    background: var(--palette-fifth);
+    color: var(--fonts-color);
 }
+
 p {
     font-size: 1.35rem;
 }
@@ -107,43 +134,6 @@ p, li, ul {
 
 /*custom styling for the page*/
 
-/*items inside of the watching_paths_list ul tag*/
-#watching_paths_list > li, #destination_paths_list > li {
-    width: 90%;
-    border-radius: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-left: auto;
-    margin-right: auto;
-    color: var(--light);
-    flex-wrap: wrap;
-}
-#watching_paths_list > li:last-child, #destination_paths_list > li:last-child {
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-}
-#watching_paths_list > li:first-child, #destination_paths_list > li:first-child {
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-}
-#watching_paths_list > li:hover, #destination_paths_list > li:hover {
-    background-color: var(--light) !important;
-    font-size: larger;
-    animation-name: hovering-list-item-growth;
-    animation-duration: 0.5s;
-    width: 100%;
-    border-radius: 8px 8px 8px 8px;
-    font-weight: bolder;
-    color: var(--dark);
-}
-.selected_watching_li, .selected_destination_li {
-    background-color: var(--danger) !important;
-    transform: translateX(2vw);
-    border-radius: 8px 8px 8px 8px !important;
-    z-index: 10;
-    color: var(--light);
-    font-weight: bolder;
-}
 
 .destination-properties-img {
     width: auto;
@@ -228,55 +218,3 @@ p, li, ul {
     font-weight: bolder;
     padding: 0.7vw 1.2vw 0.7vw 1.2vw !important;
 }
-
-/*all custom animations*/
-@keyframes stretch-text {
-    100% {
-        align-text: center;
-        padding: 1.4vh;
-        width: 80%;
-        font-size: 1.3rem;
-    }
-}
-@keyframes destination-properties-img-animation {
-    0% {
-        transform: rotateX(60deg);
-    }
-    40% {
-        transform: rotateX(-60deg);
-    }
-    100% {
-        transform: rotateX(0deg);
-    }
-}
-@keyframes img-rotate-animation {
-    0% {
-        transform: rotate(0deg);
-    }
-    60% {
-        transform: rotate(360deg);
-    }
-    70% {
-        transform: rotate(0deg);
-    }
-    75% {
-        transform: rotate(90deg);
-    }
-    80% {
-        transform: rotate(0deg);
-    }
-    85% {
-        transform: rotate(45deg);
-    }
-    90% {
-        transform: rotate(0deg);
-    }
-    95% {
-        transform: rotate(25deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
-}
-
-

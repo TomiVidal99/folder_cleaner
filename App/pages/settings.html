@@ -18,15 +18,15 @@
             <h4 class="text-muted text-center py-3" language="titleDescription"></h4>
         </div>
     
-        <div id="watching_wrapper" class="my-5 py-2 second-bg p-4 rounded shadow-lg shadow-dark">
+        <div id="watching_wrapper" class="wrappers my-5 py-2 p-4 rounded shadow-lg shadow-dark">
 
             <h3 class="text-center font-weight-bold mb-2 font-5 fifth-color w-75 mx-auto" id="watching_title" language="watchingTitle"></h3>
-            <p class="text-justify font-weight-light fourth-color" id="watching_description" language="watchingDescription"></p>
+            <p class="text-justify font-weight-light" id="watching_description" language="watchingDescription"></p>
 
             <div class="my-3">
 
                 <div class="row row-2 my-2">
-                    <button class="btn btn-primary text-uppercase mx-auto my-3 btn-with-image img-rotate-animation" language="selectWatchingPath" onclick="handle_select_watching_path()">
+                    <button class="btn btn-add text-uppercase mx-auto my-3 btn-with-image img-rotate-animation" language="selectWatchingPath" onclick="handle_select_watching_path()">
                         <div></div>
                         <img class="button-icon" src="" alt="" custom-attributes>
                     </button>
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="row row-2 my-2">
-                    <button id="remove_watching_folders" class="btn btn-danger text-uppercase btn-with-image mx-auto my-3 d-none" language="removeSelectedWatchingPaths" onclick="handle_remove_selected_watching_paths()">
+                    <button id="remove_watching_folders" class="btn delete-btn text-uppercase btn-with-image mx-auto my-3 d-none" language="removeSelectedWatchingPaths" onclick="handle_remove_selected_watching_paths()">
                         <div></div>
                         <img class="button-icon" src="" alt="" custom-attributes>
                     </button>
@@ -48,15 +48,15 @@
 
         </div>
 
-        <div id="watching_wrapper" class="my-5 py-2 second-bg p-4 rounded shadow-lg shadow-dark">
+        <div id="destination_wrapper" class="wrappers my-5 py-2 p-4 rounded shadow-lg shadow-dark">
 
             <div class="my-3">
                 <h3 class="text-center font-weight-bold mb-2 font-5 fifth-color w-75 mx-auto" id="destination_title" language="destinationTitle"></h3>
-                <p class="text-justify font-weight-light fourth-color" id="destination_description" language="destinationDescription"></p>
+                <p class="text-justify font-weight-light" id="destination_description" language="destinationDescription"></p>
             </div>
 
             <div class="row row-2 my-2">
-                <button class="btn btn-primary mx-auto my-3 text-uppercase btn-with-image img-rotate-animation" language="selectDestinationFolder" onclick="handle_select_destination_folder()">
+                <button class="btn btn-add mx-auto my-3 text-uppercase btn-with-image img-rotate-animation" language="selectDestinationFolder" onclick="handle_select_destination_folder()">
                     <div></div>
                     <img class="button-icon" src="" alt="" custom-attributes>
                 </button>
@@ -110,7 +110,7 @@
         </ul>
 
             <div class="row row-2 my-2">
-                <button id="remove_destination_folders" class="btn btn-danger text-uppercase btn-with-image mx-auto my-3 d-none" language="removeSelectedDestinationFolders" onclick="remove_destination_folder()">
+                <button id="remove_destination_folders" class="btn delete-btn text-uppercase btn-with-image mx-auto my-3 d-none" language="removeSelectedDestinationFolders" onclick="remove_destination_folder()">
                     <div></div>
                     <img class="button-icon btn-with-image" src="" alt="" custom-attributes>
                 </button>
@@ -118,9 +118,9 @@
 
         </div>
 
-        <div class="my-5 py-2 second-bg p-4 rounded shadow-lg shadow-dark">
+        <div class="wrappers my-5 py-2 p-4 rounded shadow-lg shadow-dark">
             <div class="row row-2">
-                <button class="btn btn-danger text-uppercase font-weight-bold btn-with-image mx-auto my-3" onclick="reset_personal_configuration()" language="resetPersonalConfiguration">
+                <button class="btn delete-btn text-uppercase font-weight-bold btn-with-image mx-auto my-3" onclick="reset_personal_configuration()" language="resetPersonalConfiguration">
                     <div></div>
                     <img class="button-icon btn-with-image" src="" alt="" custom-attributes>
                 </button>

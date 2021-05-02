@@ -296,7 +296,7 @@ function createWindow() {
             enableRemoteModule: true
         },
         resizable: true,
-        show: false,
+        show: isDev,
         //show: true,
         title: 'Folder Cleaner Settings Panel',
     }) 
@@ -310,7 +310,9 @@ function createWindow() {
         event.preventDefault()
         handle_open_settings()
     })
-    settings_window.removeMenu()
+    if (!isDev) {
+        settings_window.removeMenu()
+    }
 }  
 
 app.whenReady().then( () => {
