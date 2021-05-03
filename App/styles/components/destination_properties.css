@@ -4,7 +4,7 @@
 
 
     /*VARIABLES ~~~~~*/
-    --wrapper-background-color: var(--palette-third);
+    --wrapper-background-color: var(--palette-second);
     --wrapper-border-color: var(--palette-second);
 
     background-color: var(--wrapper-background-color);
@@ -18,7 +18,7 @@
 
 #destination_properties_wrapper > h6 {
     color: #808080;
-    background-color: var(--palette-third);
+    background-color: var(--palette-first);
     border: 1px solid var(--palette-second);
 }
 #destination_properties_wrapper > div > input {
@@ -26,21 +26,39 @@
 }
 
 #destination_properties_wrapper > div > div > span {
-    background-color: var(--palette-second);
-    border: 1px solid var(--palette-second);
+    background-color: var(--palette-third);
+    border: 1px solid var(--palette-third);
     color: #808080;
 }
 
-#destination_properties_wrapper > div > img {
-    background-color: var(--palette-first);
+#destination_properties_wrapper > div > input {
+    background-color: #cccccc;
     border: 1px solid var(--palette-second);
+    color: #808080;
+    display: inline-flex;
+    flex-grow: 1;
+}
+#destination_properties_wrapper > div > input:hover {
+    background-color: white;
+}
+/*#destination_properties_wrapper > div > input:focus {*/
+    /*outline-width: 0;*/
+/*}*/
+#destination_properties_wrapper > div > input:focus {
+    /*color: #ccc;*/
+    background-color: white;
+}
+
+#destination_properties_wrapper > div > img {
+    background-color: var(--palette-third);
+    border: 1px solid var(--palette-third);
 }
 
 /*the list of all the sorting types*/
 #list-folder-properties {
     overflow-x: hidden;
     overflow-wrap: break-word;
-    border-color: var(--palette-second);
+    border-color: var(--palette-first) !important;
 }
 #list-folder-properties > li {
     display: inline-flex;

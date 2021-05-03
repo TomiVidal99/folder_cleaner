@@ -5,6 +5,7 @@
 @import "./components/origin_list.css";
 @import "./components/destination_list.css";
 @import "./components/destination_properties.css";
+@import "./components/sendit_button.css";
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ IMPORT ANIMATIONS ~~~~~*/
 @import "./components/animations/destination_properties_img_animation.css";
@@ -39,9 +40,9 @@
     --sixth-color: white;
     --seventh-color: #5ebc6a;
 
-    --property-name-color: #910FFA;
+    --property-name-color: #5d08a3;
     --property-regex-color: #7f69ea;
-    --property-format-color: #0B80D9;
+    --property-format-color: #064f87;
 
     --fonts-color: #4E5659;
 
@@ -49,8 +50,18 @@
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MAIN STYLING ~~~~~*/
 
+/*removes the highlight when selecting the text*/
 p, div, h1, h2, h3, h4, h5, h6, label, span {
     user-select: none;
+}
+
+/*remove highlight when selected*/
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none !important;
+    border: 0 !important;
 }
 
 body {
