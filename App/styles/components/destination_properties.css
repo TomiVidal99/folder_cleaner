@@ -1,0 +1,58 @@
+/*all the styling for the properties panel that pops when adding a new destination folder*/
+
+#destination_properties_wrapper {
+
+
+    /*VARIABLES ~~~~~*/
+    --wrapper-background-color: var(--palette-third);
+    --wrapper-border-color: var(--palette-second);
+
+    background-color: var(--wrapper-background-color);
+    border: 1px solid var(--wrapper-border-color);
+
+}
+
+#destination-properties-path-display:hover {
+    animation: stretch-text forwards 1.4s;
+}
+
+#destination_properties_wrapper > h6 {
+    color: #808080;
+    background-color: var(--palette-third);
+    border: 1px solid var(--palette-second);
+}
+#destination_properties_wrapper > div > input {
+    background-color: #ccc;
+}
+
+#destination_properties_wrapper > div > div > span {
+    background-color: var(--palette-second);
+    border: 1px solid var(--palette-second);
+    color: #808080;
+}
+
+#destination_properties_wrapper > div > img {
+    background-color: var(--palette-first);
+    border: 1px solid var(--palette-second);
+}
+
+/*the list of all the sorting types*/
+#list-folder-properties {
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    border-color: var(--palette-second);
+}
+#list-folder-properties > li {
+    display: inline-flex;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    color: var(--palette-second);
+    box-shadow: 2px 2px 10px solid var(--palette-fifth);
+    font-size: 1.2rem;
+    padding: 10px 3px 10px 3px;
+}
+#list-folder-properties > li:hover {
+    background-color: #630000 !important;
+    font-weight: bolder;
+    padding: 0.7vw 1.2vw 0.7vw 1.2vw !important;
+}
