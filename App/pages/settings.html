@@ -63,39 +63,40 @@
             </div>
 
             <!--this is the folder properties wrapper-->
-            <div id="destination_properties_wrapper" class="row row-2 mt-2 mb-3 on-hover-stretch-path py-2 mx-auto rounded border border-dark bg-dark d-none" style="width: 85%">
+            <!--ADD d-none-->
+            <div id="destination_properties_wrapper" class="row row-2 mt-2 mb-3 on-hover-stretch-path py-2 mx-auto rounded d-none" style="width: 85%">
 
-                <h6 id="destination-properties-path-display" style="border-width: 2.5px !important; box-shadow: 1px 3px 120px black" class="input-group-text text-center bg-dark fifth-color mx-auto border border-secondary my-2 font-weight-bold"></h6>
+                <h6 id="destination-properties-path-display" style="border-width: 2.5px !important;" class="input-group-text text-center mx-auto my-2 font-weight-bold"></h6>
 
                 <!--sorting bar for the name property-->
                 <div class="col-10 input-group input-group-md mx-auto destination-properties-img-animation property-inline-elements">
                     <div class="input-group-prepend">
-                        <span class="input-group-text bg-secondary fifth-color border border-secondary" id="inputGroup-sizing-md" language="destinationPropertyName"></span>
+                        <span class="input-group-text" id="inputGroup-sizing-md" language="destinationPropertyName"></span>
                     </div>
                     <input type="text" aria-label="Default" placeholder="..." aria-describedby="inputGroup-sizing-default" class="form-control border border-secondary" onkeypress="handle_destination_property(event, true, 'name')" id="destination_name_property_input">
-                    <img class="destination-properties-img bg-secondary img-property-name" src="" alt="" img-src="summitFolderProperty" style="border-radius: 0 16px 16px 0" onclick="handle_destination_property(event, false, 'name')">
+                    <img class="destination-properties-img img-property-name" src="" alt="" img-src="summitFolderProperty" style="border-radius: 0 16px 16px 0" onclick="handle_destination_property(event, false, 'name')">
                 </div>
 
                 <!--sorting bar the format property-->
                 <div class="col-10 input-group input-group-md my-3 mx-auto destination-properties-img-animation property-inline-elements">
                     <div class="input-group-prepend">
-                        <span class="input-group-text bg-secondary fifth-color border border-secondary" id="inputGroup-sizing-md" language="destinationPropertyFormat"></span>
+                        <span class="input-group-text" id="inputGroup-sizing-md" language="destinationPropertyFormat"></span>
                     </div>
                     <input type="text" aria-label="Default" placeholder="..." aria-describedby="inputGroup-sizing-default" class="form-control border border-secondary" onkeypress="handle_destination_property(event, true, 'format')" id="destination_format_property_input">
-                    <img class="destination-properties-img bg-secondary img-property-format" src="" alt="" img-src="summitFolderProperty" style="border-radius: 0 16px 16px 0" onclick="handle_destination_property(event, false, 'format')">
+                    <img class="destination-properties-img img-property-format" src="" alt="" img-src="summitFolderProperty" style="border-radius: 0 16px 16px 0" onclick="handle_destination_property(event, false, 'format')">
                 </div>
 
                 <!--sorting bar the regex property-->
                 <div class="d-none col-10 input-group input-group-md mx-auto destination-properties-img-animation property-inline-elements">
                     <div class="input-group-prepend">
-                        <span class="input-group-text bg-secondary fifth-color border border-secondary" id="inputGroup-sizing-md" language="destinationPropertyRegex"></span>
+                        <span class="input-group-text" id="inputGroup-sizing-md" language="destinationPropertyRegex"></span>
                     </div>
                     <input type="text" aria-label="Default" disabled placeholder="CURRENTLY INAVAILABLE" aria-describedby="inputGroup-sizing-default" class="form-control border border-secondary" onkeypress="handle_destination_property(event, true, 'regex')" id="destination_regex_property_input">
-                    <img class="destination-properties-img bg-secondary img-property-regex" src="" alt="" img-src="summitFolderProperty" style="border-radius: 0 16px 16px 0" onclick="handle_destination_property(event, false, 'regex')">
+                    <img class="destination-properties-img img-property-regex" src="" alt="" img-src="summitFolderProperty" style="border-radius: 0 16px 16px 0" onclick="handle_destination_property(event, false, 'regex')">
                 </div>
 
                 <!--this is the list where all the folder properties are displayed-->
-                <ul id="list-folder-properties" class="mx-auto col-10 border-bottom border-top border-light my-2">
+                <ul id="list-folder-properties" class="mx-auto col-10 border-bottom border-top my-2">
                 </ul>
 
                 <button id="summit_destination_folder" class="text-uppercase btn-with-image btn btn-success mx-auto d-none" language="addConfiguredFolder" onclick="add_folder_with_properties_to_list()">

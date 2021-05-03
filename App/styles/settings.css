@@ -4,6 +4,7 @@
 @import "./components/add_button.css";
 @import "./components/origin_list.css";
 @import "./components/destination_list.css";
+@import "./components/destination_properties.css";
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ IMPORT ANIMATIONS ~~~~~*/
 @import "./components/animations/destination_properties_img_animation.css";
@@ -47,6 +48,11 @@
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MAIN STYLING ~~~~~*/
+
+p, div, h1, h2, h3, h4, h5, h6, label, span {
+    user-select: none;
+}
+
 body {
     background: var(--palette-fifth);
     color: var(--fonts-color);
@@ -198,9 +204,6 @@ p, li, ul {
     overflow: hidden;
     overflow-wrap: nowrap;
 }
-#destination-properties-path-display:hover {
-    animation: stretch-text forwards 1.4s;
-}
 
 /*list where all the folder properties are diplayed*/
 .property-inline-elements {
@@ -209,22 +212,4 @@ p, li, ul {
 }
 .property-inline-elements > * {
     height: 100%;
-}
-#list-folder-properties {
-    overflow-x: hidden;
-    overflow-wrap: break-word;
-}
-#list-folder-properties > li {
-    display: inline-flex;
-    border-radius: 15px;
-    font-size: 1.2rem;
-    color: var(--light);
-    box-shadow: 2px 2px 10px solid var(--light);
-    font-size: 1.2rem;
-    padding: 10px 3px 10px 3px;
-}
-#list-folder-properties > li:hover {
-    background-color: var(--danger) !important;
-    font-weight: bolder;
-    padding: 0.7vw 1.2vw 0.7vw 1.2vw !important;
 }
