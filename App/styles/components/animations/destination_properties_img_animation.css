@@ -1,0 +1,11 @@
+@keyframes destination-properties-img-animation {
+    0% {
+        transform: rotateX(60deg);
+    }
+    40% {
+        transform: rotateX(-60deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}

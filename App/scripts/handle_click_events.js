@@ -7,7 +7,7 @@ function add_watching_paths(new_paths) {
     const ul_tag = document.getElementById('watching_paths_list')
     const items_inside_list = ul_tag.children
     const add_list_element = (path) => {
-        const class_data = 'list-group-item bg-dark'
+        const class_data = 'list-group-item'
         const onclick_data = 'handle_selected_watching_folder_item(this)'
         const new_list_tag = document.createElement('li')
         new_list_tag.innerHTML = path
@@ -425,7 +425,7 @@ function create_destination_folders_elements(path, names_elements, formats_eleme
     
     // create the folder li tag
     const new_folder_element = document.createElement('li')
-    const class_data_li_element = 'list-group-item bg-dark row'
+    const class_data_li_element = 'list-group-item row'
     new_folder_element.setAttribute('class', class_data_li_element)
     const path_holder_element = document.createElement('div')
     const onclick_data = 'handle_selected_destination_folder(this)'

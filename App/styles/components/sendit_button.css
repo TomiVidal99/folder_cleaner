@@ -1,0 +1,16 @@
+/*styling for the button that creates a new destination path with all the filters*/
+
+.btn-sendit {
+
+
+    /*VARIABLES ~~~~~*/
+    --btn-background-color: #0a5e12;
+    --btn-background-color-hover: #0d8719;
+
+    background-color: var(--btn-background-color);
+
+}
+
+.btn-sendit:hover {
+    background-color: var(--btn-background-color-hover);
+}

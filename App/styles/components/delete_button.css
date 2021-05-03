@@ -1,0 +1,8 @@
+.delete-btn {
+
+    /*VARIABLES ~~~~~*/
+    --button-background-color: #630000;
+
+    background-color: var(--button-background-color);
+
+}

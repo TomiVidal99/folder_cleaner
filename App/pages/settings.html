@@ -18,15 +18,15 @@
             <h4 class="text-muted text-center py-3" language="titleDescription"></h4>
         </div>
     
-        <div id="watching_wrapper" class="my-5 py-2 second-bg p-4 rounded shadow-lg shadow-dark">
+        <div id="watching_wrapper" class="wrappers my-5 py-2 p-4 rounded shadow-lg shadow-dark">
 
             <h3 class="text-center font-weight-bold mb-2 font-5 fifth-color w-75 mx-auto" id="watching_title" language="watchingTitle"></h3>
-            <p class="text-justify font-weight-light fourth-color" id="watching_description" language="watchingDescription"></p>
+            <p class="text-justify font-weight-light" id="watching_description" language="watchingDescription"></p>
 
             <div class="my-3">
 
                 <div class="row row-2 my-2">
-                    <button class="btn btn-primary text-uppercase mx-auto my-3 btn-with-image img-rotate-animation" language="selectWatchingPath" onclick="handle_select_watching_path()">
+                    <button class="btn btn-add text-uppercase mx-auto my-3 btn-with-image img-rotate-animation" language="selectWatchingPath" onclick="handle_select_watching_path()">
                         <div></div>
                         <img class="button-icon" src="" alt="" custom-attributes>
                     </button>
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="row row-2 my-2">
-                    <button id="remove_watching_folders" class="btn btn-danger text-uppercase btn-with-image mx-auto my-3 d-none" language="removeSelectedWatchingPaths" onclick="handle_remove_selected_watching_paths()">
+                    <button id="remove_watching_folders" class="btn delete-btn text-uppercase btn-with-image mx-auto my-3 d-none" language="removeSelectedWatchingPaths" onclick="handle_remove_selected_watching_paths()">
                         <div></div>
                         <img class="button-icon" src="" alt="" custom-attributes>
                     </button>
@@ -48,57 +48,58 @@
 
         </div>
 
-        <div id="watching_wrapper" class="my-5 py-2 second-bg p-4 rounded shadow-lg shadow-dark">
+        <div id="destination_wrapper" class="wrappers my-5 py-2 p-4 rounded shadow-lg shadow-dark">
 
             <div class="my-3">
                 <h3 class="text-center font-weight-bold mb-2 font-5 fifth-color w-75 mx-auto" id="destination_title" language="destinationTitle"></h3>
-                <p class="text-justify font-weight-light fourth-color" id="destination_description" language="destinationDescription"></p>
+                <p class="text-justify font-weight-light" id="destination_description" language="destinationDescription"></p>
             </div>
 
             <div class="row row-2 my-2">
-                <button class="btn btn-primary mx-auto my-3 text-uppercase btn-with-image img-rotate-animation" language="selectDestinationFolder" onclick="handle_select_destination_folder()">
+                <button class="btn btn-add mx-auto my-3 text-uppercase btn-with-image img-rotate-animation" language="selectDestinationFolder" onclick="handle_select_destination_folder()">
                     <div></div>
                     <img class="button-icon" src="" alt="" custom-attributes>
                 </button>
             </div>
 
             <!--this is the folder properties wrapper-->
-            <div id="destination_properties_wrapper" class="row row-2 mt-2 mb-3 on-hover-stretch-path py-2 mx-auto rounded border border-dark bg-dark d-none" style="width: 85%">
+            <!--ADD d-none-->
+            <div id="destination_properties_wrapper" class="row row-2 mt-2 mb-3 on-hover-stretch-path py-2 mx-auto rounded " style="width: 85%">
 
-                <h6 id="destination-properties-path-display" style="border-width: 2.5px !important; box-shadow: 1px 3px 120px black" class="input-group-text text-center bg-dark fifth-color mx-auto border border-secondary my-2 font-weight-bold"></h6>
+                <h6 id="destination-properties-path-display" style="border-width: 2.5px !important;" class="input-group-text text-center mx-auto my-2 font-weight-bold"></h6>
 
                 <!--sorting bar for the name property-->
                 <div class="col-10 input-group input-group-md mx-auto destination-properties-img-animation property-inline-elements">
                     <div class="input-group-prepend">
-                        <span class="input-group-text bg-secondary fifth-color border border-secondary" id="inputGroup-sizing-md" language="destinationPropertyName"></span>
+                        <span class="input-group-text" id="inputGroup-sizing-md" language="destinationPropertyName"></span>
                     </div>
-                    <input type="text" aria-label="Default" placeholder="..." aria-describedby="inputGroup-sizing-default" class="form-control border border-secondary" onkeypress="handle_destination_property(event, true, 'name')" id="destination_name_property_input">
-                    <img class="destination-properties-img bg-secondary img-property-name" src="" alt="" img-src="summitFolderProperty" style="border-radius: 0 16px 16px 0" onclick="handle_destination_property(event, false, 'name')">
+                    <input type="text" aria-label="Default" placeholder="..." aria-describedby="inputGroup-sizing-default" onkeypress="handle_destination_property(event, true, 'name')" id="destination_name_property_input">
+                    <img class="destination-properties-img img-property-name" src="" alt="" img-src="summitFolderProperty" style="border-radius: 0 16px 16px 0" onclick="handle_destination_property(event, false, 'name')">
                 </div>
 
                 <!--sorting bar the format property-->
                 <div class="col-10 input-group input-group-md my-3 mx-auto destination-properties-img-animation property-inline-elements">
                     <div class="input-group-prepend">
-                        <span class="input-group-text bg-secondary fifth-color border border-secondary" id="inputGroup-sizing-md" language="destinationPropertyFormat"></span>
+                        <span class="input-group-text" id="inputGroup-sizing-md" language="destinationPropertyFormat"></span>
                     </div>
-                    <input type="text" aria-label="Default" placeholder="..." aria-describedby="inputGroup-sizing-default" class="form-control border border-secondary" onkeypress="handle_destination_property(event, true, 'format')" id="destination_format_property_input">
-                    <img class="destination-properties-img bg-secondary img-property-format" src="" alt="" img-src="summitFolderProperty" style="border-radius: 0 16px 16px 0" onclick="handle_destination_property(event, false, 'format')">
+                    <input type="text" aria-label="Default" placeholder="..." aria-describedby="inputGroup-sizing-default" onkeypress="handle_destination_property(event, true, 'format')" id="destination_format_property_input">
+                    <img class="destination-properties-img img-property-format" src="" alt="" img-src="summitFolderProperty" style="border-radius: 0 16px 16px 0" onclick="handle_destination_property(event, false, 'format')">
                 </div>
 
                 <!--sorting bar the regex property-->
                 <div class="d-none col-10 input-group input-group-md mx-auto destination-properties-img-animation property-inline-elements">
                     <div class="input-group-prepend">
-                        <span class="input-group-text bg-secondary fifth-color border border-secondary" id="inputGroup-sizing-md" language="destinationPropertyRegex"></span>
+                        <span class="input-group-text" id="inputGroup-sizing-md" language="destinationPropertyRegex"></span>
                     </div>
-                    <input type="text" aria-label="Default" disabled placeholder="CURRENTLY INAVAILABLE" aria-describedby="inputGroup-sizing-default" class="form-control border border-secondary" onkeypress="handle_destination_property(event, true, 'regex')" id="destination_regex_property_input">
-                    <img class="destination-properties-img bg-secondary img-property-regex" src="" alt="" img-src="summitFolderProperty" style="border-radius: 0 16px 16px 0" onclick="handle_destination_property(event, false, 'regex')">
+                    <input type="text" aria-label="Default" disabled placeholder="CURRENTLY INAVAILABLE" aria-describedby="inputGroup-sizing-default" onkeypress="handle_destination_property(event, true, 'regex')" id="destination_regex_property_input">
+                    <img class="destination-properties-img img-property-regex" src="" alt="" img-src="summitFolderProperty" style="border-radius: 0 16px 16px 0" onclick="handle_destination_property(event, false, 'regex')">
                 </div>
 
                 <!--this is the list where all the folder properties are displayed-->
-                <ul id="list-folder-properties" class="mx-auto col-10 border-bottom border-top border-light my-2">
+                <ul id="list-folder-properties" class="mx-auto col-10 border-bottom border-top my-2">
                 </ul>
 
-                <button id="summit_destination_folder" class="text-uppercase btn-with-image btn btn-success mx-auto d-none" language="addConfiguredFolder" onclick="add_folder_with_properties_to_list()">
+                <button id="summit_destination_folder" class="text-uppercase btn-with-image btn btn-sendit mx-auto d-none" language="addConfiguredFolder" onclick="add_folder_with_properties_to_list()">
                     <div></div>
                     <img class="button-icon" src="" alt="" custom-attributes>
                 </button>
@@ -110,7 +111,7 @@
         </ul>
 
             <div class="row row-2 my-2">
-                <button id="remove_destination_folders" class="btn btn-danger text-uppercase btn-with-image mx-auto my-3 d-none" language="removeSelectedDestinationFolders" onclick="remove_destination_folder()">
+                <button id="remove_destination_folders" class="btn delete-btn text-uppercase btn-with-image mx-auto my-3 d-none" language="removeSelectedDestinationFolders" onclick="remove_destination_folder()">
                     <div></div>
                     <img class="button-icon btn-with-image" src="" alt="" custom-attributes>
                 </button>
@@ -118,9 +119,9 @@
 
         </div>
 
-        <div class="my-5 py-2 second-bg p-4 rounded shadow-lg shadow-dark">
+        <div class="wrappers my-5 py-2 p-4 rounded shadow-lg shadow-dark">
             <div class="row row-2">
-                <button class="btn btn-danger text-uppercase font-weight-bold btn-with-image mx-auto my-3" onclick="reset_personal_configuration()" language="resetPersonalConfiguration">
+                <button class="btn delete-btn text-uppercase font-weight-bold btn-with-image mx-auto my-3" onclick="reset_personal_configuration()" language="resetPersonalConfiguration">
                     <div></div>
                     <img class="button-icon btn-with-image" src="" alt="" custom-attributes>
                 </button>

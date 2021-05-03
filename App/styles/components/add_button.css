@@ -1,0 +1,17 @@
+/*style for the buttons that add paths or information*/
+
+.btn-add {
+
+    /*VARIABLES ~~~~~*/
+    --font-color: #ccc;
+    --background-color: #364585;
+    --background-color-hover: var(--palette-first);
+
+    color: var(--font-color);
+    background-color: var(--background-color);
+
+}
+
+.btn-add:hover {
+    background-color: var(--background-color-hover);
+}
