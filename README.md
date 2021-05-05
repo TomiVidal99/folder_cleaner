@@ -29,6 +29,8 @@ _Windows: Currently it does not support Windows._
 * - [x] style the scrollbar of the settings window
 * - [x] fix tray cleaning animation 
 * - [x] remove shouldInit from personalConfig.json and check auto-launch on checkbox from tray menu
+* - [x] create 'moved file notifications'
+* - [x] add option on tray menu to switch enable the 'moved file notifications'
 
 ## KNOWN ISSUES
 _We've launched the app knowning that it has some bugs yet to be fixed, some appear up in the TODO list to be fixed, but in this list we only included the ones that may affect the user experience, because it can cause data loss for example_
