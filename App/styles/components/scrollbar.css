@@ -1,0 +1,21 @@
+/*styling for the scrolling bar of the settings page*/
+
+/* width */
+::-webkit-scrollbar {
+    width: calc(1vw + 3px);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--palette-fourth);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--palette-first);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #808080;
+}
