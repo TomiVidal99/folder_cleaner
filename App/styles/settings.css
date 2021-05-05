@@ -6,6 +6,7 @@
 @import "./components/destination_list.css";
 @import "./components/destination_properties.css";
 @import "./components/sendit_button.css";
+@import "./components/scrollbar.css";
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ IMPORT ANIMATIONS ~~~~~*/
 @import "./components/animations/destination_properties_img_animation.css";
