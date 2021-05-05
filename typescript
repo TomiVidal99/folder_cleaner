@@ -1,192 +1,0 @@
-Script iniciado en 2021-05-01 20:02:54-03:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="104" LINES="26"]
-]0;tomii@tomii:~/programming/folder_cleaner[?2004h[[31mtomii(B[m[33m@[35mtomii(B[m:[34m~/programming/folder_cleaner(B[m]$ rebootls -la .config/autostart/Folder.Cleaner.desktop [Ksudo chmod +x .config/autostart/Folder.Cleaner.desktop [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7Pls -la[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7@sudo chmod +x[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[K -la .config/autostart/Folder.Cleaner.desktop [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Creboot[K[Krebootls -la .config/autostart/Folder.Cleaner.desktop [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Creboot[Kls -la .config/autostart/Folder.Cleaner.desktop [Ksudo chmod +x .config/autostart/Folder.Cleaner.desktop [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7Pls -la[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[5P./[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[22Pls .config/autostart/./.config/autostart/Folder.Cleaner.desktop [1@c[1@a[1@t[1@ [1P[1P
-[?2004lcat: .config/autostart/Folder.Cleaner.desktop: No existe el fichero o el directorio
-]0;tomii@tomii:~/programming/folder_cleaner[?2004h[[31mtomii(B[m[33m@[35mtomii(B[m:[34m~/programming/folder_cleaner(B[m]$ cat .config/autostart/Folder.Cleaner.desktop [1@$[1P[1@#[1P[1@~[1@/
-[?2004l[Desktop Entry]
-Type=Application
-Version=1.0
-Name=Folder.Cleaner
-Comment=Folder.Cleanerstartup script
-Exec=/home/tomii/Folder.Cleaner-linux-x64/Folder.Cleaner
-StartupNotify=false
-Terminal=false]0;tomii@tomii:~/programming/folder_cleaner[?2004h[[31mtomii(B[m[33m@[35mtomii(B[m:[34m~/programming/folder_cleaner(B[m]$ cat ~/.config/autostart/Folder.Cleaner.desktop [2P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P
-[?2004lbash: .config/autostart/Folder.Cleaner.desktop: No existe el fichero o el directorio
-]0;tomii@tomii:~/programming/folder_cleaner[?2004h[[31mtomii(B[m[33m@[35mtomii(B[m:[34m~/programming/folder_cleaner(B[m]$ ^C[?2004l[?2004h[?2004l
-]0;tomii@tomii:~/programming/folder_cleaner[?2004h[[31mtomii(B[m[33m@[35mtomii(B[m:[34m~/programming/folder_cleaner(B[m]$ ^C[?2004l[?2004h[?2004l
-]0;tomii@tomii:~/programming/folder_cleaner[?2004h[[31mtomii(B[m[33m@[35mtomii(B[m:[34m~/programming/folder_cleaner(B[m]$ ^C[?2004l[?2004h[?2004l
-]0;tomii@tomii:~/programming/folder_cleaner[?2004h[[31mtomii(B[m[33m@[35mtomii(B[m:[34m~/programming/folder_cleaner(B[m]$ .config/autostart/Folder.Cleaner.desktop [1@n[1@v[1@i[1@m[1@ [1@~[1@/
-[?2004l[?1049h[22;0;0t[22;0;0t[?1h=[H[2J]11;?[?2004h[?25h[?25l(B[m[H[2J[?1004h[38;2;241;250;140m[48;2;40;42;54m  0 (B[0;4m[38;2;80;250;123m[48;2;40;42;54m[(B[m[38;2;255;121;198m[48;2;40;42;54mDesktop Entry(B[0;4m[38;2;80;250;123m[48;2;40;42;54m](B[m[38;2;248;248;242m[48;2;40;42;54m[K
-(B[m[38;2;98;114;164m[48;2;40;42;54m  1 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mType(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;189;147;249m[48;2;40;42;54mApplication(B[m[38;2;248;248;242m[48;2;40;42;54m[K
-(B[m[38;2;98;114;164m[48;2;40;42;54m  2 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mVersion(B[m[38;2;248;248;242m[48;2;40;42;54m=1.0[K
-(B[m[38;2;98;114;164m[48;2;40;42;54m  3 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mName(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;248;248;242m[48;2;40;42;54mFolder.Cleaner[K
-(B[m[38;2;98;114;164m[48;2;40;42;54m  4 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mComment(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;248;248;242m[48;2;40;42;54mFolder.Cleanerstartup script[K
-(B[m[38;2;98;114;164m[48;2;40;42;54m  5 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mExec(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;248;248;242m[48;2;40;42;54m/home/tomii/Folder.Cleaner-linux-x64/Folder.Cleaner[K
-(B[m[38;2;98;114;164m[48;2;40;42;54m  6 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mStartupNotify(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;189;147;249m[48;2;40;42;54mfalse(B[m[38;2;248;248;242m[48;2;40;42;54m[K
-(B[m[38;2;98;114;164m[48;2;40;42;54m  7 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mTerminal(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;189;147;249m[48;2;40;42;54mfalse(B[m[38;2;248;248;242m[48;2;40;42;54m[K
-(B[m[38;2;66;68;80m[48;2;40;42;54m~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-(B[0;1m[38;2;248;248;242m[48;2;66;68;80m~/.config/autostart/Folder.Cleaner.desktop[44X[44C1,1           Todo]112[2 q]112[2 q[H(B[m[38;2;241;250;140m[48;2;40;42;54m  0 (B[0;4m[38;2;80;250;123m[48;2;40;42;54m[(B[m[38;2;255;121;198m[48;2;40;42;54mDesktop Entry(B[0;4m[38;2;80;250;123m[48;2;40;42;54m](B[m[38;2;248;248;242m[48;2;40;42;54m[K
-(B[m[38;2;98;114;164m[48;2;40;42;54m  1 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mType(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;189;147;249m[48;2;40;42;54mApplication(B[m[38;2;248;248;242m[48;2;40;42;54m[K
-(B[m[38;2;98;114;164m[48;2;40;42;54m  2 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mVersion(B[m[38;2;248;248;242m[48;2;40;42;54m=1.0[K
-(B[m[38;2;98;114;164m[48;2;40;42;54m  3 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mName(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;248;248;242m[48;2;40;42;54mFolder.Cleaner[K
-(B[m[38;2;98;114;164m[48;2;40;42;54m  4 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mComment(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;248;248;242m[48;2;40;42;54mFolder.Cleanerstartup script[K
-(B[m[38;2;98;114;164m[48;2;40;42;54m  5 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mExec(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;248;248;242m[48;2;40;42;54m/home/tomii/Folder.Cleaner-linux-x64/Folder.Cleaner[K
-(B[m[38;2;98;114;164m[48;2;40;42;54m  6 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mStartupNotify(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;189;147;249m[48;2;40;42;54mfalse(B[m[38;2;248;248;242m[48;2;40;42;54m[K
-(B[m[38;2;98;114;164m[48;2;40;42;54m  7 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mTerminal(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;189;147;249m[48;2;40;42;54mfalse(B[m[38;2;248;248;242m[48;2;40;42;54m[K
-(B[m[38;2;66;68;80m[48;2;40;42;54m~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-(B[0;1m[38;2;248;248;242m[48;2;66;68;80m~/.config/autostart/Folder.Cleaner.desktop                                            1,1           Todo(B[m[38;2;248;248;242m[48;2;40;42;54m
-[J[1;5H[?25h[?25l[26;94He         [1;5H[?25h[?25l[26;94H [1;5H(B[m[38;2;255;121;198m[48;2;40;42;54m[Desktop Entry][25;89H(B[0;1m[38;2;248;248;242m[48;2;66;68;80m8[1;12H[?25h[?25l[26;94H(B[m[38;2;248;248;242m[48;2;40;42;54me[1;12H[?25h[?25l[26;94H [25;89H(B[0;1m[38;2;248;248;242m[48;2;66;68;80m14[1;18H[?25h[?25l[26;94H(B[m[38;2;248;248;242m[48;2;40;42;54mb[1;18H[?25h[?25l[26;94H [25;90H(B[0;1m[38;2;248;248;242m[48;2;66;68;80m0[1;14H[?25h[?25l[26;94H(B[m[38;2;248;248;242m[48;2;40;42;54md[1;14H[?25h[?25l]112[4 q[?25h[?25l[26;95Hw[1;14H[?25h[?25l[26;94H  [1;5H(B[0;4m[38;2;80;250;123m[48;2;40;42;54m[(B[m[38;2;255;121;198m[48;2;40;42;54mDesktop (B[0;4m[38;2;80;250;123m[48;2;40;42;54m](B[m[38;2;248;248;242m[48;2;40;42;54m[5X[25;44H(B[0;1m[38;2;248;248;242m[48;2;66;68;80m[+]]112[2 q[1;14H[?25h[?25l(B[m[38;2;248;248;242m[48;2;40;42;54m[25B[J:echomsg[Cl:message]112[2 q[26;1H[?25h[?25lfile contains group "Desktop ", but groups extending the format should start with "X-"]112[2 q[?25h[?25l[H(B[m[38;2;255;85;85m[48;2;40;42;54m>>(B[m[38;2;241;250;140m[48;2;40;42;54m  0 (B[0;4m[4:3m[58:2::255:85:85m[38;2;80;250;123m[48;2;40;42;54m[(B[m[38;2;255;121;198m[48;2;40;42;54mDesktop (B[0;4m[38;2;80;250;123m[48;2;40;42;54m][2;3H(B[m[38;2;98;114;164m[48;2;40;42;54m  1 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mType(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;189;147;249m[48;2;40;42;54mApplication[3;3H(B[m[38;2;98;114;164m[48;2;40;42;54m  2 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mVersion(B[m[38;2;248;248;242m[48;2;40;42;54m=1.0[4;3H(B[m[38;2;98;114;164m[48;2;40;42;54m  3 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mName(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;248;248;242m[48;2;40;42;54mFolder.Cleaner[5;3H(B[m[38;2;98;114;164m[48;2;40;42;54m  4 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mComment(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;248;248;242m[48;2;40;42;54mFolder.Cleanerstartup script[6;3H(B[m[38;2;98;114;164m[48;2;40;42;54m  5 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mExec(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;248;248;242m[48;2;40;42;54m/home/tomii/Folder.Cleaner-linux-x64/Folder.Cleaner[7;3H(B[m[38;2;98;114;164m[48;2;40;42;54m  6 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mStartupNotify(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;189;147;249m[48;2;40;42;54mfalse[8;3H(B[m[38;2;98;114;164m[48;2;40;42;54m  7 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mTerminal(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;189;147;249m[48;2;40;42;54mfalse[1;16H[?25h[?25l[26;94H(B[m[38;2;248;248;242m[48;2;40;42;54mX[1;16H[?25h[?25l[26;94H ]112[4 q[1;16H[?25h[?25l[26;94Hdh[1;16H[?25h[?25l[26;94H  [1;15H(B[0;4m[38;2;80;250;123m[48;2;40;42;54m](B[m[38;2;248;248;242m[48;2;40;42;54m [25;89H(B[0;1m[38;2;248;248;242m[48;2;66;68;80m9 ]112[2 q[1;15H[?25h[?25l(B[m[38;2;248;248;242m[48;2;40;42;54m[25B[86X:echomsg[Cl:message]112[2 q[26;1H[?25h[?25lfile contains group "Desktop ", but groups extending the format should start with "X-"]112[2 q[?25h[?25l[1;15H[?25h[?25l[25B[86X:echomsg[Cl:message]112[2 q[26;1H[?25h[?25lfile contains group "Desktop", but groups extending the format should start with "X-"]112[2 q[?25h[?25l[1;15H[?25h[?25l[25B[85X:w]112[2 q[26;1H[?25h[?25l"~/.config/autostart/Folder.Cleaner.desktop"]112[2 q[?25h[?25l[C8L, 188C escritos(B[0;1m[38;2;248;248;242m[48;2;66;68;80m[25;44H   [1;15H[?25h[?25l(B[m[38;2;248;248;242m[48;2;40;42;54m[25B[62X:echomsg[Cl:message]112[2 q[26;1H[?25h[?25lfile contains group "Desktop", but groups extending the format should start with "X-"]112[2 q[?25h[?25l[1;15H[?25h[?25l[26;94H^Z[1;15H[?25h[?25l[25B[95X[H(B[m[38;2;255;85;85m[48;2;40;42;54m>>(B[m[38;2;241;250;140m[48;2;40;42;54m  0 (B[0;4m[4:3m[58:2::255:85:85m[38;2;80;250;123m[48;2;40;42;54m[(B[m[38;2;255;121;198m[48;2;40;42;54mDesktop(B[0;4m[38;2;80;250;123m[48;2;40;42;54m](B[m[38;2;248;248;242m[48;2;40;42;54m                                                                                         
-(B[m[38;2;98;114;164m[48;2;40;42;54m    1 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mType(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;189;147;249m[48;2;40;42;54mApplication(B[m[38;2;248;248;242m[48;2;40;42;54m                                                                                  
-(B[m[38;2;98;114;164m[48;2;40;42;54m    2 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mVersion(B[m[38;2;248;248;242m[48;2;40;42;54m=1.0                                                                                       
-(B[m[38;2;98;114;164m[48;2;40;42;54m    3 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mName(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;248;248;242m[48;2;40;42;54mFolder.Cleaner                                                                               
-(B[m[38;2;98;114;164m[48;2;40;42;54m    4 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mComment(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;248;248;242m[48;2;40;42;54mFolder.Cleanerstartup script                                                              
-(B[m[38;2;98;114;164m[48;2;40;42;54m    5 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mExec(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;248;248;242m[48;2;40;42;54m/home/tomii/Folder.Cleaner-linux-x64/Folder.Cleaner                                          
-(B[m[38;2;98;114;164m[48;2;40;42;54m    6 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mStartupNotify(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;189;147;249m[48;2;40;42;54mfalse(B[m[38;2;248;248;242m[48;2;40;42;54m                                                                               
-(B[m[38;2;98;114;164m[48;2;40;42;54m    7 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mTerminal(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;189;147;249m[48;2;40;42;54mfalse(B[m[38;2;248;248;242m[48;2;40;42;54m                                                                                    
-(B[m[38;2;66;68;80m[48;2;40;42;54m~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-~                                                                                                       
-(B[0;1m[38;2;248;248;242m[48;2;66;68;80m~/.config/autostart/Folder.Cleaner.desktop                                            1,9           Todo
-[?25h[?25l]112[2 q(B[m[?25h[?1l>[?1049l[23;0;0t[23;0;0t[?2004l[?1004l[?25h
-[1]+  Detenido                nvim ~/.config/autostart/Folder.Cleaner.desktop
-]0;tomii@tomii:~/programming/folder_cleaner[?2004h[[31mtomii(B[m[33m@[35mtomii(B[m:[34m~/programming/folder_cleaner(B[m]$ nvim ~/.config/autostart/Folder.Cleaner.desktop 
-[?2004l[?1049h[22;0;0t[22;0;0t[?1h=[H[2J]11;?[?2004h[?25h[?25l(B[m[H[2J[?1004h[25B[38;2;255;255;255m[48;2;255;0;0mE325: ATENCIÓN(B[m[38;2;248;248;242m[48;2;40;42;54m[K[3;26r[3;1H[23M[r[2;1H(B[0;1;7m[38;2;248;248;242m[48;2;40;42;54m                                                                                                        
-
-(B[m[38;2;248;248;242m[48;2;40;42;54mSe ha encontrado un archivo de intercambio con el nombre "~/.local/share/nvim/swap//%home%tomii%.config%
-autostart%Folder.Cleaner.desktop.swp"[K
-          propiedad de: tomii   de fecha: Sat May  1 20:04:05 2021[K
-         nombre del archivo: ~tomii/.config/autostart/Folder.Cleaner.desktop[K
-         modificado: no[K
- nombre del usuario: tomii  nombre del servidor: tomii[K
-      ID del proceso: 747 (STILL RUNNING)[K
-al abrir el archivo "/home/tomii/.config/autostart/Folder.Cleaner.desktop"[K
-             de fecha: Sat May  1 20:03:56 2021[K
-[K
-(1) Another program may be editing the same file.  If this is the case,[K
-    be careful not to end up with two different instances of the same[K
-    file when making changes.  Quit, or continue with caution.[K
-(2) An edit session for this file crashed.[K
-    Si es así, use ":recover" o "vim -r /home/tomii/.config/autostart/Folder.Cleaner.desktop"[K
-    para recuperar los cambios (véa ":help recovery").[K
-    Si Ud. ya ha hecho esto, borre el archivo de intercambio "/home/tomii/.local/share/nvim/swap//%home%
-tomii%.config%autostart%Folder.Cleaner.desktop.swp"[K
-    para evitar este mensaje.[K
-[K
-(B[0;1m[38;2;46;139;87m[48;2;40;42;54m¡El archivo de intercambio "~/.local/share/nvim/swap//%home%tomii%.config%autostart%Folder.Cleaner.deskt
-op.swp" ya existe!(B[m[38;2;248;248;242m[48;2;40;42;54m[K
-(B[0;1m[38;2;46;139;87m[48;2;40;42;54m[A]brir para lectura únicamente, (E)ditar de todas formas, (R)ecuperar, (S)alir, A(b)ortar: (B[m[38;2;248;248;242m[48;2;40;42;54m[K]112[2 q]112[2 q[H[K(B[0;1;7m[38;2;248;248;242m[48;2;40;42;54m
-                                                                                                        
-(B[m[38;2;255;255;255m[48;2;255;0;0mE325: ATENCIÓN(B[m[38;2;248;248;242m[48;2;40;42;54m[K
-Se ha encontrado un archivo de intercambio con el nombre "~/.local/share/nvim/swap//%home%tomii%.config%
-autostart%Folder.Cleaner.desktop.swp"[K
-          propiedad de: tomii   de fecha: Sat May  1 20:04:05 2021[K
-         nombre del archivo: ~tomii/.config/autostart/Folder.Cleaner.desktop[K
-         modificado: no[K
- nombre del usuario: tomii  nombre del servidor: tomii[K
-      ID del proceso: 747 (STILL RUNNING)[K
-al abrir el archivo "/home/tomii/.config/autostart/Folder.Cleaner.desktop"[K
-             de fecha: Sat May  1 20:03:56 2021[K
-[K
-(1) Another program may be editing the same file.  If this is the case,[K
-    be careful not to end up with two different instances of the same[K
-    file when making changes.  Quit, or continue with caution.[K
-(2) An edit session for this file crashed.[K
-    Si es así, use ":recover" o "vim -r /home/tomii/.config/autostart/Folder.Cleaner.desktop"[K
-    para recuperar los cambios (véa ":help recovery").[K
-    Si Ud. ya ha hecho esto, borre el archivo de intercambio "/home/tomii/.local/share/nvim/swap//%home%
-tomii%.config%autostart%Folder.Cleaner.desktop.swp"[K
-    para evitar este mensaje.[K
-[K
-(B[0;1m[38;2;46;139;87m[48;2;40;42;54m¡El archivo de intercambio "~/.local/share/nvim/swap//%home%tomii%.config%autostart%Folder.Cleaner.deskt
-op.swp" ya existe!(B[m[38;2;248;248;242m[48;2;40;42;54m[K
-(B[0;1m[38;2;46;139;87m[48;2;40;42;54m[A]brir para lectura únicamente, (E)ditar de todas formas, (R)ecuperar, (S)alir, A(b)ortar: (B[m[38;2;248;248;242m[48;2;40;42;54m[K[?25h[?25l[26;1H[92X[24A                                                                                                        
-                                                                                                        
-                                                                                                        
-                                                                                                        
-                                                                                                        
-                                                                                                        
-                                                                                                        
-                                                                                                        
-                                                                                                        
-                                                                                                        
-                                                                                                        
-                                                                                                        
-                                                                                                        
-                                                                                                        
-                                                                                                        
-                                                                                                        
-                                                                                                        
-                                                                                                        
-                                                                                                        
-                                                                                                        
-                                                                                                        
-                                                                                                        
-                                                                                                        
-                                                                                                        [H(B[m[38;2;241;250;140m[48;2;40;42;54m  0 (B[0;4m[38;2;80;250;123m[48;2;40;42;54m[(B[m[38;2;255;121;198m[48;2;40;42;54mDesktop(B[0;4m[38;2;80;250;123m[48;2;40;42;54m](B[m[38;2;248;248;242m[48;2;40;42;54m[K
-(B[m[38;2;98;114;164m[48;2;40;42;54m  1 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mType(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;189;147;249m[48;2;40;42;54mApplication(B[m[38;2;248;248;242m[48;2;40;42;54m[K
-(B[m[38;2;98;114;164m[48;2;40;42;54m  2 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mVersion(B[m[38;2;248;248;242m[48;2;40;42;54m=1.0[K
-(B[m[38;2;98;114;164m[48;2;40;42;54m  3 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mName(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;248;248;242m[48;2;40;42;54mFolder.Cleaner[K
-(B[m[38;2;98;114;164m[48;2;40;42;54m  4 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mComment(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;248;248;242m[48;2;40;42;54mFolder.Cleanerstartup script[K
-(B[m[38;2;98;114;164m[48;2;40;42;54m  5 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mExec(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;248;248;242m[48;2;40;42;54m/home/tomii/Folder.Cleaner-linux-x64/Folder.Cleaner[K
-(B[m[38;2;98;114;164m[48;2;40;42;54m  6 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mStartupNotify(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;189;147;249m[48;2;40;42;54mfalse(B[m[38;2;248;248;242m[48;2;40;42;54m[K
-(B[m[38;2;98;114;164m[48;2;40;42;54m  7 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mTerminal(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;189;147;249m[48;2;40;42;54mfalse(B[m[38;2;248;248;242m[48;2;40;42;54m[K
-(B[m[38;2;66;68;80m[48;2;40;42;54m~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-~[K
-(B[0;1m[38;2;248;248;242m[48;2;66;68;80m~/.config/autostart/Folder.Cleaner.desktop[44X[44C1,1           Todo(B[m[38;2;248;248;242m[48;2;40;42;54m
-[J[1;5H[?25h[?25l[25B:echomsg[Cl:message]112[2 q[26;1H[?25h[?25lfile contains group "Desktop", but groups extending the format should start with "X-"]112[2 q[?25h[?25l[26;1H[85X:echomsg[Cl:message]112[2 q[26;1H[?25h[?25lfile contains group "Desktop", but groups extending the format should start with "X-"]112[2 q[?25h[?25l[H(B[m[38;2;255;85;85m[48;2;40;42;54m>>(B[m[38;2;241;250;140m[48;2;40;42;54m  0 (B[0;4m[4:3m[58:2::255:85:85m[38;2;80;250;123m[48;2;40;42;54m[(B[m[38;2;255;121;198m[48;2;40;42;54mDesktop(B[0;4m[38;2;80;250;123m[48;2;40;42;54m][2;3H(B[m[38;2;98;114;164m[48;2;40;42;54m  1 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mType(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;189;147;249m[48;2;40;42;54mApplication[3;3H(B[m[38;2;98;114;164m[48;2;40;42;54m  2 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mVersion(B[m[38;2;248;248;242m[48;2;40;42;54m=1.0[4;3H(B[m[38;2;98;114;164m[48;2;40;42;54m  3 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mName(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;248;248;242m[48;2;40;42;54mFolder.Cleaner[5;3H(B[m[38;2;98;114;164m[48;2;40;42;54m  4 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mComment(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;248;248;242m[48;2;40;42;54mFolder.Cleanerstartup script[6;3H(B[m[38;2;98;114;164m[48;2;40;42;54m  5 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mExec(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;248;248;242m[48;2;40;42;54m/home/tomii/Folder.Cleaner-linux-x64/Folder.Cleaner[7;3H(B[m[38;2;98;114;164m[48;2;40;42;54m  6 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mStartupNotify(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;189;147;249m[48;2;40;42;54mfalse[8;3H(B[m[38;2;98;114;164m[48;2;40;42;54m  7 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mTerminal(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;189;147;249m[48;2;40;42;54mfalse[1;7H[?25h[?25l[26;94H(B[m[38;2;248;248;242m[48;2;40;42;54me[1;7H[?25h[?25l[26;94H [1;7H(B[m[4:3m[58:2::255:85:85m[38;2;255;85;85m[48;2;40;42;54m[(B[m[38;2;255;121;198m[48;2;40;42;54mDesktop][25;89H(B[0;1m[38;2;248;248;242m[48;2;66;68;80m8[1;14H[?25h[?25l(B[m[38;2;248;248;242m[48;2;40;42;54m[25B[85X:echomsg[Cl:message]112[2 q[26;1H[?25h[?25lfile contains group "Desktop", but groups extending the format should start with "X-"]112[2 q[?25h[?25l[1;14H[?25h[?25l[26;94Ha[1;14H[?25h[?25l[26;94H ]112[6 q[1;14H[?25h[?25l[25B(B[0;1m[38;2;248;248;242m[48;2;40;42;54m-- INSERTAR --(B[m[38;2;248;248;242m[48;2;40;42;54m[71X[?25h[?25l[1;7H(B[0;4m[4:3m[58:2::255:85:85m[38;2;80;250;123m[48;2;40;42;54m[(B[m[38;2;255;121;198m[48;2;40;42;54mDesktop(B[0;4m[38;2;80;250;123m[48;2;40;42;54m][25;89H(B[0;1m[38;2;248;248;242m[48;2;66;68;80m9[1;15H[?25h[?25l(B[0;4m[38;2;80;250;123m[48;2;40;42;54m (B[m[38;2;255;121;198m[48;2;40;42;54m][25;44H(B[0;1m[38;2;248;248;242m[48;2;66;68;80m[+][42C10[1;15H(B[m[38;2;255;121;198m[48;2;40;42;54m (B[0;4m[38;2;80;250;123m[48;2;40;42;54m][?25h[?25lE(B[m[38;2;255;121;198m[48;2;40;42;54m]E(B[0;4m[38;2;80;250;123m[48;2;40;42;54m][25;90H(B[0;1m[38;2;248;248;242m[48;2;66;68;80m1[1;17H[?25h[?25l(B[0;4m[38;2;80;250;123m[48;2;40;42;54mn(B[m[38;2;255;121;198m[48;2;40;42;54m]n(B[0;4m[38;2;80;250;123m[48;2;40;42;54m][25;90H(B[0;1m[38;2;248;248;242m[48;2;66;68;80m2[1;18H[?25h[?25l(B[0;4m[38;2;80;250;123m[48;2;40;42;54mt(B[m[38;2;255;121;198m[48;2;40;42;54m]t(B[0;4m[38;2;80;250;123m[48;2;40;42;54m][25;90H(B[0;1m[38;2;248;248;242m[48;2;66;68;80m3[1;19H[?25h[?25l(B[0;4m[38;2;80;250;123m[48;2;40;42;54mr(B[m[38;2;255;121;198m[48;2;40;42;54m]r(B[0;4m[38;2;80;250;123m[48;2;40;42;54m][25;90H(B[0;1m[38;2;248;248;242m[48;2;66;68;80m4[1;20H[?25h[?25l(B[0;4m[38;2;80;250;123m[48;2;40;42;54my(B[m[38;2;255;121;198m[48;2;40;42;54m]y(B[0;4m[38;2;80;250;123m[48;2;40;42;54m][25;90H(B[0;1m[38;2;248;248;242m[48;2;66;68;80m5[1;21H[?25h[?25l(B[m[38;2;248;248;242m[48;2;40;42;54m[25B[14X:echomsg[Cl:message]112[2 q[26;1H[?25h[?25lfile contains group "Desktop", but groups extending the format should start with "X-"]112[2 q[?25h[?25l[1;7H(B[m[4:3m[58:2::255:85:85m[38;2;255;85;85m[48;2;40;42;54m[(B[m[38;2;255;121;198m[48;2;40;42;54mDesktop Entry][25;90H(B[0;1m[38;2;248;248;242m[48;2;66;68;80m4[1;20H[?25h[?25l(B[m[38;2;248;248;242m[48;2;40;42;54m[25B[85X:echomsg[Cl:message]112[2 q[26;1H[?25h[?25lfile contains group "Desktop", but groups extending the format should start with "X-"]112[2 q[?25h[?25l[1;20H[?25h[?25l[25B[85X[H(B[m[38;2;241;250;140m[48;2;40;42;54m  0 (B[m[38;2;255;121;198m[48;2;40;42;54m[Desktop Entry](B[m[38;2;248;248;242m[48;2;40;42;54m  [2;3H(B[m[38;2;98;114;164m[48;2;40;42;54m1 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mType(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;189;147;249m[48;2;40;42;54mApplication(B[m[38;2;248;248;242m[48;2;40;42;54m  [3;3H(B[m[38;2;98;114;164m[48;2;40;42;54m2 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mVersion(B[m[38;2;248;248;242m[48;2;40;42;54m=1.0  [4;3H(B[m[38;2;98;114;164m[48;2;40;42;54m3 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mName(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;248;248;242m[48;2;40;42;54mFolder.Cleaner  [5;3H(B[m[38;2;98;114;164m[48;2;40;42;54m4 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mComment(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;248;248;242m[48;2;40;42;54mFolder.Cleanerstartup script  [6;3H(B[m[38;2;98;114;164m[48;2;40;42;54m5 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mExec(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;248;248;242m[48;2;40;42;54m/home/tomii/Folder.Cleaner-linux-x64/Folder.Cleaner  [7;3H(B[m[38;2;98;114;164m[48;2;40;42;54m6 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mStartupNotify(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;189;147;249m[48;2;40;42;54mfalse(B[m[38;2;248;248;242m[48;2;40;42;54m  [8;3H(B[m[38;2;98;114;164m[48;2;40;42;54m7 (B[m[3m[38;2;139;233;253m[48;2;40;42;54mTerminal(B[m[38;2;241;250;140m[48;2;40;42;54m=(B[m[38;2;189;147;249m[48;2;40;42;54mfalse(B[m[38;2;248;248;242m[48;2;40;42;54m  [1;18H[?25h[?25l[25B:w]112[2 q[26;1H[?25h[?25l"~/.config/autostart/Folder.Cleaner.desktop"]112[2 q[?25h[?25l[C8L, 194C escritos(B[0;1m[38;2;248;248;242m[48;2;66;68;80m[25;44H   [1;18H[?25h[?25l(B[m[38;2;248;248;242m[48;2;40;42;54m[25B[62X:w]112[2 q[26;1H[?25h[?25l"~/.config/autostart/Folder.Cleaner.desktop"]112[2 q[?25h[?25l[C8L, 194C escritos[1;18H[?25h[?25l[25B[62X:w]112[2 q[26;1H[?25h[?25l"~/.config/autostart/Folder.Cleaner.desktop"]112[2 q[?25h[?25l[C8L, 194C escritos[1;18H[?25h[?25l[26;94HZ[1;18H[?25h[?25l[26;95HQ[1;18H[?25h[?25l[25B[?25h[?25l]112[2 q(B[m[?25h[?1l>[?1049l[23;0;0t[23;0;0t[?2004l[?1004l[?25h]0;tomii@tomii:~/programming/folder_cleaner[?2004h[[31mtomii(B[m[33m@[35mtomii(B[m:[34m~/programming/folder_cleaner(B[m]$ [K[[31mtomii(B[m[33m@[35mtomii(B[m:[34m~/programming/folder_cleaner(B[m]$ [K[[31mtomii(B[m[33m@[
