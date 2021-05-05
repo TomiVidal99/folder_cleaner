@@ -26,7 +26,7 @@ _Windows: Currently it does not support Windows._
 * - [x] add the icons for the settings page
 * - [x] option to automatically launch up on startup 
 * - [x] remove devtools from settings window
-* - [ ] style the bar of the settings window
+* - [x] style the scrollbar of the settings window
 * - [x] fix tray cleaning animation 
 * - [x] remove shouldInit from personalConfig.json and check auto-launch on checkbox from tray menu
 
