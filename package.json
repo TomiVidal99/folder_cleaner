@@ -7,7 +7,7 @@
   "scripts": {
     "start": "APP_DEV=true electron .",
     "build:linux": "electron-packager . --platform=linux --arch=x64 --out=builds --overwrite --icon='./assets/linux-icons/app_icon_256x256.png'",
-    "build:windows": "electron-packager . --platform=win32 --arch=x64 --out=builds --overwrite --icon='./assets/windows-icons/favicon.ico'"
+    "build:windows": "electron-packager . --platform=win32 --arch=x64 --out=builds --overwrite --icon='./App/assets/windows-icons/favicon.ico'"
   },
   "repository": "https://github.com/TomiVidal99/folder_cleaner.git",
   "author": "Tomas Vidal <tomi_vidal_99@hotmail.com>",
