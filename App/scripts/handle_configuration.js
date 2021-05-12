@@ -4,8 +4,6 @@ const localStorageElectron = require('electron-localstorage')
 const { app } = require('electron')
 const { ipcRenderer } = require('electron')
 
-//const { update_watcher, reset_watcher, return_watched } = require(path.join(localStorageElectron.getItem('scripts_path'), 'handle_organization.js'))
-
 const unwatch_old_folder = (folder) => { ipcRenderer.send('unwatch-old-folder', folder) }
 const watch_new_folder = (folder) => { ipcRenderer.send('watch-new-folder', folder) }
 const update_folders = (folders) => { ipcRenderer.send('update-folders', folders) }
@@ -42,8 +40,6 @@ function load_user_configuration() {
                 const music_path = app.getPath('music') // for .mp3 
                 const videos_path = app.getPath('videos') // for .mp4 .wav
                 const pictures_path = app.getPath('pictures') // for .png .jpeg
-
-
 
                 // i add config to the default one
                 default_configuration.watchingFolders.push(downloads_path)

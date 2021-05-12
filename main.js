@@ -17,7 +17,7 @@ let appLauncher = new AutoLaunch({
 });
 
 // define useful paths
-let app_directory
+let app_directory, should_display_warning_notifications
 if (isDev) {
     console.log('in development...')
     app_directory = process.cwd()
@@ -34,9 +34,6 @@ localStorage.setItem('scripts_path', scripts_path)
 const configurations_path = path.join(app_directory, "App/configurations")
 localStorage.setItem('configurations_path', configurations_path)
 localStorage.setItem('app_version', app.getVersion())
-
-let show_warning_notifications = JSON.parse(localStorage.getItem('personal_configuration')).warning_notifications ? "disabled" : true // set the value by default, specified on the user's default config
-
 
 // import the cokidar class
 const { chokidar_class } = require(path.join(scripts_path, 'chokidar_class.js'))
@@ -151,7 +148,7 @@ let context_menu = Menu.buildFromTemplate([
     { 
         label: tray_text_warning_notifications,
         type: 'checkbox', 
-        checked: show_warning_notifications,
+        checked: true,
         click: handle_tray_warning_notifications_click
     },
     { 
@@ -180,14 +177,21 @@ function handle_tray_warning_notifications_click() {
     // called when clicked on the tray menu
     // should switch the value on the config file
     let personal_configuration = JSON.parse(localStorage.getItem('personal_configuration'))
-    if (personal_configuration.warning_notifications == "enabled")  {
+    if (should_display_warning_notifications)  {
         personal_configuration.warning_notifications = "disabled"
-        show_warning_notifications = false
+        context_menu.items[4].checked = false
     } else {
         personal_configuration.warning_notifications = "enabled"
-        show_warning_notifications = true
+        context_menu.items[4].checked = true
     }
-    localStorage.setItem('personal_configuration')
+
+    should_display_warning_notifications = !should_display_warning_notifications
+
+    localStorage.setItem('personal_configuration', JSON.stringify(personal_configuration))
+    tray.setContextMenu(context_menu)
+
+    console.log("changed warnings to: ", context_menu.items[4].checked)
+
 }
 
 // TODO finish both functions to apply the states to the configuration file
@@ -340,10 +344,21 @@ function createWindow() {
 }  
 
 app.whenReady().then( () => {
+
     createWindow()
+
+    // set the value of the warning_notifications after the personalConfiguration is loaded, do it before it loads the contextMenu of the tray
     tray = new Tray(path.join(assets_path, tray_icon))
     tray.setToolTip('Folder Cleaner')
+
+    if (localStorage.getItem('personal_configuration')) {
+        const show_warning_notifications = JSON.parse(localStorage.getItem('personal_configuration')).warning_notifications
+         should_display_warning_notifications = show_warning_notifications ? (show_warning_notifications == "enabled") : false
+        context_menu.items[4].checked = should_display_warning_notifications
+    }
+    
     tray.setContextMenu(context_menu)
+
     // sets the language if theres no language defined currently
     handle_language_locale(app.getLocale())
     
@@ -420,7 +435,7 @@ function sort_out_file(folder, file, complete_path, keywords, unfiltered, callba
                             callback(true)
                         } else {
                             // TODO else pop a menu of what to do
-                            if (show_warning_notifications) {
+                            if (should_display_warning_notifications) {
                                 showNotification(notifications_texts.fileAlreadyExists.title, notifications_texts.fileAlreadyExists.body)
                             }
                             console.log('Error, the file was not moved, another one was already in the folder')
@@ -471,7 +486,8 @@ function handle_folder_change(complete_path) {
     if (!is_sorted) {
         // send a notification for the user to warn him to add more filter to the app
         console.log("The file was not sorted")
-        if (show_warning_notifications) {
+        if (should_display_warning_notifications) {
+            console.log(should_display_warning_notifications)
             showNotification(notifications_texts.fileNotSorted.title, notifications_texts.fileNotSorted.body)
         }
 
