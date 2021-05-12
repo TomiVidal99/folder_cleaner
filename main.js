@@ -35,6 +35,9 @@ const configurations_path = path.join(app_directory, "App/configurations")
 localStorage.setItem('configurations_path', configurations_path)
 localStorage.setItem('app_version', app.getVersion())
 
+let show_warning_notifications = JSON.parse(localStorage.getItem('personal_configuration')).warning_notifications ? "disabled" : true // set the value by default, specified on the user's default config
+
+
 // import the cokidar class
 const { chokidar_class } = require(path.join(scripts_path, 'chokidar_class.js'))
 const watcher = new chokidar_class(chokidar, null, handle_folder_change)
@@ -98,6 +101,7 @@ const tray_text_language = global_language_texts.tray_text_language
 const tray_text_quit = global_language_texts.tray_text_quit
 const tray_text_startup = global_language_texts.tray_text_startup
 const tray_text_version = global_language_texts.tray_text_version
+const tray_text_warning_notifications = global_language_texts.tray_text_warning_notifications
 
 // function to create notifications
 function showNotification(title, body) {
@@ -145,6 +149,12 @@ let context_menu = Menu.buildFromTemplate([
         click: handle_tray_startup_click
     },
     { 
+        label: tray_text_warning_notifications,
+        type: 'checkbox', 
+        checked: show_warning_notifications,
+        click: handle_tray_warning_notifications_click
+    },
+    { 
         type: 'separator', 
     },
     { 
@@ -165,6 +175,20 @@ let context_menu = Menu.buildFromTemplate([
         click: handle_tray_quit_click
     },
 ])
+
+function handle_tray_warning_notifications_click() {
+    // called when clicked on the tray menu
+    // should switch the value on the config file
+    let personal_configuration = JSON.parse(localStorage.getItem('personal_configuration'))
+    if (personal_configuration.warning_notifications == "enabled")  {
+        personal_configuration.warning_notifications = "disabled"
+        show_warning_notifications = false
+    } else {
+        personal_configuration.warning_notifications = "enabled"
+        show_warning_notifications = true
+    }
+    localStorage.setItem('personal_configuration')
+}
 
 // TODO finish both functions to apply the states to the configuration file
 // define the function that handles the click on the icon tray
@@ -371,7 +395,7 @@ async function move_file(from, to) {
     })
 }
 
-async function sort_out_file(folder, file, complete_path, keywords, unfiltered, callback) {
+function sort_out_file(folder, file, complete_path, keywords, unfiltered, callback) {
     // first i loop through all the keywords 
     for (let k = 0; k < keywords.length; k++) {
         const keyword = keywords[k]
@@ -396,7 +420,9 @@ async function sort_out_file(folder, file, complete_path, keywords, unfiltered, 
                             callback(true)
                         } else {
                             // TODO else pop a menu of what to do
-                            showNotification(notifications_texts.fileAlreadyExists.title, notifications_texts.fileAlreadyExists.body)
+                            if (show_warning_notifications) {
+                                showNotification(notifications_texts.fileAlreadyExists.title, notifications_texts.fileAlreadyExists.body)
+                            }
                             console.log('Error, the file was not moved, another one was already in the folder')
                         }
                     })
@@ -445,7 +471,9 @@ function handle_folder_change(complete_path) {
     if (!is_sorted) {
         // send a notification for the user to warn him to add more filter to the app
         console.log("The file was not sorted")
-        showNotification(notifications_texts.fileNotSorted.title, notifications_texts.fileNotSorted.body)
+        if (show_warning_notifications) {
+            showNotification(notifications_texts.fileNotSorted.title, notifications_texts.fileNotSorted.body)
+        }
 
     }
 
