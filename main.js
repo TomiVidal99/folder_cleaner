@@ -98,6 +98,7 @@ const tray_text_language = global_language_texts.tray_text_language
 const tray_text_quit = global_language_texts.tray_text_quit
 const tray_text_startup = global_language_texts.tray_text_startup
 const tray_text_version = global_language_texts.tray_text_version
+const tray_text_warning_notifications = global_language_texts.tray_text_warning_notifications
 
 // function to create notifications
 function showNotification(title, body) {
@@ -145,6 +146,12 @@ let context_menu = Menu.buildFromTemplate([
         click: handle_tray_startup_click
     },
     { 
+        label: tray_text_warning_notifications,
+        type: 'checkbox', 
+        checked: JSON.parse(localStorage.getItem('personal_configuration')).warning_notifications ? "enabled" : false, // set the value by default, specified on the user's default config
+        click: handle_tray_warning_notifications_click
+    },
+    { 
         type: 'separator', 
     },
     { 
@@ -165,6 +172,18 @@ let context_menu = Menu.buildFromTemplate([
         click: handle_tray_quit_click
     },
 ])
+
+function handle_tray_warning_notifications_click() {
+    // called when clicked on the tray menu
+    // should switch the value on the config file
+    let personal_configuration = JSON.parse(localStorage.getItem('personal_configuration'))
+    if (personal_configuration.warning_notifications == "enabled")  {
+        personal_configuration.warning_notifications = "disabled"
+    } else {
+        personal_configuration.warning_notifications = "enabled"
+    }
+    localStorage.setItem('personal_configuration')
+}
 
 // TODO finish both functions to apply the states to the configuration file
 // define the function that handles the click on the icon tray
@@ -431,14 +450,14 @@ function handle_folder_change(complete_path) {
     // filter by names
     for (let folder in destination_folders) {
         const current_names_array = destination_folders[folder].names
-        is_sorted = sort_out_file(folder, file, complete_path, current_names_array, file_name, update_is_sorted)
+        is_sorted = await sort_out_file(folder, file, complete_path, current_names_array, file_name, update_is_sorted)
     }
 
     // filter by formats
     if (!is_sorted) {
         for (let folder in destination_folders) {
             const current_formats_array = destination_folders[folder].formats
-            is_sorted = sort_out_file(folder, file, complete_path, current_formats_array, file_format, update_is_sorted)
+            is_sorted = await sort_out_file(folder, file, complete_path, current_formats_array, file_format, update_is_sorted)
         }
     }
 

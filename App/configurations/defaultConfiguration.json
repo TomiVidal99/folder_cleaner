@@ -1,1 +1,10 @@
-{"watchingFolders":[],"destinationFolders":{},"availableLanguages":["en-US"]}
+{
+    "watchingFolders": [
+    ],
+    "destinationFolders": {
+    },
+    "availableLanguages": [
+        "en-US"
+    ],
+    "warning_notifications": "enabled"
+}
