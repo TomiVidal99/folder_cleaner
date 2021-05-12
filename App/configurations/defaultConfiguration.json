@@ -1,1 +1,10 @@
-{"watchingFolders":["/home/tomii/Downloads","/home/tomii/Desktop"],"destinationFolders":{"/home/tomii/Documents":{"names":[],"formats":["txt","docx","pdf","pptx"],"regexs":[]},"/home/tomii/Music":{"names":[],"formats":["mp3"],"regexs":[]},"/home/tomii/Videos":{"names":[],"formats":["mp4","wav"],"regexs":[]},"/home/tomii/Pictures":{"names":[],"formats":["png","jpeg"],"regexs":[]}},"availableLanguages":["en-US"],"warning_notifications":"enabled"}
+{
+    "watchingFolders": [
+    ],
+    "destinationFolders": {
+    },
+    "availableLanguages": [
+        "en-US"
+    ],
+    "warning_notifications": "enabled"
+}
