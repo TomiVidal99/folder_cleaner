@@ -29,6 +29,8 @@
             "destinationPropertyFormat": "Sort by format",
             "destinationPropertyRegex": "Sort by regex",
             "addConfiguredFolder": "add to list",
+            "defaultParametersTitle": "Default parameters",
+            "defaultParametersDescription": "Select the default values for of the app as you like!",
             "resetPersonalConfiguration": "reset all the configuration to the initial"
         },
         "paths": {
