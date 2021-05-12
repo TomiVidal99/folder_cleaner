@@ -6,7 +6,8 @@
         "tray_text_language": "Lang: ",
         "tray_text_quit": "Quit",
         "tray_text_startup": "Enable auto-startup",
-        "tray_text_version": "App version: "
+        "tray_text_version": "App version: ",
+        "tray_text_warning_notifications": "Notifications"
     },
     "settings": {
         "commonText": {
