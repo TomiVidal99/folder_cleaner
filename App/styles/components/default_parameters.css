@@ -1,0 +1,23 @@
+/*styling for the default parameters component*/
+
+.parameters_wrapper {
+    /*Colors variables ~~~~~*/
+    --color-labels: #808080;
+    --label-font-size: 1.2rem;
+}
+
+.parameters_wrapper > div:not(:first-child) {
+    background-color: var(--palette-second);
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-self: center;
+    margin: auto;
+    height: calc(4vh + 20px);
+    width: clamp(360px, 80%, 65%);
+}
+
+.parameters_wrapper > div:not(:first-child) > label {
+    color: var(--color-labels);
+    font-size: var(--label-font-size);
+}

@@ -7,6 +7,8 @@
 @import "./components/destination_properties.css";
 @import "./components/sendit_button.css";
 @import "./components/scrollbar.css";
+@import "./components/default_parameters.css";
+@import "./components/selects.css";
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ IMPORT ANIMATIONS ~~~~~*/
 @import "./components/animations/destination_properties_img_animation.css";
@@ -22,16 +24,6 @@
     --palette-third: #0E111A;
     --palette-fourth: #0D1018;
     --palette-fifth: #07090D;
-
-
-    /*
-    second palette, yet to test, seems better
-    --palette-first: #251933;
-    --palette-second: #181021;
-    --palette-third: #130C1A;
-    --palette-fourth: #110C18;
-    --palette-fifth: #110C18;
-    */
 
     --first-color: #191919;
     --second-color: #374c72;
@@ -71,7 +63,7 @@ body {
 }
 
 p {
-    font-size: 1.35rem;
+    font-size: 1.20rem;
 }
 
 .input-group {

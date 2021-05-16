@@ -10,28 +10,29 @@ _Linux: You can download the latest packaged version from **https://drive.google
 _Windows: Currently it does not support Windows._
 
 ## TODO
-* - [ ] folder backup 
-* - [x] folder cleaning
-* - [ ] handle languagues system
-* - [x] tray icon and cleaning animation
-* - [ ] when user closes the settings panel and there's some list empty worn the user that the program may not work
-* - [ ] be able to set if the watch is folder recursive or not
-* - [ ] handle priority better if a file has multiple sorting parameters
-* - [ ] add the option to edit a destination folder
-* - [x] when a file is not sorted should pop up a message to advise the user that should add more filters
-* - [ ] to be more efficient should only take out or add the watchers that correspond the specific path, instead of loading everything again
-* - [ ] choose if when launched should organize all the existing files
-* - [ ] when a new destination folder is added check if the sorting filters are not already being used
-* - [ ] add copy counter when the destination folder holds a file with the same name as the file to be moved
-* - [x] add the icons for the settings page
-* - [x] option to automatically launch up on startup 
-* - [x] remove devtools from settings window
-* - [x] style the scrollbar of the settings window
-* - [x] fix tray cleaning animation 
-* - [ ] remove shouldInit from personalConfig.json and check auto-launch on checkbox from tray menu
-* - [ ] create 'moved file notifications'
-* - [x] add option on tray menu to switch enable the 'moved file notifications'
-* - [ ] should add a section for changing the moving files parameters
+* - [ ] folder backup.
+* - [x] folder cleaning.
+* - [ ] handle languagues system.
+* - [x] tray icon and cleaning animation.
+* - [ ] when user closes the settings panel and there's some list empty worn the user that the program may not work.
+* - [ ] be able to set if the watch is folder recursive or not.
+* - [ ] handle priority better if a file has multiple sorting parameters.
+* - [ ] add the option to edit a destination folder.
+* - [x] when a file is not sorted should pop up a message to advise the user that should add more filters.
+* - [ ] to be more efficient should only take out or add the watchers that correspond the specific path, instead of loading everything again.
+* - [ ] choose if when launched should organize all the existing files.
+* - [ ] when a new destination folder is added check if the sorting filters are not already being used.
+* - [ ] add copy counter when the destination folder holds a file with the same name as the file to be moved.
+* - [x] add the icons for the settings page.
+* - [x] option to automatically launch up on startup.
+* - [x] remove devtools from settings window.
+* - [x] style the scrollbar of the settings window.
+* - [x] fix tray cleaning animation.
+* - [ ] remove shouldInit from personalConfig.json and check auto-launch on checkbox from tray menu.
+* - [ ] create 'moved file notifications'.
+* - [x] add option on tray menu to switch enable the 'moved file notifications'.
+* - [ ] should add a section for changing the moving files parameters.
+* - [ ] when list element clicked to remove only show the folder name, not the entire path.
 
 ## KNOWN ISSUES
 _We've launched the app knowning that it has some bugs yet to be fixed, some appear up in the TODO list to be fixed, but in this list we only included the ones that may affect the user experience, because it can cause data loss for example_

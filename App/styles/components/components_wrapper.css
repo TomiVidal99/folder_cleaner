@@ -4,5 +4,25 @@
 
     background-color: var(--palette-fourth);
     color: var(--fonts-color);
+    box-shadow: 15px -15px 30px black;
 
+}
+
+.wrappers > div:first-of-type > p {
+    padding-inline: 8%;
+    width: 100%;
+}
+
+.wrappers:hover {
+    box-shadow: 15px -15px 20px black;
+}
+
+.wrappers > div:first-of-type > h3 {
+    transition: width 0.6s ease-in-out;
+    width: 60%;
+}
+
+.wrappers:hover > div:first-of-type > h3 {
+    transition: width 1s ease-in-out;
+    width: 90%;
 }

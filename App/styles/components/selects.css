@@ -1,0 +1,20 @@
+/*styling for the select tags*/
+
+select {
+
+    /*VARIABLES ~~~~~*/
+    --default-font-size: 1rem;
+    --default-font-color: #ccc;
+    --default-background-color: var(--palette-fourth);
+
+    font-size: var(--default-font-size);
+    color: var(--default-font-color);
+    background-color: var(--default-background-color);
+
+}
+
+select > option {
+    font-size: var(--default-font-size);
+    color: var(--default-font-color);
+    background-color: var(--default-background-color);
+}
