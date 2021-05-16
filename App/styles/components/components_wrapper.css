@@ -8,7 +8,9 @@
 
 }
 
+/*the p tag under the title of the wrapper component*/
 .wrappers > div:first-of-type > p {
+    margin-top: 3vh;
     padding-inline: 8%;
     width: 100%;
 }

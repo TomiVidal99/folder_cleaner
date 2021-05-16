@@ -14,7 +14,10 @@
     align-self: center;
     margin: auto;
     height: calc(4vh + 20px);
-    width: clamp(360px, 80%, 65%);
+    width: clamp(200px, 80%, 65%);
+    height: auto;
+    padding: 2vh;
+    border-radius: 5px;
 }
 
 .parameters_wrapper > div:not(:first-child) > label {

@@ -16,7 +16,7 @@
 
 #watching_paths_list > li {
     background-color: var(--item-background-color);
-    width: 90%;
+    width: 70%;
     border-radius: 0;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -40,7 +40,7 @@
     font-size: larger;
     animation-name: hovering-list-item-growth;
     animation-duration: 0.5s;
-    width: 100%;
+    width: 75%;
     border-radius: 8px 8px 8px 8px;
     font-weight: bolder;
     /*color: var(--dark);*/
