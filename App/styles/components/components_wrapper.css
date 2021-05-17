@@ -8,6 +8,10 @@
 
 }
 
+.parameters_wrapper > div:not(:first-child) {
+    background-color: var(--palette-second);
+}
+
 /*the p tag under the title of the wrapper component*/
 .wrappers > div:first-of-type > p {
     margin-top: 3vh;

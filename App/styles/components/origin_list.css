@@ -36,16 +36,17 @@
     border-bottom-right-radius: 8px;
 }
 
-#watching_paths_list > li:hover { /*background-color: var(--light) !important;*/ background-color: var(--item-background-color-hover) !important;
+#watching_paths_list > li:hover { 
+    background-color: var(--item-background-color-hover) !important;
     font-size: larger;
     animation-name: hovering-list-item-growth;
     animation-duration: 0.5s;
     width: 75%;
     border-radius: 8px 8px 8px 8px;
     font-weight: bolder;
-    /*color: var(--dark);*/
     color: var(--item-font-color-hover);
     white-space: normal !important;
+    box-shadow: 15px 15px 90px black;
 }
 
 .selected_watching_li {

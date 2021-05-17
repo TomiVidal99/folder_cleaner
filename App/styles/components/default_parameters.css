@@ -4,6 +4,11 @@
     /*Colors variables ~~~~~*/
     --color-labels: #808080;
     --label-font-size: 1.2rem;
+    
+}
+
+.property_wrapper {
+    box-shadow: 1px 1px 50px black;
 }
 
 .parameters_wrapper > div:not(:first-child) {

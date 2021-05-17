@@ -4,8 +4,8 @@
 
 
     /*VARIABLES ~~~~~*/
-    --btn-background-color: #0a5e12;
-    --btn-background-color-hover: #0d8719;
+    --btn-background-color: var(--sendit-button-background-color);
+    --btn-background-color-hover: var(--sendit-button-background-color-hover);
 
     background-color: var(--btn-background-color);
 

@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="container">
-                    <ul id="watching_paths_list" class="mx-auto list-group rounded" style="display: flex; flex-direction:column-reverse;">
+                    <ul id="watching_paths_list" class="list-group rounded" style="display: flex; flex-direction:column-reverse;">
                     </ul>
                 </div>
 
@@ -127,16 +127,18 @@
                 <p class="text-justify font-weight-light" language="defaultParametersDescription"></p>
             </div>
             <!--the default options for the recursion of folders-->
-            <div class="mt-4 mb-5">
+            <div class="mt-4 mb-5 property_wrapper">
                 <label language="folderRecursionLabel"></label>
-                <select language="folderRecursion" class="defaultFolderRecursionSelect">
-                </select>
+                <label class="select_label">
+                    <select language="folderRecursion" class="defaultFolderRecursionSelect"></select>
+                </label>
             </div>
             <!--the default option when file already exists on the destination-->
-            <div class="mb-5">
+            <div class="mb-5 property_wrapper">
                 <label language="fileAlreadyExistsLabel"></label>
-                <select language="fileAlreadyExists" class="fileAlreadyExists">
-                </select>
+                <label class="select_label">
+                    <select language="fileAlreadyExists" class="fileAlreadyExists"></select>
+                </label>
             </div>
         </div>
 

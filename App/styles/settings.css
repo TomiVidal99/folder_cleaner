@@ -25,6 +25,11 @@
     --palette-fourth: #0D1018;
     --palette-fifth: #07090D;
 
+    /*buttons colors*/
+    --sendit-button-background-color: #0a5e12;
+    --sendit-button-background-color-hover: #0d8719;
+    --add-button-background-color: #364585;
+
     --first-color: #191919;
     --second-color: #374c72;
     --third-color: #008891;
@@ -216,4 +221,7 @@ p, li, ul {
 }
 .property-inline-elements > * {
     height: 100%;
+}
+#app_version {
+    margin-top: 70px;
 }
