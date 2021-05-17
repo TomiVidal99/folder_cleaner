@@ -525,3 +525,19 @@ function display_warning_badge_destination_paths() {
         ul_list.appendChild(badge)
     }
 }
+
+//handle the click on the default parameters selects
+function handle_defaultFolderRecursion(e) {
+    // should save the value to the personal config
+    const val = e.target.value
+    let personal_configuration = JSON.parse(localStorageElectron.getItem('personal_configuration'))
+    personal_configuration.default_configurations.folderRecursion = parseInt(val)
+    update_user_configuration(personal_configuration)
+}
+
+function handle_defaultFileAlreadyExists(e) {
+    const val = e.target.value
+    let personal_configuration = JSON.parse(localStorageElectron.getItem('personal_configuration'))
+    personal_configuration.default_configurations.fileAlreadyExists = parseInt(val)
+    update_user_configuration(personal_configuration)
+}

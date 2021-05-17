@@ -29,10 +29,15 @@ function apply_text_to_elements_with_language_attribute() {
             // the select tag is current_element
             const language_att = current_element.getAttribute("language")
             const options_texts = global_language.settings.options[language_att]
+            const default_option = JSON.parse(user_configuration_string).default_configurations[language_att]
             for (let i = 0; i < options_texts.length; i++) {
                 // i loop through all the options 
                 const new_option_element = document.createElement('option')
                 new_option_element.innerHTML = options_texts[i]
+                new_option_element.setAttribute("value", i.toString())
+                if (i == default_option) {
+                    new_option_element.setAttribute("selected","")
+                }
                 current_element.appendChild(new_option_element)
             }
         } else {
