@@ -33,6 +33,7 @@ function apply_text_to_elements_with_language_attribute() {
                 // i loop through all the options 
                 const new_option_element = document.createElement('option')
                 new_option_element.innerHTML = options_texts[i]
+                new_option_element.setAttribute("value", i.toString())
                 current_element.appendChild(new_option_element)
             }
         } else {

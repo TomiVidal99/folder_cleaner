@@ -130,14 +130,14 @@
             <div class="mt-4 mb-5 property_wrapper">
                 <label language="folderRecursionLabel"></label>
                 <label class="select_label">
-                    <select language="folderRecursion" class="defaultFolderRecursionSelect"></select>
+                    <select onclick="handle_defaultFolderRecursion(event)" language="folderRecursion" class="defaultFolderRecursionSelect"></select>
                 </label>
             </div>
             <!--the default option when file already exists on the destination-->
             <div class="mb-5 property_wrapper">
                 <label language="fileAlreadyExistsLabel"></label>
                 <label class="select_label">
-                    <select language="fileAlreadyExists" class="fileAlreadyExists"></select>
+                    <select onclick="handle_defaultFileAlreadyExists(event)" language="fileAlreadyExists" class="fileAlreadyExists"></select>
                 </label>
             </div>
         </div>

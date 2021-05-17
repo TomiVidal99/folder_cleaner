@@ -525,3 +525,12 @@ function display_warning_badge_destination_paths() {
         ul_list.appendChild(badge)
     }
 }
+
+//handle the click on the default parameters selects
+function handle_defaultFolderRecursion(e) {
+    console.log(e.target.value)
+}
+
+function handle_defaultFileAlreadyExists(e) {
+    console.log(e)
+}
