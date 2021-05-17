@@ -29,7 +29,25 @@
             "destinationPropertyFormat": "Sort by format",
             "destinationPropertyRegex": "Sort by regex",
             "addConfiguredFolder": "add to list",
+            "defaultParametersTitle": "Default parameters",
+            "defaultParametersDescription": "Select the default values for of the app as you like!",
+            "folderRecursionLabel": "Define default folder recursion",
+            "fileAlreadyExistsLabel": "What to do when the destination file already exists",
             "resetPersonalConfiguration": "reset all the configuration to the initial"
+        },
+        "options": {
+            "folderRecursion": [
+                "just selected folder",
+                "one level more than the selected folder",
+                "two levels more than the selected folder",
+                "all the folders that are on the directory"
+            ],
+            "fileAlreadyExists": [
+                "pop a menu to ask what to do",
+                "replace the destination file with the new one",
+                "append the file with a numeric indicator",
+                "do not move the file"
+            ]
         },
         "paths": {
             "selectWatchingPathImgSrc": "./../assets/add_path.png",

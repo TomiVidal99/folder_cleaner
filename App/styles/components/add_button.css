@@ -4,7 +4,7 @@
 
     /*VARIABLES ~~~~~*/
     --font-color: #ccc;
-    --background-color: #364585;
+    --background-color: var(--add-button-background-color);
     --background-color-hover: var(--palette-first);
 
     color: var(--font-color);

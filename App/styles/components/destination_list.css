@@ -44,6 +44,7 @@
     border-radius: 8px 8px 8px 8px;
     font-weight: bolder;
     color: var(--item-font-color-hover);
+    box-shadow: 15px 15px 90px black;
 }
 
 .selected_destination_li {

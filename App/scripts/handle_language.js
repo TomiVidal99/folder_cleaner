@@ -23,6 +23,18 @@ function apply_text_to_elements_with_language_attribute() {
             // case when we got an input tag
             const element_to_modify = Array.from(current_element.children)[0]
             element_to_modify.innerHTML = global_language.settings.commonText[attribute]
+        } else if (current_element.tagName == "SELECT") {
+            // case when we got a select tag
+            // we loop through all the options and we append a new options with all the text
+            // the select tag is current_element
+            const language_att = current_element.getAttribute("language")
+            const options_texts = global_language.settings.options[language_att]
+            for (let i = 0; i < options_texts.length; i++) {
+                // i loop through all the options 
+                const new_option_element = document.createElement('option')
+                new_option_element.innerHTML = options_texts[i]
+                current_element.appendChild(new_option_element)
+            }
         } else {
             // all other cases
             const childrens = Array.from(current_element.children)

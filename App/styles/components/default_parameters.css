@@ -1,0 +1,31 @@
+/*styling for the default parameters component*/
+
+.parameters_wrapper {
+    /*Colors variables ~~~~~*/
+    --color-labels: #808080;
+    --label-font-size: 1.2rem;
+    
+}
+
+.property_wrapper {
+    box-shadow: 1px 1px 50px black;
+}
+
+.parameters_wrapper > div:not(:first-child) {
+    background-color: var(--palette-second);
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-self: center;
+    margin: auto;
+    height: calc(4vh + 20px);
+    width: clamp(200px, 80%, 65%);
+    height: auto;
+    padding: 2vh;
+    border-radius: 5px;
+}
+
+.parameters_wrapper > div:not(:first-child) > label {
+    color: var(--color-labels);
+    font-size: var(--label-font-size);
+}

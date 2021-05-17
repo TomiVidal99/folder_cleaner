@@ -20,8 +20,10 @@
     
         <div id="watching_wrapper" class="wrappers my-5 py-2 p-4 rounded shadow-lg shadow-dark">
 
-            <h3 class="text-center font-weight-bold mb-2 font-5 fifth-color w-75 mx-auto" id="watching_title" language="watchingTitle"></h3>
-            <p class="text-justify font-weight-light" id="watching_description" language="watchingDescription"></p>
+            <div class="my-3">
+                <h3 class="text-center font-weight-bold mb-2 font-5 fifth-color mx-auto" id="watching_title" language="watchingTitle"></h3>
+                <p class="text-justify font-weight-light" id="watching_description" language="watchingDescription"></p>
+            </div>
 
             <div class="my-3">
 
@@ -33,7 +35,7 @@
                 </div>
 
                 <div class="container">
-                    <ul id="watching_paths_list" class="mx-auto list-group rounded w-75" style="display: flex; flex-direction:column-reverse;">
+                    <ul id="watching_paths_list" class="list-group rounded" style="display: flex; flex-direction:column-reverse;">
                     </ul>
                 </div>
 
@@ -51,7 +53,7 @@
         <div id="destination_wrapper" class="wrappers my-5 py-2 p-4 rounded shadow-lg shadow-dark">
 
             <div class="my-3">
-                <h3 class="text-center font-weight-bold mb-2 font-5 fifth-color w-75 mx-auto" id="destination_title" language="destinationTitle"></h3>
+                <h3 class="text-center font-weight-bold mb-2 font-5 fifth-color mx-auto" id="destination_title" language="destinationTitle"></h3>
                 <p class="text-justify font-weight-light" id="destination_description" language="destinationDescription"></p>
             </div>
 
@@ -118,7 +120,29 @@
 
         </div>
 
-        <div class="wrappers my-5 py-2 p-4 rounded shadow-lg shadow-dark">
+        <div class="wrappers my-5 py-2 p-4 rounded shadow-lg shadow-dark parameters_wrapper">
+            <!--title and description-->
+            <div class="row row-2 my-2 default_parameters">
+                <h3 class="text-center font-weight-bold mb-2 font-5 fifth-color mx-auto" language="defaultParametersTitle"></h3>
+                <p class="text-justify font-weight-light" language="defaultParametersDescription"></p>
+            </div>
+            <!--the default options for the recursion of folders-->
+            <div class="mt-4 mb-5 property_wrapper">
+                <label language="folderRecursionLabel"></label>
+                <label class="select_label">
+                    <select language="folderRecursion" class="defaultFolderRecursionSelect"></select>
+                </label>
+            </div>
+            <!--the default option when file already exists on the destination-->
+            <div class="mb-5 property_wrapper">
+                <label language="fileAlreadyExistsLabel"></label>
+                <label class="select_label">
+                    <select language="fileAlreadyExists" class="fileAlreadyExists"></select>
+                </label>
+            </div>
+        </div>
+
+        <div class="wrappers py-2 p-4 rounded shadow-lg shadow-dark">
             <div class="row row-2">
                 <button class="btn delete-btn text-uppercase font-weight-bold btn-with-image mx-auto my-3" onclick="reset_personal_configuration()" language="resetPersonalConfiguration">
                     <div></div>
