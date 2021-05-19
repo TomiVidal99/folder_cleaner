@@ -17,6 +17,7 @@
             "watchingTitle": "Watching folders configuration",
             "watchingDescription": "Add the folders that you'd like to be organized to the list by clicking the blue button",
             "selectWatchingPath": "search folders",
+            "openContainingFolder": "Open containing folder",
             "removeSelectedWatchingPaths": "remove selected paths",
             "noWatchingFoldersWarning": "Oops! there are no folders selected, click up above to add them!",
             "noDestinationFoldersWarning": "Oops! there are no folders selected, click up above to add them!",

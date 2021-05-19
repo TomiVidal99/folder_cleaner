@@ -11,5 +11,8 @@
         "fileAlreadyExists": 0
     },
     "warning_notifications": "enabled",
-    "last_moved": ""
+    "last_moved": {
+        "path": "",
+        "date": ""
+    }
 }

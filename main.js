@@ -403,8 +403,11 @@ async function move_file(from, to) {
         fs.copyFile(from, to, () => {
             // on copy sucess remove copied file
             fs.unlink(from, () => { 
-                display_last_file_moved(to)
-                save_last_moved_path(to)
+                const today = new Date()
+                const complete_date = today.getHours()+':'+today.getMinutes()+':'+today.getSeconds()+' '+today.getDate()+'/'+today.getMonth()
+                console.log('At: ', complete_date)
+                display_last_file_moved(to, complete_date)
+                save_last_moved_path(to, complete_date)
                 console.log('copied')
                 resolve('Copied')
             })
@@ -498,15 +501,16 @@ function handle_folder_change(complete_path) {
 }
 
 //function that display whats the last file moved and it shows a button to open up with a file manager
-function display_last_file_moved(file) {
-    const code = `document.getElementById("last_file_moved_display").innerHTML = "${file}"`
+function display_last_file_moved(file, date) {
+    const code = `document.getElementById("last_moved_path").innerHTML = "${file}"; document.getElementById("last_moved_date").innerHTML = "${date}";`
     settings_window.webContents.executeJavaScript(code)
     settings_window.webContents.executeJavaScript("document.getElementById('display_path_wrapper').setAttribute('style', 'display: block')")
 }
 
 //function to save to personal configuration the path of the moved file
-function save_last_moved_path(path) {
+function save_last_moved_path(path, date) {
     let personal_configuration = JSON.parse(localStorage.getItem('personal_configuration'))
-    personal_configuration.last_moved = path
-    fs.writeFile(path.join(configurations_path, 'defaultConfiguration.json'), JSON.stringify(personal_configuration), (err) => {if (err) throw err})
+    personal_configuration.last_moved.path = path
+    personal_configuration.last_moved.date = date
+    fs.writeFile(`${configurations_path}/personalConfiguration.json`, JSON.stringify(personal_configuration), (error) => {if (error) throw error})
 }

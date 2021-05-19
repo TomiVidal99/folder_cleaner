@@ -82,6 +82,17 @@ function apply_metadata_to_elements() {
         const new_src_attribute = global_language.settings.paths[src_attribute_value]
         current_element.setAttribute('src', new_src_attribute)
     }
+
+    // initial path and date of the last moved file
+    const personal_configuration = JSON.parse(user_configuration_string).last_moved
+    if (personal_configuration.path == "") {
+        document.getElementById("display_path_wrapper").setAttribute("style", "display:none")
+    } else {
+        document.getElementById("last_moved_path").innerHTML = personal_configuration.path
+        document.getElementById("last_moved_date").innerHTML = personal_configuration.date
+    }
+
+
 }
 
 // i only apply the language change when all the elements have loaded
