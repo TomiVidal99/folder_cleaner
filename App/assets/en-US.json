@@ -33,7 +33,8 @@
             "defaultParametersDescription": "Select the default values for of the app as you like!",
             "folderRecursionLabel": "Define default folder recursion",
             "fileAlreadyExistsLabel": "What to do when the destination file already exists",
-            "resetPersonalConfiguration": "reset all the configuration to the initial"
+            "resetPersonalConfiguration": "reset all the configuration to the initial",
+            "lastMovedFileTitle": "Last file moved"
         },
         "options": {
             "folderRecursion": [

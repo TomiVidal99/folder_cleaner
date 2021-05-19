@@ -1,14 +1,15 @@
 {
     "watchingFolders": [
-     ],
-     "destinationFolders": {
-     },
-     "availableLanguages": [
-         "en-US"
-     ],
-     "default_configurations": {
-         "folderRecursion": 0,
-         "fileAlreadyExists": 0
-     },
-     "warning_notifications": "enabled"
+    ],
+    "destinationFolders": {
+    },
+    "availableLanguages": [
+        "en-US"
+    ],
+    "default_configurations": {
+        "folderRecursion": 0,
+        "fileAlreadyExists": 0
+    },
+    "warning_notifications": "enabled",
+    "last_moved": ""
 }
