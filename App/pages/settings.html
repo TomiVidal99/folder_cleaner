@@ -3,8 +3,7 @@
     <head>
         <title>Folder Cleaner</title>
         <meta charset = "UTF-8">
-        <link href="./../styles/bootstrap.min.css" rel="stylesheet">
-        <link href="./../styles/settings.css" rel="stylesheet">
+        <link href="./../styles/bootstrap.min.css" rel="stylesheet"> <link href="./../styles/settings.css" rel="stylesheet">
         <!--<script type="text/javascript" src="./../scripts/handle_organization.js"></script>-->
         <script type="text/javascript" src="./../scripts/handle_language.js"></script>
         <script type="text/javascript" src="./../scripts/handle_configuration.js"></script>
@@ -126,6 +125,11 @@
             <!--the list that holds all the destination folders-->
         <ul id="destination_paths_list" class="mx-auto list-group rounded w-75" style="display: flex; flex-direction:column-reverse;">
         </ul>
+        <div class="destination_paths_types mx-auto rounded">
+            <label language="destinationPathsName"></label>
+            <label language="destinationPathsFormat"></label>
+            <label language="destinationPathsRegex"></label>
+        </div>
 
             <div class="row row-2 my-2">
                 <button id="remove_destination_folders" class="btn delete-btn text-uppercase btn-with-image mx-auto my-3 d-none" language="removeSelectedDestinationFolders" onclick="remove_destination_folder()">
