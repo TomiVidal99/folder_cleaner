@@ -3,3 +3,4 @@ builds/
 dist/
 yarn-error.log
 App/configuration/
+yarn-error.log
