@@ -403,6 +403,11 @@ async function move_file(from, to) {
         fs.copyFile(from, to, () => {
             // on copy sucess remove copied file
             fs.unlink(from, () => { 
+                const today = new Date()
+                const complete_date = today.getHours()+':'+today.getMinutes()+':'+today.getSeconds()+' '+today.getDate()+'/'+today.getMonth()
+                console.log('At: ', complete_date)
+                display_last_file_moved(to, complete_date)
+                save_last_moved_path(to, complete_date)
                 console.log('copied')
                 resolve('Copied')
             })
@@ -431,7 +436,7 @@ function sort_out_file(folder, file, complete_path, keywords, unfiltered, callba
                         if (!the_name_is_already_taken) {
                             console.log("from: ", complete_path)
                             console.log("to: ", to_path)
-                            move_file(from_pah, to_path)
+                            move_file(complete_path, to_path)
                             callback(true)
                         } else {
                             // TODO else pop a menu of what to do
@@ -493,4 +498,19 @@ function handle_folder_change(complete_path) {
 
     }
 
+}
+
+//function that display whats the last file moved and it shows a button to open up with a file manager
+function display_last_file_moved(file, date) {
+    const code = `document.getElementById("last_moved_path").innerHTML = "${file}"; document.getElementById("last_moved_date").innerHTML = "${date}";`
+    settings_window.webContents.executeJavaScript(code)
+    settings_window.webContents.executeJavaScript("document.getElementById('display_path_wrapper').setAttribute('style', 'display: block')")
+}
+
+//function to save to personal configuration the path of the moved file
+function save_last_moved_path(path, date) {
+    let personal_configuration = JSON.parse(localStorage.getItem('personal_configuration'))
+    personal_configuration.last_moved.path = path
+    personal_configuration.last_moved.date = date
+    fs.writeFile(`${configurations_path}/personalConfiguration.json`, JSON.stringify(personal_configuration), (error) => {if (error) throw error})
 }

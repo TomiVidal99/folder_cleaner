@@ -77,3 +77,27 @@
 .selected_destination_li > div:last-of-type {
     display: none !important;
 }
+
+/*style for the format filename and regex description below the destinations paths*/
+.destination_paths_types {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    overflow: hidden;
+    width: 70%;
+}
+.destination_paths_types > label {
+    margin: auto;
+    margin-top: 0.4rem;
+    font-size: 1rem;
+}
+/*i set the colors for each of the words*/
+.destination_paths_types > label:nth-child(1) {
+    color: var(--property-name-color);
+}
+.destination_paths_types > label:nth-child(2) {
+    color: var(--property-format-color);
+}
+.destination_paths_types > label:nth-child(3) {
+    color: var(--property-regex-color);
+}

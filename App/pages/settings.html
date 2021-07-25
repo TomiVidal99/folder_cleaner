@@ -3,8 +3,7 @@
     <head>
         <title>Folder Cleaner</title>
         <meta charset = "UTF-8">
-        <link href="./../styles/bootstrap.min.css" rel="stylesheet">
-        <link href="./../styles/settings.css" rel="stylesheet">
+        <link href="./../styles/bootstrap.min.css" rel="stylesheet"> <link href="./../styles/settings.css" rel="stylesheet">
         <!--<script type="text/javascript" src="./../scripts/handle_organization.js"></script>-->
         <script type="text/javascript" src="./../scripts/handle_language.js"></script>
         <script type="text/javascript" src="./../scripts/handle_configuration.js"></script>
@@ -18,6 +17,22 @@
             <h4 class="text-muted text-center py-3" language="titleDescription"></h4>
         </div>
     
+        <!--wrapper for the last moved file path display-->
+        <div id="display_path_wrapper" class="wrappers my-5 py-2 p-4 rounded shadow-lg shadow-dark">
+            <div class="my-3" style="width: 100%">
+                <div style="display: inline-flex; align-content: center; justify-content: space-around; width: 100%; margin-bottom: 2vh;">
+                    <p class="text-justify font-weight-light" style="margin: 0; padding: 0;" language="lastMovedFileTitle"></p>
+                    <p id="last_moved_date" class="text-justify font-weight-light" style="margin: 0; padding: 0; font-size: smaller; align-self: center;"></p>
+                </div>
+                <h4 id="last_moved_path" class="text-center mb-2 font-3 fifth-color mx-auto" id="last_file_moved_display" style="font-size: 14pt"></h4>
+            </div>
+            <div class="my-3" style="width: 100%">
+                    <button class="btn text-uppercase mx-auto my-3" language="openContainingFolder" onclick="handle_open_last_moved()">
+                        <div></div>
+                    </button>
+            </div>
+        </div>
+
         <div id="watching_wrapper" class="wrappers my-5 py-2 p-4 rounded shadow-lg shadow-dark">
 
             <div class="my-3">
@@ -110,6 +125,11 @@
             <!--the list that holds all the destination folders-->
         <ul id="destination_paths_list" class="mx-auto list-group rounded w-75" style="display: flex; flex-direction:column-reverse;">
         </ul>
+        <div class="destination_paths_types mx-auto rounded">
+            <label language="destinationPathsName"></label>
+            <label language="destinationPathsFormat"></label>
+            <label language="destinationPathsRegex"></label>
+        </div>
 
             <div class="row row-2 my-2">
                 <button id="remove_destination_folders" class="btn delete-btn text-uppercase btn-with-image mx-auto my-3 d-none" language="removeSelectedDestinationFolders" onclick="remove_destination_folder()">

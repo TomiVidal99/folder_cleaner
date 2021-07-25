@@ -17,6 +17,7 @@
             "watchingTitle": "Watching folders configuration",
             "watchingDescription": "Add the folders that you'd like to be organized to the list by clicking the blue button",
             "selectWatchingPath": "search folders",
+            "openContainingFolder": "Open containing folder",
             "removeSelectedWatchingPaths": "remove selected paths",
             "noWatchingFoldersWarning": "Oops! there are no folders selected, click up above to add them!",
             "noDestinationFoldersWarning": "Oops! there are no folders selected, click up above to add them!",
@@ -28,12 +29,16 @@
             "destinationPropertyName": "Sort by name",
             "destinationPropertyFormat": "Sort by format",
             "destinationPropertyRegex": "Sort by regex",
+            "destinationPathsName": "Filename",
+            "destinationPathsFormat": "Format",
+            "destinationPathsRegex": "Regex",
             "addConfiguredFolder": "add to list",
             "defaultParametersTitle": "Default parameters",
             "defaultParametersDescription": "Select the default values for of the app as you like!",
             "folderRecursionLabel": "Define default folder recursion",
             "fileAlreadyExistsLabel": "What to do when the destination file already exists",
-            "resetPersonalConfiguration": "reset all the configuration to the initial"
+            "resetPersonalConfiguration": "reset all the configuration to the initial",
+            "lastMovedFileTitle": "Last file moved"
         },
         "options": {
             "folderRecursion": [
