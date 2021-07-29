@@ -163,8 +163,6 @@ function handle_select_destination_folder() {
         const selected_path = data.filePaths[0]
         if (!user_has_cancelled && selected_path) {
             display_folder_properties(selected_path, false)
-
-
         }
     }).catch((error) => {
         console.log(error)
@@ -426,7 +424,7 @@ function create_destination_folders_elements(path, names_elements, formats_eleme
     
     // create the folder li tag
     const new_folder_element = document.createElement('li')
-    const class_data_li_element = 'list-group-item row'
+    const class_data_li_element = 'row list-group-item'
     new_folder_element.setAttribute('class', class_data_li_element)
     const path_holder_element = document.createElement('div')
     const onclick_data = 'handle_selected_destination_folder(this)'
@@ -437,6 +435,13 @@ function create_destination_folders_elements(path, names_elements, formats_eleme
     new_folder_element.appendChild(path_holder_element)
     const properties_container = document.createElement('div')
     properties_container.setAttribute('class', 'col-10 d-flex')
+    const edit_folder_button = document.createElement('img')
+    //TODO: set the default image src path within the json language file as the others
+    //edit_folder_button.setAttribute('img-src', 'editDestinationPathProperties')
+    edit_folder_button.setAttribute('src', './../assets/editDestinationPathProperties.png')
+    edit_folder_button.classList.add('editDestinationPathProperties')
+    new_folder_element.appendChild(edit_folder_button)
+
     
     // appends all the properties as children to the folder li tag
     if (names_elements.length > 0) {
