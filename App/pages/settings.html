@@ -19,15 +19,15 @@
     
         <!--wrapper for the last moved file path display-->
         <div id="display_path_wrapper" class="wrappers my-5 py-2 p-4 rounded shadow-lg shadow-dark">
-            <div class="my-3" style="width: 100%">
+            <div class="my-3" style="display: flex; flex-direction: column; width: 100%;">
                 <div style="display: inline-flex; align-content: center; justify-content: space-around; width: 100%; margin-bottom: 2vh;">
                     <p class="text-justify font-weight-light" style="margin: 0; padding: 0;" language="lastMovedFileTitle"></p>
                     <p id="last_moved_date" class="text-justify font-weight-light" style="margin: 0; padding: 0; font-size: smaller; align-self: center;"></p>
                 </div>
-                <h4 id="last_moved_path" class="text-center mb-2 font-3 fifth-color border-bottom mx-auto w-50" id="last_file_moved_display" style="font-size: 14pt"></h4>
+                <h4 id="last_moved_path" class="text-center mt-3 mb-2 font-3 fifth-color py-3 mx-5 rounded" id="last_file_moved_display" style="align-self: center; font-size: 15pt; width: 65%;"></h4>
             </div>
             <div class="my-3" style="display: inline-flex; width: 100%; justify-content: center;">
-                    <button class="btn text-uppercase mx-auto my-3" language="openContainingFolder" onclick="handle_open_last_moved()">
+                    <button class="btn btn-add text-uppercase mx-auto my-3" language="openContainingFolder" onclick="handle_open_last_moved()">
                         <div></div>
                     </button>
             </div>

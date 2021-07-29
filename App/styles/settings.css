@@ -9,6 +9,7 @@
 @import "./components/scrollbar.css";
 @import "./components/default_parameters.css";
 @import "./components/selects.css";
+@import "./components/last_moved.css";
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ IMPORT ANIMATIONS ~~~~~*/
 @import "./components/animations/destination_properties_img_animation.css";
@@ -94,13 +95,13 @@ h3 {
 /*style for all img tags inside buttons*/
 .button-icon {
     width: auto;
-    height: 100% !important;
+    height: 75% !important;
     margin-left: 2vw;
 }
 
 /*style for the buttons that have an image inside*/
 .btn-with-image {
-    height: 6vh;
+    height: 2.75rem;
     display: inline-flex;
     justify-content: center;
     align-items: center;
