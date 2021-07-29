@@ -1,8 +1,8 @@
 @keyframes stretch-text {
     100% {
-        align-text: center;
-        padding: 1.4vh;
+        text-align: center !important;
+        padding: .1vh;
         width: 80%;
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
 }

@@ -8,7 +8,6 @@
 
     background-color: var(--wrapper-background-color);
     border: 1px solid var(--wrapper-border-color);
-
 }
 
 #destination-properties-path-display:hover {
@@ -16,16 +15,17 @@
 }
 
 #destination_properties_wrapper > h6 {
-    color: #808080;
-    background-color: var(--palette-first);
-    border: 1px solid var(--palette-second);
+    color: #ccc;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
 }
 #destination_properties_wrapper > div > input {
     background-color: #ccc;
 }
 
 #destination_properties_wrapper > div > div > span {
-    background-color: var(--palette-third);
+    background-color: var(--palette-first);
     border: 1px solid var(--palette-third);
     color: #808080;
 }
@@ -40,16 +40,13 @@
 #destination_properties_wrapper > div > input:hover {
     background-color: white;
 }
-/*#destination_properties_wrapper > div > input:focus {*/
-    /*outline-width: 0;*/
-/*}*/
+
 #destination_properties_wrapper > div > input:focus {
-    /*color: #ccc;*/
     background-color: white;
 }
 
 #destination_properties_wrapper > div > img {
-    background-color: var(--palette-third);
+    background-color: var(--palette-first);
     border: 1px solid var(--palette-third);
 }
 

@@ -96,7 +96,7 @@ h3 {
 .button-icon {
     width: auto;
     height: 75% !important;
-    margin-left: 2vw;
+    margin-left: 1rem;
 }
 
 /*style for the buttons that have an image inside*/
@@ -198,6 +198,7 @@ p, li, ul {
 /*}*/
 .property-element {
     margin-right: 0.7vw;
+    font-size: smaller;
 }
 .name-property-element {
     color: var(--property-name-color);
