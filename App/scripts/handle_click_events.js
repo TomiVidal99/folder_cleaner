@@ -1,5 +1,6 @@
 // include this on the html to handle all the click froms buttons and forms
 const { dialog } = require('electron').remote
+const { shell } = require('electron')
 //const localStorageElectron = require('electron-localstorage')
 
 // new_path MUST be an array
@@ -540,4 +541,11 @@ function handle_defaultFileAlreadyExists(e) {
     let personal_configuration = JSON.parse(localStorageElectron.getItem('personal_configuration'))
     personal_configuration.default_configurations.fileAlreadyExists = parseInt(val)
     update_user_configuration(personal_configuration)
+}
+
+// handle the opening of the last moved file
+function handle_open_last_moved() {
+    const filename = document.getElementById("last_moved_path").innerHTML.split("/")
+    filename.pop()
+    shell.openPath(filename.join("/"))
 }
