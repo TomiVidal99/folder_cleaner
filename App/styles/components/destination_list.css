@@ -80,6 +80,10 @@
 
 /*style for the format filename and regex description below the destinations paths*/
 .destination_paths_types {
+
+    /*font size for the types decriptors down the destination paths*/
+    --types-descriptors-font-size: .9rem;
+
     display: flex;
     align-items: center;
     justify-items: center;
@@ -89,7 +93,7 @@
 .destination_paths_types > label {
     margin: auto;
     margin-top: 0.4rem;
-    font-size: 1rem;
+    font-size: var(--types-descriptors-font-size);
 }
 /*i set the colors for each of the words*/
 .destination_paths_types > label:nth-child(1) {
