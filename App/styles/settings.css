@@ -10,6 +10,7 @@
 @import "./components/default_parameters.css";
 @import "./components/selects.css";
 @import "./components/last_moved.css";
+@import "./components/btn_cancel_properties.css";
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ IMPORT ANIMATIONS ~~~~~*/
 @import "./components/animations/destination_properties_img_animation.css";

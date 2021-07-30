@@ -110,6 +110,7 @@
     background-color: transparent;
     justify-self: right;
     margin-left: auto;
+    z-index: 999;
 }
 
 .editDestinationPathProperties:hover {

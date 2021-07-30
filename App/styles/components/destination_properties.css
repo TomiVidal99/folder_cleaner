@@ -8,17 +8,21 @@
 
     background-color: var(--wrapper-background-color);
     border: 1px solid var(--wrapper-border-color);
+    flex-direction: column;
 }
 
 #destination-properties-path-display:hover {
     animation: stretch-text forwards 1.4s;
 }
 
-#destination_properties_wrapper > h6 {
+#destination-properties-path-display {
     color: #ccc;
     background-color: transparent;
-    border: 0;
     border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--dark);
+    font-size: 1.2em;
+    width: auto;
 }
 #destination_properties_wrapper > div > input {
     background-color: #ccc;

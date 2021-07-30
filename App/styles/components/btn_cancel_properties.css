@@ -1,0 +1,13 @@
+.btn-cancel-properties {
+    background-color: var(--danger);
+    text-align: center;
+    font-size: small;
+    margin: .6rem;
+    margin-left: auto;
+    font-weight: bolder;
+}
+
+.btn-cancel-properties:hover {
+    color: #ccc;
+    box-shadow: .15em -.15em .8em black;
+}
