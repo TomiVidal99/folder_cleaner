@@ -15,14 +15,14 @@
 }
 
 #destination_paths_list > li {
+    display: flex !important;
     background-color: var(--item-background-color);
     width: 90%;
     border-radius: 0;
     margin-left: auto;
     margin-right: auto;
     overflow: hidden;
-    text-overflow: ellipsis;
-    flex-wrap: wrap;
+    text-overflow: ellipsis; flex-wrap: wrap;
 }
 
 #destination_paths_list > li:last-child {
@@ -49,7 +49,6 @@
 
 .selected_destination_li {
     background-color: var(--item-background-color-selected) !important;
-    /*transform: translateX(2vw);*/
     margin: 0 !important;
     align-self: center;
     font-size: larger;
@@ -66,7 +65,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
     flex-wrap: wrap;
-    /*word-break: break-all;*/
     white-space: nowrap;
 }
 
@@ -104,4 +102,17 @@
 }
 .destination_paths_types > label:nth-child(3) {
     color: var(--property-regex-color);
+}
+
+/*style for the edit properties img 'button'*/
+.editDestinationPathProperties {
+    height: 1.4rem;
+    background-color: transparent;
+    justify-self: right;
+    margin-left: auto;
+    z-index: 999;
+}
+
+.editDestinationPathProperties:hover {
+    height: 2.5rem;
 }

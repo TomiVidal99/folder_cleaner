@@ -1,7 +1,6 @@
 // include this on the html to handle all the click froms buttons and forms
 const { dialog } = require('electron').remote
 const { shell } = require('electron')
-//const localStorageElectron = require('electron-localstorage')
 
 // new_path MUST be an array
 function add_watching_paths(new_paths) {
@@ -163,8 +162,6 @@ function handle_select_destination_folder() {
         const selected_path = data.filePaths[0]
         if (!user_has_cancelled && selected_path) {
             display_folder_properties(selected_path, false)
-
-
         }
     }).catch((error) => {
         console.log(error)
@@ -426,7 +423,7 @@ function create_destination_folders_elements(path, names_elements, formats_eleme
     
     // create the folder li tag
     const new_folder_element = document.createElement('li')
-    const class_data_li_element = 'list-group-item row'
+    const class_data_li_element = 'row list-group-item'
     new_folder_element.setAttribute('class', class_data_li_element)
     const path_holder_element = document.createElement('div')
     const onclick_data = 'handle_selected_destination_folder(this)'
@@ -437,6 +434,21 @@ function create_destination_folders_elements(path, names_elements, formats_eleme
     new_folder_element.appendChild(path_holder_element)
     const properties_container = document.createElement('div')
     properties_container.setAttribute('class', 'col-10 d-flex')
+    const edit_folder_button = document.createElement('img')
+    //TODO: set the default image src path within the json language file as the others
+    //edit_folder_button.setAttribute('img-src', 'editDestinationPathProperties')
+    edit_folder_button.setAttribute('onclick', 'handle_edit_properties(this)')
+    edit_folder_button.setAttribute('src', './../assets/editDestinationPathProperties.png')
+    edit_folder_button.classList.add('editDestinationPathProperties')
+    new_folder_element.appendChild(edit_folder_button)
+
+    // if the folder to add already exists delete the old one
+    const items_in_list = folders_list.children
+    for (let i = 0; i < items_in_list.length; i++) {
+        if (items_in_list[i].children[0].innerText == path) {
+            items_in_list[i].remove()
+        }
+    }
     
     // appends all the properties as children to the folder li tag
     if (names_elements.length > 0) {
@@ -548,4 +560,61 @@ function handle_open_last_moved() {
     const filename = document.getElementById("last_moved_path").innerHTML.split("/")
     filename.pop()
     shell.openPath(filename.join("/"))
+}
+
+// triggered when click the wrench on the destination paths list items: to modify the item properties
+function handle_edit_properties(img_element) {
+
+    const item_element = img_element.parentElement
+    const list_folder_properties = document.getElementById('list-folder-properties')
+    const path_element = document.getElementById('destination-properties-path-display')
+
+    // clear the previous tags
+    list_folder_properties.innerHTML = ""
+
+    // set the path
+    path_element.innerHTML = item_element.children[0].innerHTML
+
+    // grab all the types and make separate arrays for them
+    const filenames_elements = item_element.children[2].querySelectorAll('.name-property-element')
+    const formats_elements = item_element.children[2].querySelectorAll('.format-property-element')
+    const regexs_elements = item_element.children[2].querySelectorAll('.regex-property-element')
+
+    // fill the types with names
+    for (let i = 0; i < filenames_elements.length; i++) {
+        const name = filenames_elements[i].innerText
+        add_property(name, 'name')
+    }
+
+    // fill the types with formats
+    for (let i = 0; i < formats_elements.length; i++) {
+        const format = formats_elements[i].innerText
+        add_property(format, 'format')
+    }
+
+    // fill the types with regexs
+    for (let i = 0; i < regexs_elements.length; i++) {
+        const regex = regexs_elements[i].innerText
+        add_property(regex, 'regex')
+    }
+
+    // toggle on the display properties panel
+    document.getElementById('destination_properties_wrapper').classList.remove('d-none')
+
+    // unselect all the selected items
+    const selected_items = document.getElementById('destination_paths_list').querySelectorAll('.selected_destination_li')
+    selected_items.forEach((item) => {item.classList.remove('selected_destination_li')})
+
+}
+
+// button to toggle off the display of the properties panel
+function handle_cancel_properties() {
+
+    const properties_panel = document.getElementById('destination_properties_wrapper')
+    properties_panel.classList.add('d-none')
+
+    // unselect all the selected items
+    const selected_items = document.getElementById('destination_paths_list').querySelectorAll('.selected_destination_li')
+    selected_items.forEach((item) => {item.classList.remove('selected_destination_li')})
+
 }

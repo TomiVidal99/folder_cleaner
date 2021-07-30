@@ -5,6 +5,7 @@
     background-color: var(--palette-fourth);
     color: var(--fonts-color);
     box-shadow: 15px -15px 30px black;
+    overflow: hidden;
 
 }
 

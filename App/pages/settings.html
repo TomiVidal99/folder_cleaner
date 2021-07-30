@@ -24,7 +24,7 @@
                     <p class="text-justify font-weight-light" style="margin: 0; padding: 0;" language="lastMovedFileTitle"></p>
                     <p id="last_moved_date" class="text-justify font-weight-light" style="margin: 0; padding: 0; font-size: smaller; align-self: center;"></p>
                 </div>
-                <h4 id="last_moved_path" class="text-center mt-3 mb-2 font-3 fifth-color py-3 mx-5 rounded" id="last_file_moved_display" style="align-self: center; font-size: 15pt; width: 65%;"></h4>
+                <h4 id="last_moved_path" class="text-center mt-3 mb-2 font-3 fifth-color py-3 mx-5 rounded" id="last_file_moved_display" style="align-self: center; font-size: 1.2em; width: auto; overflow: hidden; padding-inline: 1em;"></h4>
             </div>
             <div class="my-3" style="display: inline-flex; width: 100%; justify-content: center;">
                     <button class="btn btn-add text-uppercase mx-auto my-3" language="openContainingFolder" onclick="handle_open_last_moved()">
@@ -80,9 +80,14 @@
             </div>
 
             <!--this is the folder properties wrapper-->
-            <div id="destination_properties_wrapper" class="row row-2 mt-2 mb-3 on-hover-stretch-path py-2 mx-auto rounded d-none" style="width: 85%">
+            <div id="destination_properties_wrapper" class="row row-2 mt-2 mb-3 on-hover-stretch-path py-2 mx-auto rounded d-none" style="width: 70%">
 
-                <h6 id="destination-properties-path-display" style="border-width: 2.5px !important;" class="input-group-text text-center mx-auto my-2 font-weight-bold"></h6>
+                <!--close this panel button-->
+                <button class="btn btn-cancel-properties" onclick="handle_cancel_properties()">
+                    X
+                </button>
+
+                <div id="destination-properties-path-display" class="input-group-text mx-auto text-center mt-2 mb-4 font-weight-bold"></div>
 
                 <!--sorting bar for the name property-->
                 <div class="col-10 input-group input-group-md mx-auto destination-properties-img-animation property-inline-elements">
