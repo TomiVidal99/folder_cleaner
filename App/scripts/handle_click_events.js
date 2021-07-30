@@ -257,7 +257,7 @@ function display_remove_destination_paths() {
 // function to define if the properties for the current selected folder should apppear
 function display_folder_properties(path, close) {
     const wrapper = document.getElementById("destination_properties_wrapper")
-    const path_display_element = wrapper.children[0]
+    const path_display_element = document.getElementById('destination-properties-path-display')
     const splitted_class = wrapper.getAttribute('class').split('d-none')
 
     // i diplay the current path
