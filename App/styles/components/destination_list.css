@@ -60,7 +60,6 @@
 }
 
 #destination_paths_list > li > div:first-of-type {
-    max-height: 3vh;
     width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
