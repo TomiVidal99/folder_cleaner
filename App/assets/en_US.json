@@ -40,7 +40,8 @@
             "resetPersonalConfiguration": "reset all the configuration to the initial",
             "lastMovedFileTitle": "Last file moved",
             "appSettingsTitle": "App Settings",
-            "appSettingsDescription": "Set up the behavior of the application"
+            "appSettingsDescription": "Set up the behavior of the application",
+            "languageSelectLabel": "Select language"
         },
         "options": {
             "folderRecursion": [

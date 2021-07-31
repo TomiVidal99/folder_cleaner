@@ -160,6 +160,23 @@ function handle_select_destination_folder() {
     }).then((data) => {
         const user_has_cancelled = data.canceled
         const selected_path = data.filePaths[0]
+
+        // check if the selected path hasnt been already selected
+        const destinations_paths = document.getElementById('destination_paths_list').children
+        for (let i = 0; i < destinations_paths.length; i++) {
+            const item_path = destinations_paths[i].children[0].innerText
+            if (item_path == selected_path) {
+                // the path its already selected, should display warning
+                alert(global_language.settings.alerts['destinationPathAlreadySelected'])
+                const destination_items = document.getElementById('destination_paths_list').children
+                for (let i = 0; i < destination_items.length; i++) {
+                    if (destination_items[i].children[0].innerText == selected_path) {
+                        handle_edit_properties(destination_items[i].children[1])
+                    }
+                }
+            }
+        }
+
         if (!user_has_cancelled && selected_path) {
             display_folder_properties(selected_path, false)
         }
