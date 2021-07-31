@@ -38,7 +38,9 @@
             "folderRecursionLabel": "Define default folder recursion",
             "fileAlreadyExistsLabel": "What to do when the destination file already exists",
             "resetPersonalConfiguration": "reset all the configuration to the initial",
-            "lastMovedFileTitle": "Last file moved"
+            "lastMovedFileTitle": "Last file moved",
+            "appSettingsTitle": "App Settings",
+            "appSettingsDescription": "Set up the behavior of the application"
         },
         "options": {
             "folderRecursion": [
@@ -66,7 +68,7 @@
         "alerts": {
             "watchingPathAlreadySelected": "The following path is already selected: ",
             "destinationPathAlreadySelected": "The selected path is already set as a destination, we selected it so you can change it's properties", 
-            "destinationPropertyAlreadySelected": "is already selected as a sorting property"
+            "destinationPropertyAlreadySelected": "it's already selected as a sorting property"
         }
     },
     "notifications": {

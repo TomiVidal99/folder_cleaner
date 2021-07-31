@@ -11,6 +11,7 @@
 @import "./components/selects.css";
 @import "./components/last_moved.css";
 @import "./components/btn_cancel_properties.css";
+@import "./components/language_selection.css";
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ IMPORT ANIMATIONS ~~~~~*/
 @import "./components/animations/destination_properties_img_animation.css";

@@ -618,3 +618,19 @@ function handle_cancel_properties() {
     selected_items.forEach((item) => {item.classList.remove('selected_destination_li')})
 
 }
+
+// triggered when the select languague is clicked: should change the languague and save the change
+function handle_language_change(select_element) {
+    const new_value = select_element.value
+    console.log(new_value)
+
+    // changes the user language
+    localStorageElectron.setItem("user_language", new_value)
+
+    require(localStorageElectron.getItem('scripts_path')+"/"+"handle_language_creation.js").handle_language_creation()
+
+    //console.log(localStorageElectron.getItem("global_language"))
+    update_local_language()
+    apply_text_to_elements_with_language_attribute()
+
+}
