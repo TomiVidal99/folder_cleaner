@@ -19,8 +19,8 @@ function handle_language_creation() {
         global_language = JSON.parse(JSON.stringify(global_language_raw))
     } else {
         console.log("NO USER LANGUAGE")
-        localStorage.setItem("user_language", "en-US")
-        global_language_raw = require(path.join(assets_path, "en-US.json"))
+        localStorage.setItem("user_language", "en_US")
+        global_language_raw = require(path.join(assets_path, "en_US.json"))
         global_language = JSON.parse(JSON.stringify(global_language_raw))
     }
     localStorage.setItem("global_language", global_language)

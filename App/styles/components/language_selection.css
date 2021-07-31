@@ -1,0 +1,9 @@
+#app_settings_wrapper > div:first-of-type {
+    display: flex;
+    flex-direction: column;
+}
+#app_settings_wrapper > div:first-of-type > select {
+    justify-self: center;
+    align-self: center;
+    width: 35%;
+}

@@ -1,14 +1,21 @@
 // with this script i pass all the variables from electron-localStorage to the window.localStorage
 const electronLocalStorage = require('electron-localstorage')
-const global_language = electronLocalStorage.getItem('global_language')
-window.localStorage.setItem('global_language', JSON.stringify(global_language))
-
-const user_configuration_string = electronLocalStorage.getItem('personal_configuration')
+let global_language;
+let user_configuration_string
 let user_configuration
-if (user_configuration_string) {
-    user_configuration = JSON.parse(user_configuration_string)
-    window.localStorage.setItem('personal_configuration', user_configuration_string)
+
+function update_local_language() {
+
+    global_language = electronLocalStorage.getItem('global_language')
+    user_configuration_string = electronLocalStorage.getItem('personal_configuration')
+
+    window.localStorage.setItem('global_language', JSON.stringify(global_language))
+    if (user_configuration_string) {
+        user_configuration = JSON.parse(user_configuration_string)
+        window.localStorage.setItem('personal_configuration', user_configuration_string)
+    }
 }
+update_local_language()
 
 // i loop through all the elements that require the language change and apply it
 function apply_text_to_elements_with_language_attribute() {
@@ -92,11 +99,21 @@ function apply_metadata_to_elements() {
         document.getElementById("last_moved_date").innerHTML = personal_configuration.date
     }
 
+    // select the current language on the select tag
+    const language_select = document.getElementById('change_language_select')
+    const current_lang = electronLocalStorage.getItem("user_language")
+    for (let i = 0; i < language_select.children.length; i++) {
+        // loop among the options inside the select
+        if (language_select.children[i].innerText == current_lang) {
+            language_select.children[i].setAttribute("selected", "")
+        }
+    }
 
 }
 
 // i only apply the language change when all the elements have loaded
 window.onload = () => {
+
     // apply the text accordingly to the current language
     apply_text_to_elements_with_language_attribute()
     apply_metadata_to_elements()

@@ -4,7 +4,6 @@
         <title>Folder Cleaner</title>
         <meta charset = "UTF-8">
         <link href="./../styles/bootstrap.min.css" rel="stylesheet"> <link href="./../styles/settings.css" rel="stylesheet">
-        <!--<script type="text/javascript" src="./../scripts/handle_organization.js"></script>-->
         <script type="text/javascript" src="./../scripts/handle_language.js"></script>
         <script type="text/javascript" src="./../scripts/handle_configuration.js"></script>
         <script type="text/javascript" src="./../scripts/handle_click_events.js"></script>
@@ -176,7 +175,18 @@
             <!--</div>-->
         <!--</div>-->
 
-            <div id="backups-wrapper" class="row">
+            <!--<div id="backups-wrapper" class="row">-->
+        </div>
+
+        <div id="app_settings_wrapper" class="wrappers my-5 py-2 p-4 rounded shadow-lg shadow-dark">
+            <div class="row row-2">
+                <h3 class="text-center font-weight-bold mb-2 font-5 fifth-color mx-auto" id="app_settings_title" language="appSettingsTitle"></h3>
+                <p class="text-justify font-weight-light" id="watching_description" language="appSettingsDescription"></p>
+                <select id="change_language_select" onchange="handle_language_change(this)">
+                    <option>en_US</option>
+                    <option>es_AR</option>
+                </select>
+            </div>
         </div>
 
         <div class="footer">

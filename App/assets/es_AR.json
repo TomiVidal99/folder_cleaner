@@ -1,0 +1,84 @@
+{
+    "mainjs": {
+        "tray_text_settings": "Configuraciones",
+        "tray_text_watching": "Cambios activos",
+        "tray_text_backups": "Backups activos",
+        "tray_text_language": "Lang: ",
+        "tray_text_quit": "Salir",
+        "tray_text_startup": "Auto inciar",
+        "tray_text_version": "Version: ",
+        "tray_text_warning_notifications": "Notificaciones"
+    },
+    "settings": {
+        "commonText": {
+            "title": "Configuraciones",
+            "titleComment": "Ponete cómodo mientras hacemos tu vida mas fácil :)",
+            "titleDescription": "Acá podés configurar todo una vez y listo!",
+            "watchingTitle": "Configuración de las carpetas observadas por cambios",
+            "watchingDescription": "Agregá a la lista las carpetas que querés que se vigilen cuando se agregan nuevos archivos haciendo click en el botón azul abajo",
+            "selectWatchingPath": "buscar carpetas",
+            "openContainingFolder": "Abrir carpeta contenedora",
+            "removeSelectedWatchingPaths": "Eliminar las carpetas seleccionadas",
+            "noWatchingFoldersWarning": "Oops! no hay carpetas seleccionadas, cliqueá arriba para agregar más!",
+            "noDestinationFoldersWarning": "Oops! no hay carpetas seleccionadas, cliqueá arriba para agregar más!",
+            "destinationTitle": "Configuración de las carpetas de destino",
+            "destinationDescription": "Seleccioná la carpeta de destino con los parámetros de ordenamiento como vos quieras",
+            "selectDestinationFolder": "Seleccioná una carpeta",
+            "addDestinationFolder": "Agregar carpeta de destino",
+            "removeSelectedDestinationFolders": "Eliminar las carpetas de destino",
+            "destinationPropertyName": "Ordenar por nombre",
+            "destinationPropertyFormat": "Ordenar por formato",
+            "destinationPropertyRegex": "Ordenar por regex",
+            "destinationPathsName": "Nombre",
+            "destinationPathsFormat": "Formato",
+            "destinationPathsRegex": "Regex",
+            "addConfiguredFolder": "Agregar a lista",
+            "defaultParametersTitle": "Parámetros por defecto",
+            "defaultParametersDescription": "Configurá los parámetros por defecto de la aplicación",
+            "folderRecursionLabel": "Definir la recursión de las carpetas por defecto",
+            "fileAlreadyExistsLabel": "Qué hacer cuando el archivo de destino ya existe",
+            "resetPersonalConfiguration": "Reiniciar toda la configuración a la inicial",
+            "lastMovedFileTitle": "Último archivo movido",
+            "appSettingsTitle": "Configuración de la aplicación",
+            "appSettingsDescription": "Configurá el comportamiento de la aplicación"
+        },
+        "options": {
+            "folderRecursion": [
+                "Sólo una capeta",
+                "Un nivel más que la carpeta seleccionada",
+                "dos niveles más que la carpeta seleccionada",
+                "todas las carpetas en el directorio"
+            ],
+            "fileAlreadyExists": [
+                "preguntar que hacer",
+                "reemplazar el archivo de destino con el nuevo",
+                "mantener ambos archivos",
+                "no mover el archivo"
+            ]
+        },
+        "paths": {
+            "selectWatchingPathImgSrc": "./../assets/add_path.png",
+            "removeSelectedWatchingPathsImgSrc": "./../assets/remove_path.png",
+            "selectDestinationFolderImgSrc": "./../assets/add_path.png",
+            "removeSelectedDestinationFoldersImgSrc": "./../assets/remove_path.png",
+            "summitFolderProperty": "./../assets/summit_property.png",
+            "addConfiguredFolderImgSrc": "./../assets/add_destination_folder.png",
+            "resetPersonalConfigurationImgSrc": "./../assets/reset_personal_configuration.png"
+        },
+        "alerts": {
+            "watchingPathAlreadySelected": "La siguiente carpeta ya está seleccionada: ",
+            "destinationPathAlreadySelected": "La carpeta seleccionada ya está elegida, la elegimos para que puedas cambiar sus propiedades",
+            "destinationPropertyAlreadySelected": "ya está elegida como una propiedad de organización"
+        }
+    },
+    "notifications": {
+        "fileNotSorted": {
+            "title": "Agregá más filtros! :)",
+            "body": "Un nuevo archivo a sido detectado pero no organizado, recomendamos que agregues mas filtros así la próxima vez no tenés que organizarlo vos! :)"
+        },
+        "fileAlreadyExists": {
+            "title": "Conflicto de archivos",
+            "body": "La carpeta de destino ya tiene un archivo con ese nombre, el archivo de origen no ha sido movido"
+        }
+    }
+}
