@@ -2,8 +2,6 @@
     display: flex;
     flex-direction: column;
 }
-#app_settings_wrapper > div:first-of-type > select {
-    justify-self: center;
-    align-self: center;
+#change_language_select {
     width: 35%;
 }

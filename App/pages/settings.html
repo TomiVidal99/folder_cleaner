@@ -182,10 +182,13 @@
             <div class="row row-2">
                 <h3 class="text-center font-weight-bold mb-2 font-5 fifth-color mx-auto" id="app_settings_title" language="appSettingsTitle"></h3>
                 <p class="text-justify font-weight-light" id="watching_description" language="appSettingsDescription"></p>
-                <select id="change_language_select" onchange="handle_language_change(this)">
-                    <option>en_US</option>
-                    <option>es_AR</option>
-                </select>
+                <div class="row row-2 d-flex justify-content-center align-items-center mt-3 mb-2">
+                    <label class="text-justify font-weight-light mr-5" language="languageSelectLabel"></label>
+                    <select id="change_language_select" onchange="handle_language_change(this)">
+                        <option>en_US</option>
+                        <option>es_AR</option>
+                    </select>
+                </div>
             </div>
         </div>
 
