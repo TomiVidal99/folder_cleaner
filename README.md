@@ -42,8 +42,8 @@ _Windows: Currently it does not support Windows._
 
 ## KNOWN ISSUES
 > _We've launched the app knowning that it has some bugs yet to be fixed, some appear up in the TODO list to be fixed, but in this list we only included the ones that may affect the user experience, because it can cause data loss for example_
-* When a file that is being copied over to a destination folder already exists (with that name and format), it will replace the one that is already in the destination folder with the new one. (at the moment we don't have a mechanism to decide what to do in these scenarios)
-* Currently it does not work on windows, (still figuring out whats going on)
+> * When a file that is being copied over to a destination folder already exists (with that name and format), it will replace the one that is already in the destination folder with the new one. (at the moment we don't have a mechanism to decide what to do in these scenarios)
+> * Currently it does not work on windows, (still figuring out whats going on)
 
 ## CONTRIBUTORS
 **_TOMAS VIDAL_**
