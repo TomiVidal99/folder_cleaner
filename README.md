@@ -1,5 +1,5 @@
 # FOLDER CLEANER
-_GUI program made with electron for organizing and backing up your folders._
+> _GUI program made with electron for organizing and backing up your folders._ 
 __We used chokidar to watch the folder changes thus making the program more resource efficient.__
 
 # HOW TO MODIFY IT
