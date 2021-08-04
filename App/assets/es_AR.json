@@ -80,6 +80,10 @@
         "fileAlreadyExists": {
             "title": "Conflicto de archivos",
             "body": "La carpeta de destino ya tiene un archivo con ese nombre, el archivo de origen no ha sido movido"
+        },
+        "filePathError": {
+            "title": "Error en la carpeta de destino",
+            "body": "La carpeta de destino no existe y no pudo ser creada, probablemente sea un error de permisos o de espacio en el disco"
         }
     }
 }
