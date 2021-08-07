@@ -398,24 +398,46 @@ handle_tray_watching_click(context_menu.items[1].checked)
 require(path.join(scripts_path, "handle_configuration")).load_user_configuration()
 
 // TODO move all functions of sorting the files to an independent file
-async function move_file(from, to) {
-    return new Promise( resolve => {
-        fs.copyFile(from, to, () => {
-            // on copy sucess remove copied file
-            fs.unlink(from, () => { 
-                const today = new Date()
-                const complete_date = today.getHours()+':'+today.getMinutes()+':'+today.getSeconds()+' '+today.getDate()+'/'+today.getMonth()
-                console.log('At: ', complete_date)
-                display_last_file_moved(to, complete_date)
-                save_last_moved_path(to, complete_date)
-                console.log('copied')
-                resolve('Copied')
-            })
-        })
-    })
+function move_file(from, to) {
+    // return TRUETRUE  if the file was moved to the location
+    // if the file was not moved return FALSE
+    // TODO: add option to change this variable to change the app behavior
+    const should_cancel_on_same_destination_file = 'dont_copy' 
+    try {
+        switch (should_cancel_on_same_destination_file) {
+            case 'dont_copy':
+                fs.copyFileSync(from, to, fs.constants.COPYFILE_EXCL)
+                break;
+            case 'keep_both': 
+                fs.copyFileSync(from, to, fs.constants.COPYFILE_FICLONE_FORCE)
+                break;
+        }
+        fs.copyFileSync(from, to)
+        // on copy sucess remove copied file
+        try {
+            fs.unlinkSync(from)
+            const today = new Date()
+            const complete_date = today.getHours()+':'+today.getMinutes()+':'+today.getSeconds()+' '+today.getDate()+'/'+today.getMonth()
+            console.log('At: ', complete_date)
+            display_last_file_moved(to, complete_date)
+            save_last_moved_path(to, complete_date)
+            console.log('copied')
+            return(true)
+        } catch (err) {
+            console.log(err)
+            return(false)
+        }
+    } catch (err) {
+        console.log(err)
+        return(false)
+    }
 }
 
-function sort_out_file(folder, file, complete_path, keywords, unfiltered, callback) {
+function sort_out_file(folder, file, complete_path, keywords, unfiltered) {
+    // i check if the format exists, if not just quit
+    if (unfiltered == undefined) {
+        return;
+    }
     // first i loop through all the keywords 
     for (let k = 0; k < keywords.length; k++) {
         const keyword = keywords[k]
@@ -425,31 +447,39 @@ function sort_out_file(folder, file, complete_path, keywords, unfiltered, callba
             // when the file format is one that has to be moved 
             const to_path = path.join(folder, file)
             // only copy the file if the destination folder exists
-            return fs.exists(folder, (the_path_exists) => {
-                if (!the_path_exists) {
-                    // create the path and then move the file
+            the_path_exists = fs.existsSync(folder)
+            if (!the_path_exists) {
+                // create the path and then move the file
+                try {
                     fs.mkdirSync(folder)
-                } else {
-                    // check if a file with the same name is already there
-                    fs.exists(to_path, (the_name_is_already_taken) => {
-                        // if there is not such a file, move it 
-                        if (!the_name_is_already_taken) {
-                            console.log("from: ", complete_path)
-                            console.log("to: ", to_path)
-                            move_file(complete_path, to_path)
-                            callback(true)
-                        } else {
-                            // TODO else pop a menu of what to do
-                            if (should_display_warning_notifications) {
-                                showNotification(notifications_texts.fileAlreadyExists.title, notifications_texts.fileAlreadyExists.body)
-                            }
-                            console.log('Error, the file was not moved, another one was already in the folder')
-                        }
-                    })
+                } catch (err) {
+                    console.log(err)
+                    showNotification(notifications_texts.filePathError.title, notifications_texts.filePathError.body)
                 }
-            })
+            } else {
+                // check if a file with the same name is already there
+                the_name_is_already_taken = fs.existsSync(to_path)
+
+                // if there is not such a file, move it 
+                if (!the_name_is_already_taken) {
+                    console.log("from: ", complete_path)
+                    console.log("to: ", to_path)
+                    // TODO: make error handling if the file was not move because there was a problem
+                    file_was_moved = move_file(complete_path, to_path)
+                    return(true)
+                } else {
+                    // TODO else pop a menu of what to do
+                    if (should_display_warning_notifications) {
+                        showNotification(notifications_texts.fileAlreadyExists.title, notifications_texts.fileAlreadyExists.body)
+                    }
+                    console.log('Error, the file was not moved, another one was already in the folder')
+                    // this should be false if the file was not move, but then handling the more filters recommendation should be different
+                    return(true)
+                }
+            }
         } 
     }
+    return(false)
 }
 
 // callback when a file is added to a watching folder
@@ -467,38 +497,37 @@ function handle_folder_change(complete_path) {
 
     // priority on this one
     // sorts by names
-    let is_sorted = false 
-
-    function update_is_sorted(state) {
-        console.log(state)
-        is_sorted = state
-    }
+    let is_sorted = false
 
     // filter by names
     for (let folder in destination_folders) {
         const current_names_array = destination_folders[folder].names
-        is_sorted = sort_out_file(folder, file, complete_path, current_names_array, file_name, update_is_sorted)
+        let result = sort_out_file(folder, file, complete_path, current_names_array, file_name)
+        if (result) {
+            is_sorted = result
+        }
     }
 
     // filter by formats
     if (!is_sorted) {
         for (let folder in destination_folders) {
             const current_formats_array = destination_folders[folder].formats
-            is_sorted = sort_out_file(folder, file, complete_path, current_formats_array, file_format, update_is_sorted)
+            let result = sort_out_file(folder, file, complete_path, current_formats_array, file_format)
+            if (result) {
+                is_sorted = result
+            }
         }
     }
 
-    if (!is_sorted) {
+    console.log(is_sorted)
+    if (!is_sorted && should_display_warning_notifications) {
         // send a notification for the user to warn him to add more filter to the app
         console.log("The file was not sorted")
-        if (should_display_warning_notifications) {
-            console.log(should_display_warning_notifications)
-            showNotification(notifications_texts.fileNotSorted.title, notifications_texts.fileNotSorted.body)
-        }
-
+        showNotification(notifications_texts.fileNotSorted.title, notifications_texts.fileNotSorted.body)
     }
 
 }
+
 
 //function that display whats the last file moved and it shows a button to open up with a file manager
 function display_last_file_moved(file, date) {
