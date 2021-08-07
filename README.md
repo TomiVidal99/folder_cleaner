@@ -4,7 +4,7 @@ __We used chokidar to watch the folder changes thus making the program more reso
 
 ## Table of content
 * [Setup](#INSTALLATION)
-* [How to modify it](HOW-TO-MODIFY-IT)
+* [How to modify it](how-to-modify-it)
 * [Todo](#TODO)
 * [Contributors](#CONTRIBUTORS)
 
