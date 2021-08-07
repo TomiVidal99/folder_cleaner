@@ -22,6 +22,7 @@ _Windows: Currently it does not support Windows._
 * - [x] fix: remove devtools from settings window.
 * - [x] fix: tray cleaning animation.
 * - [ ] fix: remove shouldInit from personalConfig.json and check auto-launch on checkbox from tray menu.
+* - [ ] new feature: add a system to exclude certain files from moving to other folders.
 * - [ ] new feature: folder backup.
 * - [x] new feature: folder cleaning.
 * - [x] new feature: handle languages system.
