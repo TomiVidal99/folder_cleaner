@@ -9,11 +9,16 @@ __We used chokidar to watch the folder changes thus making the program more reso
 * [Contributors](#CONTRIBUTORS)
 
 ## INSTALLATION
-> _Linux: You can download the latest packaged version from **https://drive.google.com/file/d/1AEpwDxUfJj3DrD09kbtJ5tRse0_bviEO/view?usp=sharing**, or you can clone this repo and pack the app with electron-packager executing: **yarn build:linux** and then you will have the packed app in the builds folders._
-_Windows: Currently it does not support Windows._
+### Download
+> _You can download the latest packaged version from **https://drive.google.com/file/d/1AEpwDxUfJj3DrD09kbtJ5tRse0_bviEO/view?usp=sharing**. 
+### Linux
+> clone this repo and pack the app with electron-packager executing: **yarn build:linux** and then you will have the packed app in the builds folders._
+### Windows
+> _Windows: Currently it does not support Windows._
 
 ## HOW TO MODIFY IT
-> _You want to make some changes to improve your own experience? or maybe you want to contribute to this project?_ then **clone** this repo and execute **yarn start** when you're **inside the folder**.
+> _You want to make some changes to improve your own experience? or maybe you want to contribute to this project?_ then **clone** this repo and execute (when you're **inside the repo folder**) **yarn install** (to install all the node modules), and then run **yarn start** and there you go!, that's it! have fun coding.
+> Make sure you have the following dependencies: nodejs, npm.
 
 ## TODO
 * - [ ] fix: when a new destination path is added should reload watchers.
