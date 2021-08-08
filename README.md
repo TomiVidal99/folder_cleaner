@@ -1,5 +1,5 @@
 # FOLDER CLEANER
-> _GUI program made with electron for organizing and backing up your folders._ 
+> _GUI program made with electron for organizing and backing up your folders. The gold of this app is for you to set folders to be watched and folders to act as destination for the files that you want to organize, after doing this once you just use your computer as normal but this time around all the files that you send to the watching folders will be organized if they have a destination folder, else those files will just not be moved. _ 
 __We used chokidar to watch the folder changes thus making the program more resource efficient.__
 
 ## Table of content
@@ -9,11 +9,11 @@ __We used chokidar to watch the folder changes thus making the program more reso
 * [Contributors](#CONTRIBUTORS)
 
 ## INSTALLATION
-### Download
+#### Download
 > _You can download the latest packaged version from **https://drive.google.com/file/d/1AEpwDxUfJj3DrD09kbtJ5tRse0_bviEO/view?usp=sharing**. 
-### Linux
+#### Linux
 > clone this repo and pack the app with electron-packager executing: **yarn build:linux** and then you will have the packed app in the builds folders._
-### Windows
+#### Windows
 > _Windows: Currently it does not support Windows._
 
 ## HOW TO MODIFY IT
