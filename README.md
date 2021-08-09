@@ -22,7 +22,7 @@ __We used chokidar to watch the folder changes thus making the program more reso
 
 ## TODO
 * - [ ] fix: when a new destination path is added should reload watchers.
-* - [ ] fix: sizing issue with the folders destinations list and the parameters elements.
+* - [x] fix: sizing issue with the folders destinations list and the parameters elements.
 * - [ ] fix: when a new destination folder is added check if the sorting filters are not already being used.
 * - [x] fix: remove devtools from settings window.
 * - [x] fix: tray cleaning animation.
