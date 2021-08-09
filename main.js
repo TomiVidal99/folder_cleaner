@@ -2,7 +2,7 @@
 // the objective is for it to control all the logic 
 
 // import modules
-const { app, Menu, Tray, BrowserWindow, ipcMain, Notification } = require('electron')
+const { app, Menu, Tray, BrowserWindow, ipcMain, Notification, shell } = require('electron')
 const localStorage = require('electron-localstorage')
 const fs = require('fs')
 const url = require('url')
@@ -101,12 +101,12 @@ const tray_text_version = global_language_texts.tray_text_version
 const tray_text_warning_notifications = global_language_texts.tray_text_warning_notifications
 
 // function to create notifications
-function showNotification(title, body) {
-  const notification = {
-    title: title,
-    body: body
-  }
-  new Notification(notification).show()
+function showNotification(TITLE, BODY, callback) {
+    const noti = {
+        title: TITLE,
+        body: BODY
+    }
+    new Notification(noti).show()
 }
 
 // define general variables
@@ -270,6 +270,7 @@ function handle_tray_backups_click(new_state) {
 function handle_open_settings() {
     if (is_settings_hidden) {
         settings_window.show()
+        showNotification(notifications_texts.chokidarBugNotification.title, notifications_texts.chokidarBugNotification.body, null)
     } else {
         settings_window.hide()
     }
@@ -422,6 +423,9 @@ function move_file(from, to) {
             display_last_file_moved(to, complete_date)
             save_last_moved_path(to, complete_date)
             console.log('copied')
+            showNotification(notifications_texts.fileMoved.title, to + " " + notifications_texts.fileMoved.title + " " + complete_date, () => {
+                shell.openPath(filename.join("/"))
+            })
             return(true)
         } catch (err) {
             console.log(err)
@@ -454,7 +458,7 @@ function sort_out_file(folder, file, complete_path, keywords, unfiltered) {
                     fs.mkdirSync(folder)
                 } catch (err) {
                     console.log(err)
-                    showNotification(notifications_texts.filePathError.title, notifications_texts.filePathError.body)
+                    showNotification(notifications_texts.filePathError.title, notifications_texts.filePathError.body, null)
                 }
             } else {
                 // check if a file with the same name is already there
@@ -470,7 +474,7 @@ function sort_out_file(folder, file, complete_path, keywords, unfiltered) {
                 } else {
                     // TODO else pop a menu of what to do
                     if (should_display_warning_notifications) {
-                        showNotification(notifications_texts.fileAlreadyExists.title, notifications_texts.fileAlreadyExists.body)
+                        showNotification(notifications_texts.fileAlreadyExists.title, notifications_texts.fileAlreadyExists.body, null)
                     }
                     console.log('Error, the file was not moved, another one was already in the folder')
                     // this should be false if the file was not move, but then handling the more filters recommendation should be different
@@ -523,7 +527,7 @@ function handle_folder_change(complete_path) {
     if (!is_sorted && should_display_warning_notifications) {
         // send a notification for the user to warn him to add more filter to the app
         console.log("The file was not sorted")
-        showNotification(notifications_texts.fileNotSorted.title, notifications_texts.fileNotSorted.body)
+        showNotification(notifications_texts.fileNotSorted.title, notifications_texts.fileNotSorted.body, null)
     }
 
 }
@@ -543,3 +547,9 @@ function save_last_moved_path(path, date) {
     personal_configuration.last_moved.date = date
     fs.writeFile(`${configurations_path}/personalConfiguration.json`, JSON.stringify(personal_configuration), (error) => {if (error) throw error})
 }
+
+// when a new destiantion or watching folder is added should reset watchers
+ipcMain.on('should-reset-watchers', () => {
+    console.log("RESETTING WATCHERS @ ", new Date().getSeconds());
+    reset_watcher();
+})

@@ -84,6 +84,14 @@
         "filePathError": {
             "title": "File path error",
             "body": "The destination folder does not exists and the path could not be created, it's problaby a permission or disk space issue"
+        },
+        "chokidarBugNotification": {
+            "title": "Warning!!!",
+            "body": "Currently the app has a bug where you have to reboot the app after making any change on the watching and destination folders, sorry for the inconvenience :("
+        },
+        "fileMoved": {
+            "title": "File organized",
+            "body": "at"
         }
     }
 }

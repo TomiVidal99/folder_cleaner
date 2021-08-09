@@ -84,6 +84,14 @@
         "filePathError": {
             "title": "Error en la carpeta de destino",
             "body": "La carpeta de destino no existe y no pudo ser creada, probablemente sea un error de permisos o de espacio en el disco"
+        },
+        "chokidarBugNotification": {
+            "title": "Cuidado!!!",
+            "body": "Actualmente la aplicación sufre de un problema en el que se debe reinciar manualmente la app cuando se hayan hecho cambios en las lista de carpetas de origen y de destino, perdón por las inconveniencias :("
+        },
+        "fileMoved": {
+            "title": "Archivo organizado",
+            "body": "a las"
         }
     }
 }
