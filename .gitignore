@@ -2,5 +2,5 @@ node_modules/
 builds/
 dist/
 yarn-error.log
-App/configuration/personalConfiguration.json
+App/configurations/*
 yarn-error.log

@@ -79,7 +79,7 @@
             </div>
 
             <!--this is the folder properties wrapper-->
-            <div id="destination_properties_wrapper" class="row row-2 mt-2 mb-3 on-hover-stretch-path py-2 mx-auto rounded d-none" style="width: 70%">
+            <div id="destination_properties_wrapper" class="d-none flex-column justify-content-center align-items-center row row-2 mt-2 mb-3 on-hover-stretch-path py-2 mx-auto rounded" style="width: 70%; overflow: hidden;">
 
                 <!--close this panel button-->
                 <button class="btn btn-cancel-properties" onclick="handle_cancel_properties()">
@@ -89,7 +89,7 @@
                 <div id="destination-properties-path-display" class="input-group-text mx-auto text-center mt-2 mb-4 font-weight-bold"></div>
 
                 <!--sorting bar for the name property-->
-                <div class="col-10 input-group input-group-md mx-auto destination-properties-img-animation property-inline-elements">
+                <div class="d-flex flex-row input-group input-group-md w-75 mx-2 destination-properties-img-animation property-inline-elements" style="overflow: hidden;">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="inputGroup-sizing-md" language="destinationPropertyName"></span>
                     </div>
@@ -98,7 +98,7 @@
                 </div>
 
                 <!--sorting bar the format property-->
-                <div class="col-10 input-group input-group-md my-3 mx-auto destination-properties-img-animation property-inline-elements">
+                <div class="d-flex flex-row input-group input-group-md my-3 w-75 mx-2 destination-properties-img-animation property-inline-elements" style="overflow: hidden;">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="inputGroup-sizing-md" language="destinationPropertyFormat"></span>
                     </div>
@@ -107,11 +107,11 @@
                 </div>
 
                 <!--sorting bar the regex property-->
-                <div class="d-none col-10 input-group input-group-md mx-auto destination-properties-img-animation property-inline-elements">
+                <div class="d-none flex-row input-group input-group-md my-3 w-75 mx-2 destination-properties-img-animation property-inline-elements" style="overflow: hidden;">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="inputGroup-sizing-md" language="destinationPropertyRegex"></span>
                     </div>
-                    <input type="text" aria-label="Default" disabled placeholder="CURRENTLY INAVAILABLE" aria-describedby="inputGroup-sizing-default" onkeypress="handle_destination_property(event, true, 'regex')" id="destination_regex_property_input">
+                    <input type="text" aria-label="Default" disabled placeholder="CURRENTLY UNAVAILABLE" aria-describedby="inputGroup-sizing-default" onkeypress="handle_destination_property(event, true, 'regex')" id="destination_regex_property_input">
                     <img class="destination-properties-img img-property-regex" src="" alt="" img-src="summitFolderProperty" style="border-radius: 0 16px 16px 0" onclick="handle_destination_property(event, false, 'regex')">
                 </div>
 
