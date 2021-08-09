@@ -21,7 +21,7 @@ __We used chokidar to watch the folder changes thus making the program more reso
 > Make sure you have the following dependencies: nodejs, npm.
 
 ## TODO
-* - [ ] fix: when a new destination path is added should reload watchers.
+* - [ ] fix: when a new destination path is added should reload watchers (currently the unwatch method provided by chokidar is not working, so the user has to reload the app).
 * - [x] fix: sizing issue with the folders destinations list and the parameters elements.
 * - [ ] fix: when a new destination folder is added check if the sorting filters are not already being used.
 * - [x] fix: remove devtools from settings window.

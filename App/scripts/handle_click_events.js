@@ -101,6 +101,10 @@ function display_remove_watching_paths() {
         // there's not elements to remove and the button is being display, so i should add the hide class
         button_element.classList.add('d-none')
     }
+
+    // tell to main that reset the watchers
+    ipcRenderer.send('should-reset-watchers')
+
 }
 
 // button to remove selected li elements from watching paths ul tag
@@ -124,6 +128,7 @@ function handle_remove_selected_watching_paths() {
 
     // check if there's any element left to display hint text
     display_warning_badge_watching_paths()
+
     // check if the remove button should be displayed
     display_remove_watching_paths()
 
@@ -181,7 +186,9 @@ function handle_select_destination_folder() {
     }).catch((error) => {
         console.log(error)
     })
+
     display_warning_badge_destination_paths()
+
 }
 
 function loadInitialConditions(configuration) {
@@ -249,6 +256,9 @@ function remove_destination_folder() {
     // check if the remove button should be displayed
     display_remove_destination_paths()
 
+    // tell to main that reset the watchers
+    ipcRenderer.send('should-reset-watchers')
+
 }
 
 // decides if the button to remove selected path should exist
@@ -259,10 +269,10 @@ function display_remove_destination_paths() {
     
     if (element_to_remove.length > 0 && button_hidden) {
         // there's elements to remove and the button is hidden thus should remove the hide class
-        button_element.classList.add('d-none')
+        button_element.classList.remove('d-none')
     } else if (element_to_remove.length == 0 && !button_hidden) {
         // there's not elements to remove and the button is being display, so i should add the hide class
-        button_element.classList.remove('d-none')
+        button_element.classList.add('d-none')
     }
 
 }
@@ -426,6 +436,9 @@ function add_folder_with_properties_to_list() {
     personal_configuration.destinationFolders[path].regexs = regexs 
 
     update_user_configuration(personal_configuration)
+
+    // tell to main that reset the watchers
+    ipcRenderer.send('should-reset-watchers')
 
 }
 
@@ -652,3 +665,4 @@ function handle_language_change(select_element) {
     apply_text_to_elements_with_language_attribute()
 
 }
+

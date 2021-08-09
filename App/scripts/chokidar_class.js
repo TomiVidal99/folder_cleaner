@@ -84,6 +84,7 @@ class chokidar_class {
         if (new_folder != null) {
             this.watcher.add(new_folder)
             this.folders.push(new_folder)
+            this.reset_watcher()
         } else {
             throw 'null argument'
         }

@@ -51,7 +51,7 @@
 
 .selected_watching_li {
     background-color: var(--item-background-color-selected) !important;
-    width: 100% !important;
+    width: 85% !important;
     align-self: center;
     border-radius: 8px 8px 8px 8px !important;
     z-index: 10;
