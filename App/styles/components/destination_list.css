@@ -105,13 +105,15 @@
 
 /*style for the edit properties img 'button'*/
 .editDestinationPathProperties {
-    height: 1.4rem;
+    height: 1.6rem;
     background-color: transparent;
     justify-self: right;
     margin-left: auto;
     z-index: 999;
+    filter: invert(40%);
 }
 
 .editDestinationPathProperties:hover {
-    height: 2.5rem;
+    height: 2rem;
+    filter: invert(1) brightness(0.5) sepia(1) saturate(1000%);
 }

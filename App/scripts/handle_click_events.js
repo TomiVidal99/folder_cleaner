@@ -89,19 +89,17 @@ function handle_selected_watching_folder_item(selected_li_tag) {
 
 // handles if it should display a remove button to delete all the selected watching paths
 function display_remove_watching_paths() {
-    // TODO remove from personal config
+
     const element_to_remove = document.getElementsByClassName('selected_watching_li')
     const button_element = document.getElementById('remove_watching_folders')
-    const is_button_hidden = button_element.getAttribute('class').split('d-none')
+    const button_element_not_displayed = button_element.classList.contains('d-none')
     
-    if (element_to_remove.length > 0 && is_button_hidden.length > 1) {
+    if (element_to_remove.length > 0 && button_element_not_displayed) {
         // there's elements to remove and the button is hidden thus should remove the hide class
-        const new_class = is_button_hidden[0]
-        button_element.setAttribute('class', new_class)
-    } else if (element_to_remove.length == 0 && is_button_hidden.length == 1) {
+        button_element.classList.remove('d-none')
+    } else if (element_to_remove.length == 0 && !button_element_not_displayed ) {
         // there's not elements to remove and the button is being display, so i should add the hide class
-        const new_class = is_button_hidden[0] + ' d-none'
-        button_element.setAttribute('class', new_class)
+        button_element.classList.add('d-none')
     }
 }
 
@@ -257,16 +255,14 @@ function remove_destination_folder() {
 function display_remove_destination_paths() {
     const element_to_remove = document.getElementsByClassName('selected_destination_li')
     const button_element = document.getElementById('remove_destination_folders')
-    const is_button_hidden = button_element.getAttribute('class').split('d-none')
+    const button_hidden = button_element.classList.contains('d-none')
     
-    if (element_to_remove.length > 0 && is_button_hidden.length > 1) {
+    if (element_to_remove.length > 0 && button_hidden) {
         // there's elements to remove and the button is hidden thus should remove the hide class
-        const new_class = is_button_hidden[0]
-        button_element.setAttribute('class', new_class)
-    } else if (element_to_remove.length == 0 && is_button_hidden.length == 1) {
+        button_element.classList.add('d-none')
+    } else if (element_to_remove.length == 0 && !button_hidden) {
         // there's not elements to remove and the button is being display, so i should add the hide class
-        const new_class = is_button_hidden[0] + ' d-none'
-        button_element.setAttribute('class', new_class)
+        button_element.classList.remove('d-none')
     }
 
 }
@@ -632,7 +628,12 @@ function handle_cancel_properties() {
 
     // unselect all the selected items
     const selected_items = document.getElementById('destination_paths_list').querySelectorAll('.selected_destination_li')
-    selected_items.forEach((item) => {item.classList.remove('selected_destination_li')})
+    let selected_items_reverse = [];
+    selected_items.forEach( (item) => {selected_items_reverse.push(item)})
+    selected_items_reverse.forEach((item) => {item.classList.remove('selected_destination_li')})
+
+    // check if the button to remove the selected paths should be visible
+    display_remove_destination_paths()
 
 }
 
