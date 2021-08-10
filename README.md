@@ -10,11 +10,12 @@ __We used chokidar to watch the folder changes thus making the program more reso
 
 ## INSTALLATION
 #### Download
-> _You can download the latest packaged version from **https://drive.google.com/file/d/1AID_knJc6KxFgtFQvWLApM9lfkeOJwu9/view?usp=sharing**. 
+> **Linux: ** _You can download the latest packaged version from **https://drive.google.com/file/d/1AID_knJc6KxFgtFQvWLApM9lfkeOJwu9/view?usp=sharing**. 
+> **Windows: ** _You can download the latest packaged version from **https://drive.google.com/file/d/1AID_knJc6KxFgtFQvWLApM9lfkeOJwu9/view?usp=sharing**. 
 #### Linux
 > clone this repo and pack the app with electron-packager executing: **yarn build:linux** and then you will have the packed app in the builds folders._
 #### Windows
-> _Windows: Currently it does not support Windows._
+> clone this repo and pack the app with electron-packager executing: **yarn build:windows** and then you will have the packed app in the builds folders. **(still working on windows, so many bugs may appear)**_
 
 ## HOW TO MODIFY IT
 > _You want to make some changes to improve your own experience? or maybe you want to contribute to this project?_ then **clone** this repo and execute (when you're **inside the repo folder**) **yarn install** (to install all the node modules), and then run **yarn start** and there you go!, that's it! have fun coding.
