@@ -10,7 +10,7 @@ __We used chokidar to watch the folder changes thus making the program more reso
 
 ## INSTALLATION
 #### Download
-> _You can download the latest packaged version from **https://drive.google.com/file/d/1Ub_rVJSA7MnenUSnUJ_MGw0ThkNZmPH7/view?usp=sharing**. 
+> _You can download the latest packaged version from **https://drive.google.com/file/d/1AID_knJc6KxFgtFQvWLApM9lfkeOJwu9/view?usp=sharing**. 
 #### Linux
 > clone this repo and pack the app with electron-packager executing: **yarn build:linux** and then you will have the packed app in the builds folders._
 #### Windows
