@@ -37,7 +37,7 @@
             "defaultParametersDescription": "Configurá los parámetros por defecto de la aplicación",
             "folderRecursionLabel": "Definir la recursión de las carpetas por defecto",
             "fileAlreadyExistsLabel": "Qué hacer cuando el archivo de destino ya existe",
-            "resetPersonalConfiguration": "Reiniciar toda la configuración a la inicial",
+            "resetPersonalConfiguration": "Reiniciar configuración",
             "lastMovedFileTitle": "Último archivo movido",
             "appSettingsTitle": "Configuración de la aplicación",
             "appSettingsDescription": "Configurá el comportamiento de la aplicación",
