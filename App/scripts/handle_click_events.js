@@ -279,25 +279,16 @@ function display_remove_destination_paths() {
 
 // function to define if the properties for the current selected folder should apppear
 function display_folder_properties(path, close) {
-    const wrapper = document.getElementById("destination_properties_wrapper")
     const path_display_element = document.getElementById('destination-properties-path-display')
-    const splitted_class = wrapper.getAttribute('class').split('d-none')
+
+    clearPropertiesPanel()
 
     // i diplay the current path
     if (path) {
         path_display_element.innerHTML = path
     }
 
-    // display the properties panel if is not being displayed atm
-    if (splitted_class.length > 1 && !close) {
-        // case when the properties panel is NOT being displayed
-        wrapper.setAttribute('class', splitted_class[0])
-    } 
-    else if (close) {
-        // case when the properties panel IS being displayed
-        const new_class = splitted_class[0] + ' d-none'
-        wrapper.setAttribute('class', new_class)
-    }
+    toggle_display_properties_panel(!close)
 
     display_warning_badge_destination_paths()
 }
@@ -592,11 +583,10 @@ function handle_open_last_moved() {
 function handle_edit_properties(img_element) {
 
     const item_element = img_element.parentElement
-    const list_folder_properties = document.getElementById('list-folder-properties')
     const path_element = document.getElementById('destination-properties-path-display')
 
-    // clear the previous tags
-    list_folder_properties.innerHTML = ""
+    // clears old data left inside the panel
+    clearPropertiesPanel()
 
     // set the path
     path_element.innerHTML = item_element.children[0].innerHTML
@@ -625,29 +615,58 @@ function handle_edit_properties(img_element) {
     }
 
     // toggle on the display properties panel
-    document.getElementById('destination_properties_wrapper').classList.remove('d-none')
+    toggle_display_properties_panel(true)
 
-    // unselect all the selected items
-    const selected_items = document.getElementById('destination_paths_list').querySelectorAll('.selected_destination_li')
-    selected_items.forEach((item) => {item.classList.remove('selected_destination_li')})
+    // clears all the selected paths
+    clearSelectedDestinationPaths()
 
 }
 
 // button to toggle off the display of the properties panel
 function handle_cancel_properties() {
 
-    const properties_panel = document.getElementById('destination_properties_wrapper')
-    properties_panel.classList.add('d-none')
+    // stop displaying the properties panel
+    toggle_display_properties_panel(false)
 
+    // check if the button to remove the selected paths should be visible
+    display_remove_destination_paths()
+
+}
+
+// adds or remove 'd-none' class on the properties panel to toggle the display on or off
+// the force_display is to force to be enable o disable
+function toggle_display_properties_panel(force_display) {
+    const wrapper = document.getElementById('destination_properties_wrapper')
+    const is_hidden = wrapper.classList.contains('d-none')
+    if (!force_display && !is_hidden) {
+        wrapper.classList.add('d-none')
+        clearPropertiesPanel()
+        clearSelectedDestinationPaths()
+    } else if (force_display && is_hidden) {
+        wrapper.classList.remove('d-none')
+    }
+}
+
+// clears all the data left in the properties panel and unselect the path list
+function clearPropertiesPanel() {
+    // clear the previous tags
+    const path_container = document.getElementById('destination-properties-path-display')
+    const list_folder_properties = document.getElementById('list-folder-properties')
+
+    // clears the types data
+    list_folder_properties.innerHTML = ""
+
+    // clears the file path
+    path_container.innerHTML = ""
+
+}
+
+function clearSelectedDestinationPaths() {
     // unselect all the selected items
     const selected_items = document.getElementById('destination_paths_list').querySelectorAll('.selected_destination_li')
     let selected_items_reverse = [];
     selected_items.forEach( (item) => {selected_items_reverse.push(item)})
     selected_items_reverse.forEach((item) => {item.classList.remove('selected_destination_li')})
-
-    // check if the button to remove the selected paths should be visible
-    display_remove_destination_paths()
-
 }
 
 // triggered when the select languague is clicked: should change the languague and save the change
