@@ -1,0 +1,8 @@
+.divider {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid var(--palette-first);
+    width: 40%;
+}

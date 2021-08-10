@@ -685,3 +685,8 @@ function handle_language_change(select_element) {
 
 }
 
+// handler to reset all the personal configuration by deleting personalConfiguration.json
+function handle_reset_configuration() {
+    console.log("RESETTING PERSONAL CONFIG")
+    require(localStorageElectron.getItem('scripts_path')+"/"+"handle_configuration.js").reset_personal_configuration()
+}
